@@ -4,7 +4,8 @@ Grammar v2
 Changes from grammar `v1`
 -------------------------
 
-Grammar `v2` is essentially the same as grammar `v1`, with the following three changes (the first two render it backwards-incompatible):
+Grammar `v2` is essentially the same as grammar `v1`, with the following four changes (the first three render it backwards-incompatible):
+* `version` in the root object is now a *string*, allowing for version names like `test-1`, `qa-1`, `prod-1`.
 * The misnamed `showHints` has been renamed to `showLiveIndication`.
 * The misnamed `nSlotsPerPoll` has been renamed to `nSlotsPerProbe`.
 * There are two new *mandatory* properties in the root object:
@@ -20,7 +21,7 @@ The grammar is defined by the following rules:
 
 1. The parameters file contains pure [JSON](http://json.org/).
 2. The root node in the file is a JSON object (`{}`) containing the following *mandatory* properties:
-  * `version`: an *integer* defining the version of the parameters.
+  * `version`: a *string* defining the version of the parameters.
   * `nSlotsPerProbe`: an *integer* defining how many slots are allocated when a probe is created (see below the explanation about question groups and slots).
   * `schedulingMinDelay`: an *integer* defining the minimal delay between two probes (in seconds).
   * `schedulingMeanDelay`: an *integer* defining the average delay between two probes (in seconds).
