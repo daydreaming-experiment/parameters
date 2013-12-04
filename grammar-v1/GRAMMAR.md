@@ -6,7 +6,7 @@ Rules
 
 The grammar is defined by the following rules:
 
-1. The parameters file contains pure JSON.
+1. The parameters file contains pure [JSON](http://json.org/).
 2. The root node in the file is a JSON object (`{}`) containing the following *mandatory* properties:
   * `version`: an *integer* defining the version of the parameters.
   * `nSlotsPerPoll`: an *integer* defining how many slots are allocated when a probe is created (see below the explanation about question groups and slots).
