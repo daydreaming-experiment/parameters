@@ -1,6 +1,6 @@
 {
-    "version": 1,
-    "nSlotsPerPoll": 5,
+    "version": "prod-1",
+    "nSlotsPerProbe": 5,
     "schedulingMinDelay": 300000,
     "schedulingMeanDelay": 7200000,
     "questions": [
@@ -38,7 +38,7 @@
                         "hints": ["Later today", "In a week", "In a month", "In six months", "In more than a year"],
                         "initialPosition": 50,
                         "notApplyAllowed": true,
-                        "showHints": true
+                        "showLiveIndication": true
                     }
                 ]
             }
@@ -61,7 +61,7 @@
                         "hints": ["More than a year back", "Six months back", "A month back", "A week back", "Earlier today"],
                         "initialPosition": 50,
                         "notApplyAllowed": true,
-                        "showHints": true
+                        "showLiveIndication": true
                     }
                 ]
             }
