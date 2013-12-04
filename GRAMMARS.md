@@ -1,10 +1,13 @@
-Parameter file grammar
+Parameters file grammar
 ======================
 
-Current grammar used in master branch of the app: `v1`.
-
-v1.1
+v2.1
 ----
+
+TODO
+
+v2
+--
 
 TODO
 
