@@ -1,8 +1,8 @@
 Grammar v2
 ==========
 
-Changes from grammar `v1`
--------------------------
+Changes from grammar v1
+-----------------------
 
 Grammar `v2` is essentially the same as grammar `v1`, with the following four changes (the first three render it backwards-incompatible):
 * `version` in the root object is now a *string*, allowing for version names like `test-1`, `qa-1`, `prod-1`.
