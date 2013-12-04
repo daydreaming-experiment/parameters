@@ -18,7 +18,7 @@ The grammar is defined by the following rules:
   * `subCategory`: a *string* representing the question's sub-category (both are used for classification purposes when analysing results).
   * `slot`: a *string* representing both the question's group and group position (see below the explanation about question groups and slots).
   * `details`: a JSON *object* containing the details of the question, as detailed in the following rule.
-4. A *detail* object contains the following *mandatory* properties:
+4. A *details* object contains the following *mandatory* properties:
   * `type`: a *string* representing the type of question asked; can be either `"MultipleChoice"`, `"Slider"`, or `"StarRating"` (star-ratings appear like sliders in the app, but behave in a discreet manner instead of continuous).
   * If `type` is `"MultipleChoice"`, the following properties are *mandatory*:
     * `text`: a *string* containing the actual question asked to the user.
