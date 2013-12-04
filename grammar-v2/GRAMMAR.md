@@ -7,7 +7,7 @@ Changes from grammar `v1`
 Grammar `v2` is essentially the same as grammar `v1`, with the following three changes (the first two render it backwards-incompatible):
 * The misnamed `showHints` has been renamed to `showLiveIndication`.
 * The misnamed `nSlotsPerPoll` has been renamed to `nSlotsPerProbe`.
-* There are two new *mandatory* parameters in the root object:
+* There are two new *mandatory* properties in the root object:
   * `schedulingMinDelay`: an *integer* defining the minimal delay between two probes (in seconds).
   * `schedulingMeanDelay`: an *integer* defining the average delay between two probes (in seconds).
 
