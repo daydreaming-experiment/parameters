@@ -21,13 +21,22 @@ Parameters update instructions
 
 Follow these steps to update parameters for the app:
 
-1. Check the grammar version used in the latest version of the app: head over to [`GRAMMAR-VERSIONS.md`](https://github.com/daydreaming-experiment/app/blob/master/GRAMMAR-VERSIONS.md) in the [daydreaming app](https://github.com/daydreaming-experiment/app/) repository. Then read carefully `grammar-vX/GRAMMAR.md`.
-2. Since you don't know what the last tester did with the corresponding `grammar-vX/test.json` file (in *this* repository), start from scratch by copying `grammar-vX/production.json` to `grammar-vX/test.json` (unless you can read git commit logs and you know you were the last person to edit the test file); this will either overwrite the existing test file or create a new one if it doesn't already exist. You can do all this either directly on GitHub's website, or with your own clone of the repository.
+1. Check the grammar version used in the latest version of the app:
+  * Head over to [`GRAMMAR-VERSIONS.md`](https://github.com/daydreaming-experiment/app/blob/master/GRAMMAR-VERSIONS.md) in the [daydreaming app](https://github.com/daydreaming-experiment/app/) repository.
+  * Then read carefully `grammar-vX/GRAMMAR.md`.
+2. Since you don't know what the last tester did with the corresponding `grammar-vX/test.json` file (in *this* repository), start from scratch:
+  * Copy `grammar-vX/production.json` to `grammar-vX/test.json` (unless you can read git commit logs and you know you were the last person to edit the test file); this will either overwrite the existing test file or create a new one if it doesn't already exist.
+  * If you are using grammar `v2` or above, **set the `version` property in your test file to `test-X`** to make sure the uploaded test results can be filtered out from the real results.
+  * You can do all this either directly on GitHub's website, or with your own clone of the repository.
 3. Edit `grammar-vX/test.json`, and commit your changes (again, either on the GitHub website or by commiting on your clone and pushing to GitHub).
 4. If you can, validate your test file by using the provided `grammar-vX/validate.py` script: if you are at the root of the repository, you can do this on a Linux distribution by running `python grammar-vX/validate.py grammar-vX/test.json` (where you replace `vX` with the real grammar version; you'll also need `python` installed).
 5. Enter *testing mode* in the app on your phone (from the options screen). Then use the new buttons on the app dashboard to reset your test profile; you'll be presented with a new *test* first-launch sequence, during which the app will update its test parameters to the ones you just committed.
 6. Play around with the app in test mode to try those new parameters.
 7. Repeat steps 3-6 until you're happy.
-8. Put your new parameters into production: copy `grammar-vX/test.json` to `grammar-vX/production.json`, replace the contents of `grammar-vX/test.json` with a single comment line (so that no one is misguided into using your draft test file in later tests), and commit.
+8. Put your new parameters into production:
+  * Copy `grammar-vX/test.json` to `grammar-vX/production.json` (overwriting the existing production file)
+  * If you are using grammar `v2` or above, **don't forget to set back the `version` property to something like `prod-X`** in the production file, so that the newly produced results aren't misinterpreted as test results
+  * Replace the contents of `grammar-vX/test.json` with a single comment line (so that no one is misguided into using your draft test file in later tests).
+  * Commit.
 
 That's it!
