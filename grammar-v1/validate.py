@@ -295,6 +295,80 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
         self._test_on_typed_subquestions('StarRating', range_test)
 
 
+class ConsistencyTestCase(LoadedParametersTestCase):
+
+    description = "Checking general consistency of parameters"
+
+    def test_unique_names(self):
+        names = set([])
+        for q in self.params['questions']:
+            n = q['name']
+            if n in names:
+                raise ValueError(
+                    ("'{}' appears multiple times as a "
+                     "question name").format(n))
+            names.add(n)
+
+    def test_slots(self):
+        nSlotsPerPoll = self.params['nSlotsPerPoll']
+        slots = set([])
+        positioned = set([])
+        random = set([])
+        for q in self.params['questions']:
+            s = q['slot']
+            slots.add(s)
+            try:
+                int(s)
+            except ValueError:
+                random.add(s)
+            else:
+                positioned.add(int(s))
+
+        self.assertGreaterEqual(
+            len(slots), nSlotsPerPoll,
+            ("There are too few defined groups of questions ({0}) compared "
+             "to nSlotsPerPoll ({1})").format(len(slots), nSlotsPerPoll))
+
+        self.assertLessEqual(
+            len(positioned), nSlotsPerPoll,
+            ("There are strictly more predefined-position groups ({0}) than "
+             "nSlotsPerPoll ({1}), that's too many, they won't "
+             "fit").format(len(positioned), nSlotsPerPoll))
+
+        if len(random):
+            self.assertLess(len(positioned), nSlotsPerPoll,
+                            ("There are as many as or more "
+                             "predefined-position groups of questions ({0}) "
+                             "than nSlotsPerPoll ({1}): none of the "
+                             "random-position groups will ever be "
+                             "used").format(len(positioned), nSlotsPerPoll))
+
+        corrected_positions = set([])
+        for s in positioned:
+            if s >= 0:
+                self.assertLess(s, nSlotsPerPoll,
+                                ("Some group positions are greater than the "
+                                 "number of slots (remember indices start "
+                                 "at 0)"))
+                self.assertNotIn(s, corrected_positions,
+                                 ("Some positive and negative group "
+                                  "positions represent the same position "
+                                  "({0} and {1}), use either one or the "
+                                  "other").format(s, s - nSlotsPerPoll))
+                corrected_positions.add(s)
+            else:
+                self.assertGreaterEqual(s, - nSlotsPerPoll,
+                                        ("Some group positions are lower than"
+                                         " -nSlotsPerPoll, don't try to wrap "
+                                         "around backwards"))
+                self.assertNotIn(s + nSlotsPerPoll, corrected_positions,
+                                 ("Some positive and negative group "
+                                  "positions represent the same position "
+                                  "({0} and {1}), use either one or the "
+                                  "other").format(s, s + nSlotsPerPoll))
+                corrected_positions.add(s + nSlotsPerPoll)
+
+
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         sys.exit('Usage: {} file-to-validate'.format(
@@ -303,7 +377,8 @@ if __name__ == '__main__':
     sys.argv = sys.argv[:1]
 
     test_cases = [JSONTestCase, RootTestCase, QuestionsTestCase,
-                  QuestionDetailsTestCase, SubQuestionsTestCase]
+                  QuestionDetailsTestCase, SubQuestionsTestCase,
+                  ConsistencyTestCase]
     runner = unittest.TextTestRunner()
     for tc in test_cases:
         print tc.description
