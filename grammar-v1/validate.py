@@ -10,6 +10,8 @@ import unittest
 import os
 import sys
 from functools import partial
+from random import shuffle
+from pprint import pprint
 
 
 class ParametersFileTestCase(unittest.TestCase):
@@ -29,7 +31,7 @@ class JSONTestCase(ParametersFileTestCase):
         try:
             json.load(self.f)
         except ValueError:
-            raise Exception('{} is not valid JSON!'.format(filename))
+            self.fail('{} is not valid JSON!'.format(filename))
 
 
 class LoadedParametersTestCase(ParametersFileTestCase):
@@ -68,8 +70,7 @@ class LoadedParametersTestCase(ParametersFileTestCase):
 
         # If optional and equals default value, it's useless
         if optional and container[attr_name] == default:
-            raise ValueError(self.warn_default.format(
-                container_name, attr_name))
+            self.fail(self.warn_default.format(container_name, attr_name))
 
         # Check list item types if we're a list
         if attr_type is list:
@@ -317,9 +318,8 @@ class ConsistencyTestCase(LoadedParametersTestCase):
         for q in self.params['questions']:
             n = q['name']
             if n in names:
-                raise ValueError(
-                    ("'{}' appears multiple times as a "
-                     "question name").format(n))
+                self.fail(("'{}' appears multiple times as a "
+                           "question name").format(n))
             names.add(n)
 
     def test_slots(self):
@@ -388,21 +388,88 @@ class ConsistencyTestCase(LoadedParametersTestCase):
                 corrected_positions.add(s + nSlotsPerPoll)
 
 
+class bcolors(object):
+
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
+
+def strip_stacktrace(trace):
+    trace = trace[trace.index('\n'):]
+    trace = trace[trace.index('\n'):]
+    trace = trace[trace.index('\n'):]
+    return trace[trace.index(':') + 2:].rstrip('\n')
+
+
+def green(s):
+    return bcolors.OKGREEN + s + bcolors.ENDC
+
+
+def red(s):
+    return bcolors.FAIL + s + bcolors.ENDC
+
+
+def blue(s):
+    return bcolors.OKBLUE + s + bcolors.ENDC
+
+
 if __name__ == '__main__':
+    # Make sure we have a single argument
     if len(sys.argv) != 2:
         sys.exit('Usage: {} file-to-validate'.format(
             os.path.split(sys.argv[0])[1]))
     filename = sys.argv[1]
+    # Don't pass on the argument to unittest
     sys.argv = sys.argv[:1]
 
+    # Our test cases and encouragements
     test_cases = [JSONTestCase, RootTestCase, QuestionsTestCase,
                   QuestionDetailsTestCase, SubQuestionsTestCase,
                   ConsistencyTestCase]
-    runner = unittest.TextTestRunner()
-    for tc in test_cases:
-        print tc.description
+    ok_texts = ['Yep!', 'Ok!', 'Great!', 'Brilliant!', 'Fantastic!',
+                'Perfect!', 'Good!', 'Right you are!', 'Well done!']
+    shuffle(ok_texts)
+
+    # Error flag
+    error = False
+
+    for tc, ok in zip(test_cases, ok_texts):
+        sys.stdout.write(tc.description + " ... ")
         suite = unittest.defaultTestLoader.loadTestsFromTestCase(tc)
-        res = runner.run(suite)
-        print
+        res = unittest.TestResult()
+        suite.run(res)
         if len(res.errors) or len(res.failures):
+            error = True
+            sys.stdout.write(red('Arg, wrong') + '\r\n')
+            print
+            sys.stdout.write(blue("Here's all the information "
+                                  "I've got for you:") + '\r\n')
+
+            for k, e in enumerate(res.errors):
+                print
+                print "Error #{}".format(k + 1)
+                print "--------"
+                pprint(e)
+
+            for k, f in enumerate(res.failures):
+                print
+                print "Failure #{}".format(k + 1)
+                print "----------"
+                print strip_stacktrace(f[1])
+
             break
+        else:
+            sys.stdout.write(green(ok) + '\r\n')
+
+    print
+    if error:
+        sys.stdout.write(red("*** Well, there was an error.") + '\r\n')
+        sys.stdout.write(red("*** It happens. Try again :-)") + '\r\n')
+        sys.exit(1)
+    else:
+        sys.stdout.write(green("*** You're good to go!") + '\r\n')
+        sys.exit(0)
