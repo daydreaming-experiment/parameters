@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-"""Test a parameters file to check it follows grammar v1."""
+"""Test a parameters file to check it follows grammar v2."""
 
 
 import json
@@ -94,15 +94,23 @@ class RootTestCase(LoadedParametersTestCase):
 
     def test_version(self):
         self._test_presence_and_type(self.params, 'root object',
-                                     'version', int)
+                                     'version', unicode)
 
-    def test_nSlotsPerPoll(self):
+    def test_nSlotsPerProbe(self):
         self._test_presence_and_type(self.params, 'root object',
-                                     'nSlotsPerPoll', int)
+                                     'nSlotsPerProbe', int)
 
     def test_questions(self):
         self._test_presence_and_type(self.params, 'root object',
                                      'questions', list, dict)
+
+    def test_schedulingMinDelay(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'schedulingMinDelay', int)
+
+    def test_schedulingMeanDelay(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'schedulingMeanDelay', int)
 
 
 class QuestionsTestCase(LoadedParametersTestCase):
@@ -177,7 +185,7 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
     default_stepSize = 0.5
     default_initialRating = 0
     default_initialPosition = 0
-    default_showHints = False
+    default_showLiveIndication = False
     default_notApplyAllowed = False
 
     def setUp(self):
@@ -236,9 +244,10 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
             'notApplyAllowed', bool, optional=True,
             default=self.default_notApplyAllowed)
 
-    def test_showHints(self):
+    def test_showLiveIndication(self):
         self._test_presence_and_type_on_all_subquestions(
-            'showHints', bool, optional=True, default=self.default_showHints)
+            'showLiveIndication', bool, optional=True,
+            default=self.default_showLiveIndication)
 
     def test_slider_initialPosition(self):
         self._test_presence_and_type_on_typed_subquestions(
@@ -324,7 +333,7 @@ class ConsistencyTestCase(LoadedParametersTestCase):
 
     def test_slots(self):
         # Gather some information
-        nSlotsPerPoll = self.params['nSlotsPerPoll']
+        nSlotsPerProbe = self.params['nSlotsPerProbe']
         slots = set([])
         positioned = set([])
         random = set([])
@@ -340,32 +349,32 @@ class ConsistencyTestCase(LoadedParametersTestCase):
 
         # There are enough groups to fill all the slots
         self.assertGreaterEqual(
-            len(slots), nSlotsPerPoll,
+            len(slots), nSlotsPerProbe,
             ("There are too few defined groups of questions ({0}) compared "
-             "to nSlotsPerPoll ({1})").format(len(slots), nSlotsPerPoll))
+             "to nSlotsPerProbe ({1})").format(len(slots), nSlotsPerProbe))
 
         # There aren't too many positioned groups
         self.assertLessEqual(
-            len(positioned), nSlotsPerPoll,
+            len(positioned), nSlotsPerProbe,
             ("There are strictly more predefined-position groups ({0}) than "
-             "nSlotsPerPoll ({1}), that's too many, they won't "
-             "fit").format(len(positioned), nSlotsPerPoll))
+             "nSlotsPerProbe ({1}), that's too many, they won't "
+             "fit").format(len(positioned), nSlotsPerProbe))
 
         # If there are some random groups, they will be used eventually
         if len(random):
-            self.assertLess(len(positioned), nSlotsPerPoll,
+            self.assertLess(len(positioned), nSlotsPerProbe,
                             ("There are as many as or more "
                              "predefined-position groups of questions ({0}) "
-                             "than nSlotsPerPoll ({1}): none of the "
+                             "than nSlotsPerProbe ({1}): none of the "
                              "random-position groups will ever be "
-                             "used").format(len(positioned), nSlotsPerPoll))
+                             "used").format(len(positioned), nSlotsPerProbe))
 
         # Positioned groups don't wrap around the number of slots, and don't
         # overlap each other when defined negatively versus positively
         corrected_positions = set([])
         for s in positioned:
             if s >= 0:
-                self.assertLess(s, nSlotsPerPoll,
+                self.assertLess(s, nSlotsPerProbe,
                                 ("Some group positions are greater than the "
                                  "number of slots (remember indices start "
                                  "at 0)"))
@@ -373,19 +382,34 @@ class ConsistencyTestCase(LoadedParametersTestCase):
                                  ("Some positive and negative group "
                                   "positions represent the same position "
                                   "({0} and {1}), use either one or the "
-                                  "other").format(s, s - nSlotsPerPoll))
+                                  "other").format(s, s - nSlotsPerProbe))
                 corrected_positions.add(s)
             else:
-                self.assertGreaterEqual(s, - nSlotsPerPoll,
+                self.assertGreaterEqual(s, - nSlotsPerProbe,
                                         ("Some group positions are lower than"
-                                         " -nSlotsPerPoll, don't try to wrap "
+                                         " -nSlotsPerProbe, don't try to wrap "
                                          "around backwards"))
-                self.assertNotIn(s + nSlotsPerPoll, corrected_positions,
+                self.assertNotIn(s + nSlotsPerProbe, corrected_positions,
                                  ("Some positive and negative group "
                                   "positions represent the same position "
                                   "({0} and {1}), use either one or the "
-                                  "other").format(s, s + nSlotsPerPoll))
-                corrected_positions.add(s + nSlotsPerPoll)
+                                  "other").format(s, s + nSlotsPerProbe))
+                corrected_positions.add(s + nSlotsPerProbe)
+
+    def test_delays(self):
+        minDelay = self.params['schedulingMinDelay']
+        meanDelay = self.params['schedulingMeanDelay']
+
+        # meanDelay is greater than minDelay
+        self.assertGreater(meanDelay, minDelay,
+                           ("schedulingMeanDelay ({0}) is less than (or "
+                            "equal to) schedulingMinDelay "
+                            "({1})").format(meanDelay, minDelay))
+
+        # meanDelay is reasonably large
+        self.assertGreater(meanDelay, 5 * 60,
+                           ("schedulingMeanDelay ({}) is very small! "
+                            "(Less than 5 minutes)"))
 
 
 class bcolors(object):
@@ -439,7 +463,7 @@ if __name__ == '__main__':
     error = False
 
     # Say hello
-    hello = "Validating '{}' against grammar version 1".format(basefilename)
+    hello = "Validating '{}' against grammar version 2".format(basefilename)
     print
     print hello
     print "-" * len(hello)
