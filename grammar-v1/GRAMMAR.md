@@ -13,7 +13,7 @@ The grammar is defined by the following rules:
   * `questions`: a *list* of question objects (see below for a description of what question objects should contain).
   * Any other property on this root object is ignored.
 3. A *question* object contains the following *mandatory* properties:
-  * `name`: a *string* defining a name for the question (used to identify questions when retrieving the uploaded results).
+  * `name`: a *string* defining a name for the question (used to identify questions when retrieving the uploaded results; it's recommended that question names be unique across questions).
   * `category`: a *string* representing the question's category.
   * `subCategory`: a *string* representing the question's sub-category (both are used for classification purposes when analysing results).
   * `slot`: a *string* representing both the question's group and group position (see below the explanation about question groups and slots).
