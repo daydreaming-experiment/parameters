@@ -53,20 +53,25 @@ class LoadedParametersTestCase(ParametersFileTestCase):
     def _test_presence_and_type(self, container, container_name,
                                 attr_name, attr_type, list_attr_type=None,
                                 optional=False, default=None):
+        # If optional and not present, nothing to do
         if optional and attr_name not in container:
             return
 
+        # Test presence
         error_msg = self.error_in.format(container_name, attr_name)
         self.assertIn(attr_name, container, error_msg)
 
+        # Test type
         error_msg = self.error_type.format(container_name, attr_name,
                                            self.type_names[attr_type])
         self.assertIsInstance(container[attr_name], attr_type, error_msg)
 
+        # If optional and equals default value, it's useless
         if optional and container[attr_name] == default:
             raise ValueError(self.warn_default.format(
                 container_name, attr_name))
 
+        # Check list item types if we're a list
         if attr_type is list:
             error_msg = self.error_empty_list.format(container_name, attr_name)
             self.assertTrue(len(container[attr_name]), error_msg)
@@ -148,14 +153,17 @@ class QuestionDetailsTestCase(LoadedParametersTestCase):
 
     def test_type_and_derivatives(self):
         for i, (d, n) in enumerate(zip(self.details, self.names)):
+
             dname = ("details of question '{0}' "
                      "(number {1} in list)").format(n, i + 1)
             self._test_presence_and_type(d, dname, 'type', unicode)
             self.assertIn(d['type'], self.allowed_types)
+            # Test MultipleChoice mandatory properties
             if d['type'] == 'MultipleChoice':
                 self._test_presence_and_type(d, dname, 'text', unicode)
                 self._test_presence_and_type(d, dname, 'choices',
                                              list, unicode)
+            # Test Slider and StarRating mandatory properties
             elif d['type'] == 'Slider' or d['type'] == 'StarRating':
                 self._test_presence_and_type(d, dname, 'subQuestions',
                                              list, dict)
@@ -236,6 +244,7 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
             'Slider', 'initialPosition', int, optional=True,
             default=self.default_initialPosition)
 
+        # initialPosition is between 0 and 100
         def range_test(subq, subqname):
             error_msg = ("'initialPosition' in {} is not "
                          "between 0 and 100").format(subqname)
@@ -252,6 +261,7 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
             'StarRating', 'numStars', int, optional=True,
             default=self.default_numStars)
 
+        # numStars is strictly positive
         def range_test(subq, subqname):
             error_msg = ("'numStars' in {} is not "
                          "strictly positive").format(subqname)
@@ -267,6 +277,7 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
             'StarRating', 'stepSize', float, optional=True,
             default=self.default_stepSize)
 
+        # stepSize is strictly positive
         def range_test(subq, subqname):
             error_msg = ("'stepSize' in {} is not "
                          "strictly positive").format(subqname)
@@ -282,6 +293,7 @@ class SubQuestionsTestCase(LoadedParametersTestCase):
             'StarRating', 'initialRating', float, optional=True,
             default=self.default_initialRating)
 
+        # initialRating is between 0.0 and numStars
         def range_test(subq, subqname):
             error_msg = ("'initialRating' in {} is not "
                          "between 0.0 and numStars").format(subqname)
@@ -300,6 +312,7 @@ class ConsistencyTestCase(LoadedParametersTestCase):
     description = "Checking general consistency of parameters"
 
     def test_unique_names(self):
+        # Question names are unique across questions
         names = set([])
         for q in self.params['questions']:
             n = q['name']
@@ -310,6 +323,7 @@ class ConsistencyTestCase(LoadedParametersTestCase):
             names.add(n)
 
     def test_slots(self):
+        # Gather some information
         nSlotsPerPoll = self.params['nSlotsPerPoll']
         slots = set([])
         positioned = set([])
@@ -324,17 +338,20 @@ class ConsistencyTestCase(LoadedParametersTestCase):
             else:
                 positioned.add(int(s))
 
+        # There are enough groups to fill all the slots
         self.assertGreaterEqual(
             len(slots), nSlotsPerPoll,
             ("There are too few defined groups of questions ({0}) compared "
              "to nSlotsPerPoll ({1})").format(len(slots), nSlotsPerPoll))
 
+        # There aren't too many positioned groups
         self.assertLessEqual(
             len(positioned), nSlotsPerPoll,
             ("There are strictly more predefined-position groups ({0}) than "
              "nSlotsPerPoll ({1}), that's too many, they won't "
              "fit").format(len(positioned), nSlotsPerPoll))
 
+        # If there are some random groups, they will be used eventually
         if len(random):
             self.assertLess(len(positioned), nSlotsPerPoll,
                             ("There are as many as or more "
@@ -343,6 +360,8 @@ class ConsistencyTestCase(LoadedParametersTestCase):
                              "random-position groups will ever be "
                              "used").format(len(positioned), nSlotsPerPoll))
 
+        # Positioned groups don't wrap around the number of slots, and don't
+        # overlap each other when defined negatively versus positively
         corrected_positions = set([])
         for s in positioned:
             if s >= 0:
