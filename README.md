@@ -30,7 +30,7 @@ Follow these steps to update parameters for the app:
   * You can do all this either directly on GitHub's website, or with your own clone of the repository.
 3. Edit `grammar-vX/test.json`, and commit your changes (again, either on the GitHub website or by commiting on your clone and pushing to GitHub).
 4. If you can, validate your test file with the provided `grammar-vX/validate.py` script: if you're at the root of the repository, you can do this on a Linux distribution by running `python grammar-vX/validate.py grammar-vX/test.json` (where you replace `vX` with the real grammar version; you'll also need `python` installed).
-5. Enter *testing mode* in the app on your phone (from the options screen). Then use the new buttons on the app dashboard to reset your test profile; you'll be presented with a new *test* first-launch sequence, during which the app will update its test parameters to the ones you just committed.
+5. Enter *testing mode* in the app on your phone: going to the options screen, long press the icon in the top right, and type in `petitbois` as the password). Then use the new buttons on the app dashboard to reset your test profile; you'll be presented with a new *test* first-launch sequence, during which the app will update its test parameters to the ones you just committed.
 6. Play around with the app in test mode to try those new parameters.
 7. Repeat steps 3-6 until you're happy.
 8. Put your new parameters into production:
