@@ -3,7 +3,7 @@ Daydreaming parameters
 
 This repository contains the various versions of parameters used in the [daydreaming experiment](http://daydreaming-the-app.net/). These parameters include question details, probe scheduling settings, and probably more things in the future. The app itself directly retrieves the parameters from this repository when it needs to; there is no other mirror.
 
-File orgnisation
+File organisation
 ----------------
 
 There are three important axes organising these files:
