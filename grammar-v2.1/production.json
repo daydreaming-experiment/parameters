@@ -1,5 +1,30 @@
 {
-    "version": "prod-2",
+    "version": "prod-2.1",
+    "expId": "daydreamingBeta",
+    "expDuration": 30,
+    "urlBackendApi": "http://api.qa.naja.cc",
+    "urlResultsPage": "http://daydreaming-the-app.net",
+    "firstLaunch": {
+        "welcomeText": "the introduction text to be taken out of the xml description (TODO)",
+        "descriptionText": "the description text to be taken of the xml file (TODO)",
+        "tipiQuestionnaire" : {
+            "text": "... Tipi description ...",
+            "hintsForAllSubQuestions": ["Disagree strongly", "Disagree moderately",
+                                        "Disagree a little", "Neither agree nor disagree",
+                                        "Agree a little", "Agree moderately",
+                                        "Agree strongly"],
+            "subQuestions": [
+                {
+                    "text": "Extroverted, enthusiastic",
+                    "initialPosition": 50
+                },
+                {
+                    "text": "Critical, quarrelsome",
+                    "initialPosition": 50
+                }
+            ]
+        }
+    },
     "nSlotsPerProbe": 5,
     "schedulingMinDelay": 300000,
     "schedulingMeanDelay": 7200000,
