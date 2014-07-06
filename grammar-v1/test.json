@@ -11,7 +11,7 @@
                 "type": "Slider",
                 "subQuestions": [
                     {
-                        "text": "Were you daydreaming?",
+                        "text": "Were you mind wandering?",
                         "hints": ["Not at all", "Completely"],
                         "initialPosition": 50
                     }
