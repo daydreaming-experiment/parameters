@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "nSlotsPerPoll": 5,
+    "nSlotsPerPoll": 6,
     "questions": [
         {
             "name": "mindWandering_daydreaming",
@@ -11,7 +11,7 @@
                 "type": "Slider",
                 "subQuestions": [
                     {
-                        "text": "Were you daydreaming?",
+                        "text": "Were you mind wandering?",
                         "hints": ["Not at all", "Completely"],
                         "initialPosition": 50
                     }
@@ -22,7 +22,7 @@
             "name": "mindWandering_phenomeno",
             "category": "mindWandering",
             "subCategory": "phenomeno",
-            "slot": "0",
+            "slot": "-3",
             "details": {
                 "type": "Slider",
                 "subQuestions": [
