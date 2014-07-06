@@ -1,6 +1,6 @@
 {
     "version": 101,
-    "nSlotsPerPoll": 5,
+    "nSlotsPerPoll": 6,
     "questions": [
         {
             "name": "mindWandering_daydreaming",
@@ -13,6 +13,31 @@
                     {
                         "text": "Were you mind wandering?",
                         "hints": ["Not at all", "Completely"],
+                        "initialPosition": 50
+                    }
+                ]
+            }
+        },
+        {
+            "name": "mindWandering_phenomeno",
+            "category": "mindWandering",
+            "subCategory": "phenomeno",
+            "slot": "-3",
+            "details": {
+                "type": "Slider",
+                "subQuestions": [
+                    {
+                        "text": "Were you thinking in words?",
+                        "hints": ["Not at all", "In some abstract way", "With some precise words", "In clear and precise words"],
+                        "notApplyAllowed": true,
+                        "showHints": true
+                        "initialPosition": 50
+                    },
+                    {
+                        "text": "Were you thinking in visual mental images?",
+                        "hints": ["Not at all", "In some abstract way", "With some visual features", "With vivid images"],
+                        "notApplyAllowed": true,
+                        "showHints": true
                         "initialPosition": 50
                     }
                 ]
