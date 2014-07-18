@@ -409,7 +409,7 @@ class ConsistencyTestCase(LoadedParametersTestCase):
         # meanDelay is reasonably large
         self.assertGreater(meanDelay, 5 * 60,
                            ("schedulingMeanDelay ({}) is very small! "
-                            "(Less than 5 minutes)"))
+                            "(Less than 5 minutes)").format(meanDelay))
 
 
 class bcolors(object):
