@@ -2,12 +2,13 @@
 # -*- coding: utf-8 -*-
 
 
-"""Test a parameters file to check it follows grammar v2."""
+"""Test a parameters file to check it follows grammar v2.1."""
 
 
 import json
 import unittest
 import os
+import re
 import sys
 from functools import partial
 from random import shuffle
@@ -54,6 +55,7 @@ class LoadedParametersTestCase(ParametersFileTestCase):
 
     def _test_presence_and_type(self, container, container_name,
                                 attr_name, attr_type, list_attr_type=None,
+                                str_regex=None, str_regex_error=None,
                                 optional=False, default=None):
         # If optional and not present, nothing to do
         if optional and attr_name not in container:
@@ -67,6 +69,18 @@ class LoadedParametersTestCase(ParametersFileTestCase):
         error_msg = self.error_type.format(container_name, attr_name,
                                            self.type_names[attr_type])
         self.assertIsInstance(container[attr_name], attr_type, error_msg)
+
+        # Test string regex parameters are consistent
+        if (attr_type != unicode and
+                (str_regex is not None or str_regex_error is not None)):
+            raise ValueError("Can't give a regex check if the checked object"
+                             "is not a string.")
+
+        # The, if necessary, test string regex
+        if (str_regex is not None and
+                re.search(str_regex, container[attr_name]) is None):
+            self.fail(self.error_type.format(container_name, attr_name,
+                                             str_regex_error))
 
         # If optional and equals default value, it's useless
         if optional and container[attr_name] == default:
@@ -96,6 +110,38 @@ class RootTestCase(LoadedParametersTestCase):
         self._test_presence_and_type(self.params, 'root object',
                                      'version', unicode)
 
+    def test_backendExpId(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'backendExpId', unicode)
+
+    def test_backendDbName(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'backendDbName', unicode)
+
+    def test_expDuration(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'expDuration', int)
+
+    def test_backendApiUrl(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'backendApiUrl', unicode,
+                                     str_regex=r'^https?://.*[^/]$',
+                                     str_regex_error=('a properly formed '
+                                                      'url with no '
+                                                      'trailing slash'))
+
+    def test_resultsPageUrl(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'resultsPageUrl', unicode,
+                                     str_regex=r'^https?://.*[^/]$',
+                                     str_regex_error=('a properly formed '
+                                                      'url with no '
+                                                      'trailing slash'))
+
+    def test_firstLaunch(self):
+        self._test_presence_and_type(self.params, 'root object',
+                                     'firstLaunch', dict)
+
     def test_nSlotsPerProbe(self):
         self._test_presence_and_type(self.params, 'root object',
                                      'nSlotsPerProbe', int)
@@ -111,6 +157,82 @@ class RootTestCase(LoadedParametersTestCase):
     def test_schedulingMeanDelay(self):
         self._test_presence_and_type(self.params, 'root object',
                                      'schedulingMeanDelay', int)
+
+
+class FirstLaunchTestCase(LoadedParametersTestCase):
+
+    description = 'Checking first launch parameters are properly formatted'
+
+    def setUp(self):
+        super(FirstLaunchTestCase, self).setUp()
+        self.firstLaunch = self.params['firstLaunch']
+
+    def test_welcomeText(self):
+        self._test_presence_and_type(self.firstLaunch, 'firstLaunch object',
+                                     'welcomeText', unicode)
+
+    def test_descriptionText(self):
+        self._test_presence_and_type(self.firstLaunch, 'firstLaunch object',
+                                     'descriptionText', unicode)
+
+    def test_tipiQuestionnaire(self):
+        self._test_presence_and_type(self.firstLaunch, 'firstLaunch object',
+                                     'tipiQuestionnaire', dict)
+
+
+class TipiQuestionnaireTestCase(LoadedParametersTestCase):
+
+    description = ('Checking tipi questionnaire parameters are properly '
+                   'formatted')
+
+    def setUp(self):
+        super(TipiQuestionnaireTestCase, self).setUp()
+        self.tipi = self.params['firstLaunch']['tipiQuestionnaire']
+
+    def test_text(self):
+        self._test_presence_and_type(self.tipi, 'tipiQuestionnaire object',
+                                     'text', unicode)
+
+    def test_hintsForAllSubQuestions(self):
+        self._test_presence_and_type(self.tipi, 'tipiQuestionnaire object',
+                                     'hintsForAllSubQuestions', list, unicode)
+
+    def test_subQuestions(self):
+        self._test_presence_and_type(self.tipi, 'tipiQuestionnaire object',
+                                     'subQuestions', list, dict)
+
+
+class TipiSubQuestionsTestCase(LoadedParametersTestCase):
+
+    description = ('Checking subQuestions of the tipi questionnaire a '
+                   'properly formatted')
+    default_initialPosition = 0
+
+    def setUp(self):
+        super(TipiSubQuestionsTestCase, self).setUp()
+        self.subQuestions = \
+            self.params['firstLaunch']['tipiQuestionnaire']['subQuestions']
+
+    def _test_on_all_subQuestions(self, tester):
+        for i, q in enumerate(self.subQuestions):
+            qname = "subQuestion {} of the tipi questionnaire".format(i)
+            tester(q, qname)
+
+    def _test_presence_and_type_on_all_subQuestions(
+            self, attr_name, attr_type, list_attr_type=None,
+            optional=False, default=None):
+        self._test_on_all_subQuestions(
+            partial(self._test_presence_and_type, attr_name=attr_name,
+                    attr_type=attr_type, list_attr_type=list_attr_type,
+                    optional=optional, default=default))
+
+    def test_text(self):
+        self._test_presence_and_type_on_all_subQuestions('text', unicode)
+
+    def test_initialPosition(self):
+        self._test_presence_and_type_on_all_subQuestions(
+            'initialPosition', int, optional=True,
+            default=self.default_initialPosition)
 
 
 class QuestionsTestCase(LoadedParametersTestCase):
@@ -399,6 +521,7 @@ class ConsistencyTestCase(LoadedParametersTestCase):
     def test_delays(self):
         minDelay = self.params['schedulingMinDelay']
         meanDelay = self.params['schedulingMeanDelay']
+        expDuration = self.params['expDuration']
 
         # meanDelay is greater than minDelay
         self.assertGreater(meanDelay, minDelay,
@@ -410,6 +533,11 @@ class ConsistencyTestCase(LoadedParametersTestCase):
         self.assertGreater(meanDelay, 5 * 60,
                            ("schedulingMeanDelay ({}) is very small! "
                             "(Less than 5 minutes)").format(meanDelay))
+
+        # expDuration is reasonably large
+        self.assertGreater(expDuration, 10,
+                           ("expDuration ({}) is very small! "
+                            "(Less than 10 days)").format(expDuration))
 
 
 class bcolors(object):
@@ -452,9 +580,10 @@ if __name__ == '__main__':
     sys.argv = sys.argv[:1]
 
     # Our test cases and encouragements
-    test_cases = [JSONTestCase, RootTestCase, QuestionsTestCase,
-                  QuestionDetailsTestCase, SubQuestionsTestCase,
-                  ConsistencyTestCase]
+    test_cases = [JSONTestCase, RootTestCase, FirstLaunchTestCase,
+                  TipiQuestionnaireTestCase, TipiSubQuestionsTestCase,
+                  QuestionsTestCase, QuestionDetailsTestCase,
+                  SubQuestionsTestCase, ConsistencyTestCase]
     ok_texts = ['Yep!', 'Ok!', 'Great!', 'Brilliant!', 'Fantastic!',
                 'Perfect!', 'Good!', 'Right you are!', 'Well done!']
     shuffle(ok_texts)
@@ -463,7 +592,7 @@ if __name__ == '__main__':
     error = False
 
     # Say hello
-    hello = "Validating '{}' against grammar version 2".format(basefilename)
+    hello = "Validating '{}' against grammar version 2.1".format(basefilename)
     print
     print hello
     print "-" * len(hello)
