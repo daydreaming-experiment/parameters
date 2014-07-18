@@ -56,7 +56,7 @@ The grammar is defined by the following rules:
 7. The `tipiQuestionnaire` property on the `firstLaunch` object is a JSON *object* with fields:
   * `text`: a *string* containing the header description of the questionnaire.
   * `hintsForAllSubQuestions`: a *list* of *strings* containing the hints along the range of the slider answer of the questions of the questionnaire.
-  * `subQuestions`: a *list* of JSON *objects* formatted as tipiQuestions (see below).
+  * `subQuestions`: a *list* of JSON *objects* formatted as `tipiQuestion`s (see below).
 8. A `tipiQuestion` object contains:
    * `text`: a *string* containing the question.
    * `initialPosition`: an *integer* between `0` and `100` (included) defining the initial position of the slider; defaults to `0` (i.e. to the left).
