@@ -12,13 +12,13 @@ The grammar is defined by the following rules:
 
 1. The parameters file contains pure [JSON](http://json.org/).
 2. The root node in the file is a JSON object (`{}`) containing the following *mandatory* properties:
+  * `version`: a *string* defining the version of the parameters.
   * `backendExpId`: a *string* defining the identity of the experiment for the backend.
   * `backendDbName`: a *string* defining the name of the database to upload the results to in the backend.
   * `expDuration`: an *integer* defining the duration before publication of results if users use the app as intented.
   * `backendApiUrl`: a *string* defining the url of the backend API.
   * `resultsPageUrl`: a *string* defining the url of the results page.
   * `firstLaunch`: a JSON *object* containing a detailed description of the textual content of the views to be displayed at the first launch of the application as well as a description of the questionnaire questions they may contain.
-  * `version`: a *string* defining the version of the parameters.
   * `nSlotsPerProbe`: an *integer* defining how many slots are allocated when a probe is created (see below the explanation about question groups and slots).
   * `schedulingMinDelay`: an *integer* defining the minimal delay between two probes (in seconds).
   * `schedulingMeanDelay`: an *integer* defining the average delay between two probes (in seconds).
