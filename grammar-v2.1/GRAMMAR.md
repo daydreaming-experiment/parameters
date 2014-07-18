@@ -10,14 +10,13 @@ Rules
 
 The grammar is defined by the following rules:
 
-
 1. The parameters file contains pure [JSON](http://json.org/).
 2. The root node in the file is a JSON object (`{}`) containing the following *mandatory* properties:
-  * `expId`: a *string* defining the identity of the experiment.
-  * `dbName`: a *string* defining the name of the database to upload the results to.
+  * `backendExpId`: a *string* defining the identity of the experiment for the backend.
+  * `backendDbName`: a *string* defining the name of the database to upload the results to in the backend.
   * `expDuration`: an *integer* defining the duration before publication of results if users use the app as intented.
-  * `urlBackendApi`: a *string* defining the url of the backend API.
-  * `urlResultsPage`: a *string* defining the url of the results page.
+  * `backendApiUrl`: a *string* defining the url of the backend API.
+  * `resultsPageUrl`: a *string* defining the url of the results page.
   * `firstLaunch`: a JSON *object* containing a detailed description of the textual content of the views to be displayed at the first launch of the application as well as a description of the questionnaire questions they may contain.
   * `version`: a *string* defining the version of the parameters.
   * `nSlotsPerProbe`: an *integer* defining how many slots are allocated when a probe is created (see below the explanation about question groups and slots).
@@ -50,17 +49,17 @@ The grammar is defined by the following rules:
     * `numStars`: an positive *integer* defining the number of stars the rating would have if it were really displayed as a star-rating (and not as a discreet slider as is the case now); combined with `stepSize`, these two parameters define the number of discreet values the rating allows; defaults to `5`.
     * `stepSize`: a positive *float* defining the size of the interval between two discreet values; the total number of values allowed by the star-rating is `1 + ceiling(numStars  / stepSize)`; defaults to `0.5`.
     * `initialRating`: a *float* between `0.0` and `numStars` (included) defining the initial rating when the question is asked; this doesn't need to be a multiple of `stepSize`; defaults to `0.0` (i.e. to the left).
-6. `firstLaunch`: a JSON *object* with fields:
- * `welcomeText`: a *string* containing the text to be displayed in the Welcoming screen of the application.
- * `descriptionText`: a *string* containing the text to be displayed in the Description screen of the application.
+6. The `firstLaunch` property on the root node is a JSON *object* with fields:
+ * `welcomeText`: a *string* containing the text to be displayed in the Welcome screen of the app.
+ * `descriptionText`: a *string* containing the text to be displayed in the Description screen of the app.
  * `tipiQuestionnaire`: a JSON *object* defining the personality questionnaire to be displayed at first launch of the app.
-7. `tipiQuestionnaire`: a JSON *object* with fields:
-  * `text`: a string containing the header description of the questionnaire.
-  * `hintsForAllSubQuestions`: a *list* of *string* containing the hints along the range of the slider answer of the questions of the questionnaire.
-  * `subQuestions`: a *list* of JSON *object* tipiQuestion
-8. `tipiQuestion`: a JSON *object* with fields:
-   * `text`: a *string* containing the question
-   * `initialPosition`: an *integer* in [0,100] declaring the initial position of the slider.
+7. The `tipiQuestionnaire` property on the `firstLaunch` object is a JSON *object* with fields:
+  * `text`: a *string* containing the header description of the questionnaire.
+  * `hintsForAllSubQuestions`: a *list* of *strings* containing the hints along the range of the slider answer of the questions of the questionnaire.
+  * `subQuestions`: a *list* of JSON *objects* formatted as tipiQuestions (see below).
+8. A `tipiQuestion` object contains:
+   * `text`: a *string* containing the question.
+   * `initialPosition`: an *integer* between `0` and `100` (included) defining the initial position of the slider; defaults to `0` (i.e. to the left).
 
 
 About question groups, slots, and positioning
