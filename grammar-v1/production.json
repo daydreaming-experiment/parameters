@@ -30,14 +30,14 @@
                         "text": "Were you thinking in words?",
                         "hints": ["Not at all", "In some abstract way", "With some precise words", "In clear and precise words"],
                         "notApplyAllowed": true,
-                        "showHints": true
+                        "showHints": true,
                         "initialPosition": 50
                     },
                     {
                         "text": "Were you thinking in visual mental images?",
                         "hints": ["Not at all", "In some abstract way", "With some visual features", "With vivid images"],
                         "notApplyAllowed": true,
-                        "showHints": true
+                        "showHints": true,
                         "initialPosition": 50
                     }
                 ]
