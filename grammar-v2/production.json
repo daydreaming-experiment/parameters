@@ -1,8 +1,8 @@
 {
     "version": "prod-2",
     "nSlotsPerProbe": 5,
-    "schedulingMinDelay": 300000,
-    "schedulingMeanDelay": 7200000,
+    "schedulingMinDelay": 300,
+    "schedulingMeanDelay": 7200,
     "questions": [
         {
             "name": "mindWandering_daydreaming",
