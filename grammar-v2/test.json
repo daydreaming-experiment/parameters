@@ -1,5 +1,5 @@
 {
-    "version": "test-2",
+    "version": "test-3",
     "nSlotsPerProbe": 5,
     "schedulingMinDelay": 120,
     "schedulingMeanDelay": 600,

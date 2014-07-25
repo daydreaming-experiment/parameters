@@ -1,5 +1,5 @@
 {
-    "version": "prod-2",
+    "version": "prod-3",
     "nSlotsPerProbe": 5,
     "schedulingMinDelay": 300,
     "schedulingMeanDelay": 7200,
