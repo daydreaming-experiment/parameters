@@ -185,7 +185,7 @@
                   "position": "A"
                 },
                 {
-                  "Name": "probe.mindWandering.temporalFuture",
+                  "name": "probe.mindWandering.temporalFuture",
                   "position": "A"
                 }
               ]
