@@ -162,7 +162,7 @@
           "name": "mindWandering",
           "friendlyName": "Mind-wandering",
           "position": "1",
-          "nSlots": 3,
+          "nSlots": 2,
           "pages": [
             {
               "name": "daydreaming",
@@ -178,7 +178,7 @@
             {
               "name": "temporal",
               "position": "A",
-              "nSlots": 2,
+              "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.temporalPast",
@@ -193,7 +193,7 @@
             {
               "name": "social",
               "position": "A",
-              "nSlots": 2,
+              "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.socialOther",
