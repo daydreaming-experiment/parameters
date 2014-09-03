@@ -161,7 +161,7 @@
         {
           "name": "mindWandering",
           "friendlyName": "Mind-wandering",
-          "position": "0",
+          "position": "1",
           "nSlots": 3,
           "pages": [
             {
