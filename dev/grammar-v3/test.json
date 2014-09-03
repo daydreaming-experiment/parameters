@@ -126,6 +126,7 @@
   "sequences": [
     {
       "name": "probe",
+      "type": "probe",
       "nSlots": 2,
       "pageGroups": [
         {
