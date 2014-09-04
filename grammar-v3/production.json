@@ -210,5 +210,11 @@
         }
       ]
     }
-  ]
+  ],
+  "glossary": {
+                "Imagery":"When you imagine images in your head.",
+                "Cupcake":"also British English: fairy cake; Australian English: fairy cake patty cake or cup cake) is a small cake designed to serve one person, which may be baked in a small thin paper or aluminium cup. As with larger cakes, icing and other cake decorations, such as sprinkles, may be applied.",
+                "Daydreaming":"Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
+                "Mind-wandering":"Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low."
+              }
 }
