@@ -1,5 +1,5 @@
 {
-  "version": "3-production-1",
+  "version": "3-production-2",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -10,8 +10,8 @@
   "questions": [
     {
       "name": "probe.mindWandering.daydreaming",
+      "type": "slider",
       "details": {
-        "type": "Slider",
         "subQuestions": [
           {
           "text": "Were you daydreaming?",
@@ -23,8 +23,8 @@
     },
     {
       "name": "probe.mindWandering.temporalFuture",
+      "type": "slider",
       "details": {
-        "type": "Slider",
         "subQuestions": [
           {
             "text": "Were you thinking about the future?",
@@ -43,8 +43,8 @@
     },
     {
       "name": "probe.mindWandering.temporalPast",
+      "type": "slider",
       "details": {
-        "type": "Slider",
         "subQuestions": [
           {
             "text": "Were you thinking about the past?",
@@ -63,8 +63,8 @@
     },
     {
       "name": "probe.mindWandering.socialOther",
+      "type": "slider",
       "details": {
-      "type": "Slider",
         "subQuestions": [
           {
             "text": "Were you thinking about other people?",
@@ -82,8 +82,8 @@
     },
     {
       "name": "probe.mindWandering.socialSelf",
+      "type": "slider",
       "details": {
-        "type": "Slider",
         "subQuestions": [
           {
             "text": "Were you thinking about yourself?",
@@ -95,8 +95,8 @@
     },
     {
       "name": "probe.mood",
+      "type": "slider",
       "details": {
-        "type": "Slider",
         "subQuestions": [
           {
             "text": "What was your mood?",
@@ -108,8 +108,8 @@
     },
     {
       "name": "probe.currentActivity",
+      "type": "multipleChoice",
       "details": {
-        "type": "MultipleChoice",
         "text": "What were you doing?",
         "choices": ["Commuting", "Working", "Studying", "Shopping",
                     "Preparing food", "Doing housework",
