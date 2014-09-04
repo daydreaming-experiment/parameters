@@ -64,7 +64,7 @@
     {
       "name": "probe.mindWandering.socialOther",
       "details": {
-      "type": "Slider",
+        "type": "Slider",
         "subQuestions": [
           {
             "text": "Were you thinking about other people?",
