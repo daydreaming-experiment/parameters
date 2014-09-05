@@ -1,164 +1,153 @@
 {
-    "version": 101,
-    "nSlotsPerPoll": 6,
-    "questions": [
-        {
-            "name": "mindWandering_daydreaming",
-            "category": "mindWandering",
-            "subCategory": "daydreaming",
-            "slot": "0",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "Were you mind wandering?",
-                        "hints": ["Not at all", "Completely"],
-                        "initialPosition": 50
-                    }
-                ]
+"version": 1,
+"nSlotsPerPoll": 5,
+"questions": [
+    {
+    "name": "contextPlace",
+    "category": "context",
+    "subCategory": "null",
+    "slot": "0",
+    "details": {
+        "type": "Slider",
+        "subQuestions": [
+            {
+            "text": "Where are you?",
+            "hints": ["Home", "At work", "Commuting", "Outside", "Public Space"],
+            "initialPosition": 50
             }
-        },
-        {
-            "name": "mindWandering_phenomeno",
-            "category": "mindWandering",
-            "subCategory": "phenomeno",
-            "slot": "-3",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "Were you thinking in words?",
-                        "hints": ["Not at all", "In some abstract way", "With some precise words", "In clear and precise words"],
-                        "showHints": true,
-                        "initialPosition": 50
-                    },
-                    {
-                        "text": "Were you thinking in visual mental images?",
-                        "hints": ["Not at all", "In some abstract way", "With some visual features", "With vivid images"],
-                        "showHints": true,
-                        "initialPosition": 50
-                    }
-                ]
-            }
-        },
-        {
-            "name": "mindWandering_temporalFuture",
-            "category": "mindWandering",
-            "subCategory": "temporalFuture",
-            "slot": "A",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "Were you thinking about the future?",
-                        "hints": ["Not at all", "Completely"],
-                        "initialPosition": 50
-                    },
-                    {
-                        "text": "If so, how far in the future?",
-                        "hints": ["Later today", "In a week", "In a month", "In six months", "In more than a year"],
-                        "initialPosition": 50,
-                        "notApplyAllowed": true,
-                        "showHints": true
-                    }
-                ]
-            }
-        },
-        {
-            "name": "mindWandering_temporalPast",
-            "category": "mindWandering",
-            "subCategory": "temporalPast",
-            "slot": "A",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "Were you thinking about the past?",
-                        "hints": ["Not at all", "Completely"],
-                        "initialPosition": 50
-                    },
-                    {
-                        "text": "If so, how far into the past?",
-                        "hints": ["More than a year back", "Six months back", "A month back", "A week back", "Earlier today"],
-                        "initialPosition": 50,
-                        "notApplyAllowed": true,
-                        "showHints": true
-                    }
-                ]
-            }
-        },
-        {
-            "name": "mindWandering_socialOther",
-            "category": "mindWandering",
-            "subCategory": "socialOther",
-            "slot": "B",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "Were you thinking about other people?",
-                        "hints": ["Not at all", "Completely"],
-                        "initialPosition": 50
-                    },
-                    {
-                        "text": "If so, how close to you are those people?",
-                        "hints": ["Complete stranger", "Very close"],
-                        "initialPosition": 50,
-                        "notApplyAllowed": true
-                    }
-                ]
-            }
-        },
-        {
-            "name": "mindWandering_socialSelf",
-            "category": "mindWandering",
-            "subCategory": "socialSelf",
-            "slot": "B",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "Were you thinking about yourself?",
-                        "hints": ["Not at all", "Completely"],
-                        "initialPosition": 50
-                    }
-                ]
-            }
-        },
-        {
-            "name": "mood",
-            "category": "mood",
-            "subCategory": "null",
-            "slot": "-2",
-            "details": {
-                "type": "Slider",
-                "subQuestions": [
-                    {
-                        "text": "What was your mood?",
-                        "hints": ["Very negative", "Very positive"],
-                        "initialPosition": 50
-                    }
-                ]
-            }
-        },
-        {
-            "name": "currentActivity",
-            "category": "currentActivity",
-            "subCategory": "null",
-            "slot": "-1",
-            "details": {
-                "type": "MultipleChoice",
-                "text": "What were you doing?",
-                "choices": ["Commuting", "Working", "Studying", "Shopping",
-                            "Preparing food", "Doing housework",
-                            "Taking care of your children", "Eating",
-                            "Praying, worshiping, or meditating",
-                            "Socializing", "Watching TV",
-                            "Having a nap, resting",
-                            "Computer, Internet, or Email", "Relaxing",
-                            "On the phone", "Intimate relations",
-                            "Exercising"]
-            }
+            ]
         }
-    ]
+    },
+    {
+    "name": "currentActivity",
+    "category": "context",
+    "subCategory": "null",
+    "slot": "1",
+    "details": {
+        "type": "MultipleChoice",
+        "text": "What were you doing?",
+        "choices": ["Reading", "Writing", "Speaking", "Listening", "Attending", "Watching", "Waiting", 
+        "Actively thinking", "Attempting to Daydream", "Walking", "Biking", "Driving", "Gardening",
+        "Shopping", "Cooking", "Eating", "Doing housework (dishes/cleaning)", "Self-care (shower/make up)", 
+        "Nursing", "Petting", "Intimate relations", "Having a nap, resting", "Praying, worshiping, or meditating", 
+        "Exercizing", "Physical Game", "Video Game", "Playing Music", "Drawing", "Computer, Internet, or Email"]
+        }
+    },
+    {
+    "name": "noises",
+    "category": "context",
+    "subCategory": "phenomeno",
+    "slot": "2",
+    "details": {
+        "type": "Slider",
+        "subQuestions": [
+            {
+            "text": "What kind of noise is around?",
+            "hints": ["One person talking", "Speaking Crowd", "Music", "TV/Radio/Computer", "Non-human noise"],
+            "notApplyAllowed": false,
+            "showHints": true,
+            "initialPosition": 50
+            },
+            {
+            "text": "How many people are there?",
+            "hints": ["0", "1", "2-5", "6-15", "more than 15"],
+            "notApplyAllowed": false,
+            "showHints": true,
+            "initialPosition": 50
+            },
+            {
+            "text": "Are you interacting with anyone?",
+            "hints": ["No", "Yes, here, with 1 person", "Yes, here, with more than 1 person", "Yes, from a distance, with 1 person", "Yes, from a distance, with more than 1 person",],
+            "notApplyAllowed": false,
+            "showHints": true,
+            "initialPosition": 50
+            }
+        ]
+    }
+    },
+    {
+    "name": "thoughtOblig",
+    "category": "mindWandering",
+    "subCategory": "daydreaming",
+    "slot": "3",
+        "details": {
+        "type": "Slider",
+        "subQuestions": [
+            {
+            "text": "Were you focused on what you were doing?",
+            "hints": ["Not at all", "Completely"],
+            "initialPosition": 50
+            },
+            {
+            "text": "Were you thinking in words?",
+            "hints": ["Not at all", "In some abstract way", "With some precise words", "In clear and precise words"],
+            "notApplyAllowed": false,
+            "showHints": true,
+            "initialPosition": 50
+            },
+            {
+            "text": "Were you thinking in visual mental images?",
+            "hints": ["Not at all", "In some abstract way", "With some visual features", "With vivid images"],
+            "notApplyAllowed": false,
+            "showHints": true,
+            "initialPosition": 50
+            },
+            {
+            "text": "Were you thinking in auditory mental images?",
+            "hints": ["Not at all", "In some abstract way", "With some acoustic features", "With vivid sounds"],
+            "notApplyAllowed": false,
+            "showHints": true,
+            "initialPosition": 50
+            },
+            {
+            "text": "If you were not focused but also not experiencing any of the linguistic/visual/auditory features above, were you...",
+            "hints": ["Distracted", "Lapsing", "Daydreaming", "Else"],
+            "notApplyAllowed": true,
+            "showHints": true,
+            "initialPosition": 50
+            }
+        ]
+        }
+    },
+    {
+    "name": "thoughtOptional",
+    "category": "mindWandering",
+    "subCategory": "temporalFuture",
+    "slot": "4",
+    "details": {
+        "type": "Slider",
+        "subQuestions": [
+            {
+            "text": "How far into the past or the future were you thinking about?",
+            "hints": ["More than a week back", "A few days ago", "Earlier today", "Now", "Later today", "In a few days", "In more than a week"],
+            "initialPosition": 50,
+            "notApplyAllowed": true,
+            "showHints": true
+            },
+            {
+            "text": "Were you thinking about other people?",
+            "hints": ["Not at all", "About a lover", "About friends", "About family", "About co-worker", "Else"],
+            "initialPosition": 50,
+            "notApplyAllowed": false,
+            "showHints": true
+            },
+            {
+            "text": "What was your mood?",
+            "hints": ["Very negative", "Very positive"],
+            "initialPosition": 50
+            },
+            {
+            "text": "How new was your thought?",
+            "hints": ["Brand new", "New perspective on current concern", "Recurrent thought", "Memory Recollection"],
+            "initialPosition": 50,
+            "showHints": true
+            },
+            {
+            "text": "How controlled was your thought?",
+            "hints": ["Desired & effortful to have", "Desired & fluid", "Neutral & automatic thought", "Undesired & fluid", "Undesired & failed to avoid"],
+            "initialPosition": 50,
+            "showHints": true
+            }
+        ]}
+    }]
 }
