@@ -14,7 +14,7 @@
             "text": "Where are you?",
             "hints": ["Home", "At work", "Commuting", "Outside", "Public Space"],
             "showHints": true,
-            "initialPosition": 50,
+            "initialPosition": 50
             }
             ]
         }
@@ -45,23 +45,23 @@
             {
             "text": "What kind of noise is around?",
             "hints": ["One person talking", "Speaking Crowd", "Music", "TV/Radio/Computer", "Non-human noise"],
-            "notApplyAllowed": false,
             "showHints": true,
-            "initialPosition": 50
+            "initialPosition": 50,
+            "slot": "0"
             },
             {
             "text": "How many people are there?",
             "hints": ["0", "1", "2-5", "6-15", "more than 15"],
-            "notApplyAllowed": false,
             "showHints": true,
-            "initialPosition": 50
+            "initialPosition": 50,
+            "slot": "0"
             },
             {
             "text": "Are you interacting with anyone?",
             "hints": ["No", "Yes, here, with 1 person", "Yes, here, with more than 1 person", "Yes, from a distance, with 1 person", "Yes, from a distance, with more than 1 person",],
-            "notApplyAllowed": false,
             "showHints": true,
-            "initialPosition": 50
+            "initialPosition": 50,
+            "slot": "0"
             }
         ]
     }
