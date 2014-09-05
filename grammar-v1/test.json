@@ -13,7 +13,8 @@
             {
             "text": "Where are you?",
             "hints": ["Home", "At work", "Commuting", "Outside", "Public Space"],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showHints": true
             }
             ]
         }
