@@ -1,5 +1,5 @@
 {
-  "version": "3-production-2",
+  "version": "3-production-4",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -107,6 +107,84 @@
       }
     },
     {
+      "name": "test.bonusPage",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusPage",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.1",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.1",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.2",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.2",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.3",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.3",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.4",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.4",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.5",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.5",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
       "name": "probe.currentActivity",
       "type": "multipleChoice",
       "details": {
@@ -132,28 +210,131 @@
         {
           "name": "context",
           "friendlyName": "Context",
-          "position": "0",
+          "position": {
+            "fixed": 0
+          },
           "nSlots": 2,
           "pages": [
             {
               "name": "activity",
-              "position": "0",
+              "position": {
+                "fixed": 0
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.currentActivity",
-                  "position": "0"
+                  "questionName": "probe.currentActivity",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             },
             {
               "name": "mood",
-              "position": 1,
+              "position": {
+                "fixed": 1
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mood",
-                  "position": "0"
+                  "questionName": "probe.mood",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "testBonusBlock",
+          "friendlyName": "Test bonus block",
+          "position": {
+            "fixed": 1,
+            "bonus": true
+          },
+          "nSlots": 1,
+          "pages": [
+            {
+              "name": "test.bonusBlock.page1",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion1",
+                  "questionName": "test.bonusBlock.1",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page2",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion2",
+                  "questionName": "test.bonusBlock.2",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page3",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion3",
+                  "questionName": "test.bonusBlock.3",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page4",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion4",
+                  "questionName": "test.bonusBlock.4",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page5",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion5",
+                  "questionName": "test.bonusBlock.5",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             }
@@ -162,47 +343,71 @@
         {
           "name": "mindWandering",
           "friendlyName": "Mind-wandering",
-          "position": "1",
+          "position": {
+            "fixed": 1
+          },
           "nSlots": 2,
           "pages": [
             {
               "name": "daydreaming",
-              "position": "0",
+              "position": {
+                "fixed": 0
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.daydreaming",
-                  "position": 0
+                  "questionName": "probe.mindWandering.daydreaming",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             },
             {
               "name": "temporal",
-              "position": "A",
+              "position": {
+                "floating": "A",
+                "bonus": true
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.temporalPast",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.temporalPast",
+                  "position": {
+                    "floating": "A"
+                  }
                 },
                 {
                   "name": "probe.mindWandering.temporalFuture",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.temporalFuture",
+                  "position": {
+                    "floating": "A"
+                  }
                 }
               ]
             },
             {
               "name": "social",
-              "position": "A",
+              "position": {
+                "floating": "A"
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.socialOther",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.socialOther",
+                  "position": {
+                    "floating": "A"
+                  }
                 },
                 {
                   "name": "probe.mindWandering.socialSelf",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.socialSelf",
+                  "position": {
+                    "floating": "A"
+                  }
                 }
               ]
             }
@@ -212,8 +417,8 @@
     }
   ],
   "glossary": {
-    "mood":"Emotional state, can be happy, sad, etc",
-    "future":"Everything that is to come",
+    "Imagery":"When you imagine images in your head.",
+    "Cupcake":"also British English: fairy cake; Australian English: fairy cake patty cake or cup cake) is a small cake designed to serve one person, which may be baked in a small thin paper or aluminium cup. As with larger cakes, icing and other cake decorations, such as sprinkles, may be applied.",
     "Daydreaming":"Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
     "Mind-wandering":"Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low."
   }
