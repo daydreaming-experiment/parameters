@@ -107,6 +107,42 @@
       }
     },
     {
+      "name": "test.bonusPage",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          "text": "test.bonusPage"
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.1",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          "text": "test.bonusBlock.1"
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.2",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          "text": "test.bonusBlock.2"
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.3",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          "text": "test.bonusBlock.3"
+        ]
+      }
+    },
+    {
       "name": "probe.currentActivity",
       "type": "multipleChoice",
       "details": {
@@ -172,6 +208,65 @@
           ]
         },
         {
+          "name": "testBonusBlock",
+          "friendlyName": "Test bonus block",
+          "position": {
+            "fixed": 1,
+            "bonus": true
+          },
+          "nSlots": 1,
+          "pages": [
+            {
+              "name": "test.bonusBlock.page1",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion1",
+                  "questionName": "test.bonusBlock.1",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page2",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion2",
+                  "questionName": "test.bonusBlock.2",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page3",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion3",
+                  "questionName": "test.bonusBlock.3",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "mindWandering",
           "friendlyName": "Mind-wandering",
           "position": {
@@ -198,7 +293,8 @@
             {
               "name": "temporal",
               "position": {
-                "floating": "A"
+                "floating": "A",
+                "bonus": true
               },
               "nSlots": 1,
               "questions": [
