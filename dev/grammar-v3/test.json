@@ -113,7 +113,8 @@
         "subQuestions": [
           {
             "text": "test.bonusPage",
-            "hints": ["1", "2", "3"]
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
           }
         ]
       }
@@ -125,7 +126,8 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.1",
-            "hints": ["1", "2", "3"]
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
           }
         ]
       }
@@ -137,7 +139,8 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.2",
-            "hints": ["1", "2", "3"]
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
           }
         ]
       }
@@ -149,7 +152,8 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.3",
-            "hints": ["1", "2", "3"]
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
           }
         ]
       }
