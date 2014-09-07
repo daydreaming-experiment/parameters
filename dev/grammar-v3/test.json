@@ -159,6 +159,32 @@
       }
     },
     {
+      "name": "test.bonusBlock.4",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.4",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "test.bonusBlock.5",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "test.bonusBlock.5",
+            "hints": ["1", "2", "3"],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
       "name": "probe.currentActivity",
       "type": "multipleChoice",
       "details": {
