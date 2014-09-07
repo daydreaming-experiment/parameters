@@ -111,8 +111,10 @@
       "type": "slider",
       "details": {
         "subQuestions": [
-          "text": "test.bonusPage",
-          "hints": ["1", "2", "3"]
+          {
+            "text": "test.bonusPage",
+            "hints": ["1", "2", "3"]
+          }
         ]
       }
     },
@@ -121,8 +123,10 @@
       "type": "slider",
       "details": {
         "subQuestions": [
-          "text": "test.bonusBlock.1",
-          "hints": ["1", "2", "3"]
+          {
+            "text": "test.bonusBlock.1",
+            "hints": ["1", "2", "3"]
+          }
         ]
       }
     },
@@ -131,8 +135,10 @@
       "type": "slider",
       "details": {
         "subQuestions": [
-          "text": "test.bonusBlock.2",
-          "hints": ["1", "2", "3"]
+          {
+            "text": "test.bonusBlock.2",
+            "hints": ["1", "2", "3"]
+          }
         ]
       }
     },
@@ -141,8 +147,10 @@
       "type": "slider",
       "details": {
         "subQuestions": [
-          "text": "test.bonusBlock.3",
-          "hints": ["1", "2", "3"]
+          {
+            "text": "test.bonusBlock.3",
+            "hints": ["1", "2", "3"]
+          }
         ]
       }
     },
