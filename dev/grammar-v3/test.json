@@ -1,5 +1,5 @@
 {
-  "version": "3-test-2",
+  "version": "3-test-3",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -132,28 +132,40 @@
         {
           "name": "context",
           "friendlyName": "Context",
-          "position": "0",
+          "position": {
+            "fixed": 0
+          },
           "nSlots": 2,
           "pages": [
             {
               "name": "activity",
-              "position": "0",
+              "position": {
+                "fixed": 0
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.currentActivity",
-                  "position": "0"
+                  "questionName": "probe.currentActivity",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             },
             {
               "name": "mood",
-              "position": 1,
+              "position": {
+                "fixed": 1
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mood",
-                  "position": "0"
+                  "questionName": "probe.mood",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             }
@@ -162,47 +174,70 @@
         {
           "name": "mindWandering",
           "friendlyName": "Mind-wandering",
-          "position": "1",
+          "position": {
+            "fixed": 1
+          },
           "nSlots": 2,
           "pages": [
             {
               "name": "daydreaming",
-              "position": "0",
+              "position": {
+                "fixed": 0
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.daydreaming",
-                  "position": 0
+                  "questionName": "probe.mindWandering.daydreaming",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             },
             {
               "name": "temporal",
-              "position": "A",
+              "position": {
+                "floating": "A"
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.temporalPast",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.temporalPast",
+                  "position": {
+                    "floating": "A"
+                  }
                 },
                 {
                   "name": "probe.mindWandering.temporalFuture",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.temporalFuture",
+                  "position": {
+                    "floating": "A"
+                  }
                 }
               ]
             },
             {
               "name": "social",
-              "position": "A",
+              "position": {
+                "floating": "A"
+              },
               "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.mindWandering.socialOther",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.socialOther",
+                  "position": {
+                    "floating": "A"
+                  }
                 },
                 {
                   "name": "probe.mindWandering.socialSelf",
-                  "position": "A"
+                  "questionName": "probe.mindWandering.socialSelf",
+                  "position": {
+                    "floating": "A"
+                  }
                 }
               ]
             }
