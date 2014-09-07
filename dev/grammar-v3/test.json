@@ -1,5 +1,5 @@
 {
-  "version": "3-test-3",
+  "version": "3-test-4",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -300,6 +300,38 @@
                 {
                   "name": "testQuestion3",
                   "questionName": "test.bonusBlock.3",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page4",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion4",
+                  "questionName": "test.bonusBlock.4",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page5",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion5",
+                  "questionName": "test.bonusBlock.5",
                   "position": {
                     "fixed": 0
                   }
