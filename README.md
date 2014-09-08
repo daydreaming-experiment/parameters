@@ -1,4 +1,4 @@
-Daydreaming parameters
+Daydreaming parameters [![Build Status](https://travis-ci.org/daydreaming-experiment/parameters.svg)](https://travis-ci.org/daydreaming-experiment/parameters)
 ======================
 
 This repository contains the various versions of parameters used in the [daydreaming experiment](http://daydreaming-the-app.net/). These parameters include question details, probe scheduling settings, and probably more things in the future. The app itself directly retrieves the parameters from this repository when it needs to; there is no other mirror.
