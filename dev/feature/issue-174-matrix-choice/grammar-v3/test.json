@@ -199,6 +199,14 @@
                     "On the phone", "Intimate relations",
                     "Exercising"]
       }
+    },
+    {
+      "name": "probe.location",
+      "type": "matrixChoice",
+      "details": {
+        "text": "Where are you right now?",
+        "choices" ["Home", "Outside", "Work", "Commuting", "Public place"]
+      }
     }
   ],
   "sequences": [
@@ -225,6 +233,22 @@
                 {
                   "name": "probe.currentActivity",
                   "questionName": "probe.currentActivity",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "location",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.location",
+                  "questionName": "probe.location",
                   "position": {
                     "fixed": 0
                   }
