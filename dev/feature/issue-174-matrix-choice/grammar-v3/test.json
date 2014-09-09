@@ -1,5 +1,5 @@
 {
-  "version": "3-test-4",
+  "version": "3-test-5",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -205,7 +205,7 @@
       "type": "matrixChoice",
       "details": {
         "text": "Where are you right now?",
-        "choices" ["Home", "Outside", "Work", "Commuting", "Public place"]
+        "choices": ["Home", "Outside", "Work", "Commuting", "Public place"]
       }
     }
   ],
