@@ -212,6 +212,7 @@
   "sequences": [
     {
       "name": "probe",
+      "intro": "Right before the app interrupted you...",
       "type": "probe",
       "nSlots": 2,
       "pageGroups": [
