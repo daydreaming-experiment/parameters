@@ -1,5 +1,5 @@
 {
-  "version": "3-test-5",
+  "version": "3-test-6",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -213,7 +213,7 @@
     {
       "name": "probe",
       "type": "probe",
-      "nSlots": 2,
+      "nSlots": 3,
       "pageGroups": [
         {
           "name": "context",
@@ -277,7 +277,7 @@
           "name": "testBonusBlock",
           "friendlyName": "Test bonus block",
           "position": {
-            "fixed": 1,
+            "fixed": 2,
             "bonus": true
           },
           "nSlots": 1,
@@ -415,7 +415,8 @@
             {
               "name": "social",
               "position": {
-                "floating": "A"
+                "floating": "A",
+                "bonus": true
               },
               "nSlots": 1,
               "questions": [
