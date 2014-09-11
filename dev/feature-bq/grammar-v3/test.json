@@ -517,7 +517,7 @@
     {
       "name": "SODAS",
       "intro": "Right before the app interrupted you...",
-      "type": "begin_questionnaire",
+      "type": "beginQuestionnaire",
       "nSlots": 3,
       "pageGroups": [
         {
@@ -748,7 +748,7 @@
     {
       "name": "MAAS",
       "intro": "Right before the app interrupted you...",
-      "type": "begin_questionnaire",
+      "type": "beginQuestionnaire",
       "nSlots": 3,
       "pageGroups": [
         {
