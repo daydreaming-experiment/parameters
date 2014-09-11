@@ -529,15 +529,15 @@
           "nSlots": 2,
           "pages": [
             {
-              "name": "daydreaming",
+              "name": "activity",
               "position": {
                 "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mindWandering.daydreaming",
-                  "questionName": "probe.mindWandering.daydreaming",
+                  "name": "probe.currentActivity",
+                  "questionName": "probe.currentActivity",
                   "position": {
                     "fixed": 0
                   }
@@ -545,25 +545,33 @@
               ]
             },
             {
-              "name": "temporal",
+              "name": "location",
               "position": {
-                "floating": "A",
-                "bonus": true
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mindWandering.temporalPast",
-                  "questionName": "probe.mindWandering.temporalPast",
+                  "name": "probe.location",
+                  "questionName": "probe.location",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "mood",
+              "position": {
+                "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
                 {
-                  "name": "probe.mindWandering.temporalFuture",
-                  "questionName": "probe.mindWandering.temporalFuture",
+                  "name": "probe.mood",
+                  "questionName": "probe.mood",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
                 }
               ]
@@ -587,15 +595,15 @@
           "nSlots": 2,
           "pages": [
             {
-              "name": "daydreaming",
+              "name": "activity",
               "position": {
                 "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mindWandering.daydreaming",
-                  "questionName": "probe.mindWandering.daydreaming",
+                  "name": "probe.currentActivity",
+                  "questionName": "probe.currentActivity",
                   "position": {
                     "fixed": 0
                   }
@@ -603,25 +611,33 @@
               ]
             },
             {
-              "name": "temporal",
+              "name": "location",
               "position": {
-                "floating": "A",
-                "bonus": true
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mindWandering.temporalPast",
-                  "questionName": "probe.mindWandering.temporalPast",
+                  "name": "probe.location",
+                  "questionName": "probe.location",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "mood",
+              "position": {
+                "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
                 {
-                  "name": "probe.mindWandering.temporalFuture",
-                  "questionName": "probe.mindWandering.temporalFuture",
+                  "name": "probe.mood",
+                  "questionName": "probe.mood",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
                 }
               ]
@@ -645,15 +661,15 @@
           "nSlots": 2,
           "pages": [
             {
-              "name": "daydreaming",
+              "name": "activity",
               "position": {
                 "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mindWandering.daydreaming",
-                  "questionName": "probe.mindWandering.daydreaming",
+                  "name": "probe.currentActivity",
+                  "questionName": "probe.currentActivity",
                   "position": {
                     "fixed": 0
                   }
@@ -661,25 +677,33 @@
               ]
             },
             {
-              "name": "temporal",
+              "name": "location",
               "position": {
-                "floating": "A",
-                "bonus": true
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mindWandering.temporalPast",
-                  "questionName": "probe.mindWandering.temporalPast",
+                  "name": "probe.location",
+                  "questionName": "probe.location",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "mood",
+              "position": {
+                "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
                 {
-                  "name": "probe.mindWandering.temporalFuture",
-                  "questionName": "probe.mindWandering.temporalFuture",
+                  "name": "probe.mood",
+                  "questionName": "probe.mood",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
                 }
               ]
