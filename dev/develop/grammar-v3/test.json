@@ -1,5 +1,5 @@
 {
-  "version": "3-test-7",
+  "version": "3-test-10",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -268,6 +268,29 @@
       }
     },
     {
+      "name": "probe.currentActivityAutoList",
+      "type": "autoList",
+      "details": {
+        "text": "What were you doing?",
+        "hint": "Activites...",
+        "possibilities": [
+          "Cooking|food, eat", "Eating", "Housework|dishes, cleaning", "Care|shower, makeup", "Nursing", "Petting|cat, dog",
+          "Intimate relations|sex", "Having a nap|sleep", "Resting|sleep", "Playing music", "Making a drawing", "Video game|play, computer",
+          "Watching a program|tv", "Reading|book, comic",
+
+          "Driving|car", "Biking|bicyle", "Walking", "Train, metro, bus", "Listening to music or the radio",
+          "Attempting to daydream", "Writing or texting|sms", "Talking", "Video game (on phone)|play", "Writing (coding)|programming",
+
+          "Gardening", "Shopping", "Exercising", "Physical game|outside",
+
+          "Shopping, groceries|food, clothes", "Reading (library)|book, comic", "Watching screen (cinema)|movie", "Eating (restaurant)",
+
+          "Attending a presentation, conference, or class", "Computer, Internet or Email|google, facebook, twitter, social network",
+          "Waiting", "Actively thinking (reasoning)"
+        ]
+      }
+    },
+    {
       "name": "probe.location",
       "type": "matrixChoice",
       "details": {
@@ -295,24 +318,8 @@
           "position": {
             "fixed": 0
           },
-          "nSlots": 2,
+          "nSlots": 3,
           "pages": [
-            {
-              "name": "activity",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.currentActivity",
-                  "questionName": "probe.currentActivity",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
             {
               "name": "location",
               "position": {
@@ -330,9 +337,25 @@
               ]
             },
             {
-              "name": "mood",
+              "name": "activity",
               "position": {
                 "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.currentActivityAutoList",
+                  "questionName": "probe.currentActivityAutoList",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "mood",
+              "position": {
+                "fixed": 2
               },
               "nSlots": 1,
               "questions": [
