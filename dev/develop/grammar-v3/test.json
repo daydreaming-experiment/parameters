@@ -272,7 +272,13 @@
       "type": "matrixChoice",
       "details": {
         "text": "Where are you right now?",
-        "choices": ["Home", "Outside", "Work", "Commuting", "Public place"]
+        "choices": [
+          "Home",
+          "Outside",
+          "Work",
+          "Commuting",
+          "Public place"
+        ]
       }
     }
   ],
