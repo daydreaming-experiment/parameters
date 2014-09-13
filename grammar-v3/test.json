@@ -1,10 +1,10 @@
 {
-  "version": "3-test-4",
+  "version": "3-test-10",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
   "backendApiUrl": "http://api.qa.naja.cc",
-  "resultsPageUrl": "http://daydreaming-the-app.net/results",
+  "resultsPageUrl": "http://daydreaming-the-app.net/results/device/",
   "schedulingMinDelay": 300,
   "schedulingMeanDelay": 7200,
   "questions": [
@@ -14,9 +14,12 @@
       "details": {
         "subQuestions": [
           {
-          "text": "Were you daydreaming?",
-          "hints": ["Not at all", "Completely"],
-          "initialPosition": 50
+            "text": "Were you daydreaming?",
+            "hints": [
+              "Not at all",
+              "Completely"
+            ],
+            "initialPosition": 50
           }
         ]
       }
@@ -28,12 +31,21 @@
         "subQuestions": [
           {
             "text": "Were you thinking about the future?",
-            "hints": ["Not at all", "Completely"],
+            "hints": [
+              "Not at all",
+              "Completely"
+            ],
             "initialPosition": 50
           },
           {
             "text": "If so, how far in the future?",
-            "hints": ["Later today", "In a week", "In a month", "In six months", "In more than a year"],
+            "hints": [
+              "Later today",
+              "In a week",
+              "In a month",
+              "In six months",
+              "In more than a year"
+            ],
             "initialPosition": 50,
             "notApplyAllowed": true,
             "showLiveIndication": true
@@ -48,12 +60,21 @@
         "subQuestions": [
           {
             "text": "Were you thinking about the past?",
-            "hints": ["Not at all", "Completely"],
+            "hints": [
+              "Not at all",
+              "Completely"
+            ],
             "initialPosition": 50
           },
           {
             "text": "If so, how far into the past?",
-            "hints": ["More than a year back", "Six months back", "A month back", "A week back", "Earlier today"],
+            "hints": [
+              "More than a year back",
+              "Six months back",
+              "A month back",
+              "A week back",
+              "Earlier today"
+            ],
             "initialPosition": 50,
             "notApplyAllowed": true,
             "showLiveIndication": true
@@ -68,12 +89,18 @@
         "subQuestions": [
           {
             "text": "Were you thinking about other people?",
-            "hints": ["Not at all", "Completely"],
+            "hints": [
+              "Not at all",
+              "Completely"
+            ],
             "initialPosition": 50
           },
           {
             "text": "If so, how close to you are those people?",
-            "hints": ["Complete stranger", "Very close"],
+            "hints": [
+              "Complete stranger",
+              "Very close"
+            ],
             "initialPosition": 50,
             "notApplyAllowed": true
           }
@@ -87,7 +114,10 @@
         "subQuestions": [
           {
             "text": "Were you thinking about yourself?",
-            "hints": ["Not at all", "Completely"],
+            "hints": [
+              "Not at all",
+              "Completely"
+            ],
             "initialPosition": 50
           }
         ]
@@ -100,7 +130,10 @@
         "subQuestions": [
           {
             "text": "What was your mood?",
-            "hints": ["Very negative", "Very positive"],
+            "hints": [
+              "Very negative",
+              "Very positive"
+            ],
             "initialPosition": 50
           }
         ]
@@ -113,7 +146,11 @@
         "subQuestions": [
           {
             "text": "test.bonusPage",
-            "hints": ["1", "2", "3"],
+            "hints": [
+              "1",
+              "2",
+              "3"
+            ],
             "initialPosition": 50
           }
         ]
@@ -126,7 +163,11 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.1",
-            "hints": ["1", "2", "3"],
+            "hints": [
+              "1",
+              "2",
+              "3"
+            ],
             "initialPosition": 50
           }
         ]
@@ -139,7 +180,11 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.2",
-            "hints": ["1", "2", "3"],
+            "hints": [
+              "1",
+              "2",
+              "3"
+            ],
             "initialPosition": 50
           }
         ]
@@ -152,7 +197,11 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.3",
-            "hints": ["1", "2", "3"],
+            "hints": [
+              "1",
+              "2",
+              "3"
+            ],
             "initialPosition": 50
           }
         ]
@@ -165,7 +214,11 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.4",
-            "hints": ["1", "2", "3"],
+            "hints": [
+              "1",
+              "2",
+              "3"
+            ],
             "initialPosition": 50
           }
         ]
@@ -178,7 +231,11 @@
         "subQuestions": [
           {
             "text": "test.bonusBlock.5",
-            "hints": ["1", "2", "3"],
+            "hints": [
+              "1",
+              "2",
+              "3"
+            ],
             "initialPosition": 50
           }
         ]
@@ -189,23 +246,71 @@
       "type": "multipleChoice",
       "details": {
         "text": "What were you doing?",
-        "choices": ["Commuting", "Working", "Studying", "Shopping",
-                    "Preparing food", "Doing housework",
-                    "Taking care of your children", "Eating",
-                    "Praying, worshiping, or meditating",
-                    "Socializing", "Watching TV",
-                    "Having a nap, resting",
-                    "Computer, Internet, or Email", "Relaxing",
-                    "On the phone", "Intimate relations",
-                    "Exercising"]
+        "choices": [
+          "Commuting",
+          "Working",
+          "Studying",
+          "Shopping",
+          "Preparing food",
+          "Doing housework",
+          "Taking care of your children",
+          "Eating",
+          "Praying, worshiping, or meditating",
+          "Socializing",
+          "Watching TV",
+          "Having a nap, resting",
+          "Computer, Internet, or Email",
+          "Relaxing",
+          "On the phone",
+          "Intimate relations",
+          "Exercising"
+        ]
+      }
+    },
+    {
+      "name": "probe.currentActivityAutoList",
+      "type": "autoList",
+      "details": {
+        "text": "What were you doing?",
+        "hint": "Activites...",
+        "possibilities": [
+          "Cooking|food, eat", "Eating", "Housework|dishes, cleaning", "Care|shower, makeup", "Nursing", "Petting|cat, dog",
+          "Intimate relations|sex", "Having a nap|sleep", "Resting|sleep", "Playing music", "Making a drawing", "Video game|play, computer",
+          "Watching a program|tv", "Reading|book, comic",
+
+          "Driving|car", "Biking|bicyle", "Walking", "Train, metro, bus", "Listening to music or the radio",
+          "Attempting to daydream", "Writing or texting|sms", "Talking", "Video game (on phone)|play", "Writing (coding)|programming",
+
+          "Gardening", "Shopping", "Exercising", "Physical game|outside",
+
+          "Shopping, groceries|food, clothes", "Reading (library)|book, comic", "Watching screen (cinema)|movie", "Eating (restaurant)",
+
+          "Attending a presentation, conference, or class", "Computer, Internet or Email|google, facebook, twitter, social network",
+          "Waiting", "Actively thinking (reasoning)"
+        ]
+      }
+    },
+    {
+      "name": "probe.location",
+      "type": "matrixChoice",
+      "details": {
+        "text": "Where are you right now?",
+        "choices": [
+          "Home",
+          "Outside",
+          "Work",
+          "Commuting",
+          "Public place"
+        ]
       }
     }
   ],
   "sequences": [
     {
       "name": "probe",
+      "intro": "Right before the app interrupted you...",
       "type": "probe",
-      "nSlots": 2,
+      "nSlots": 3,
       "pageGroups": [
         {
           "name": "context",
@@ -213,18 +318,34 @@
           "position": {
             "fixed": 0
           },
-          "nSlots": 2,
+          "nSlots": 3,
           "pages": [
             {
-              "name": "activity",
+              "name": "location",
               "position": {
                 "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.currentActivity",
-                  "questionName": "probe.currentActivity",
+                  "name": "probe.location",
+                  "questionName": "probe.location",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "activity",
+              "position": {
+                "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.currentActivityAutoList",
+                  "questionName": "probe.currentActivityAutoList",
                   "position": {
                     "fixed": 0
                   }
@@ -234,7 +355,7 @@
             {
               "name": "mood",
               "position": {
-                "fixed": 1
+                "fixed": 2
               },
               "nSlots": 1,
               "questions": [
@@ -253,7 +374,7 @@
           "name": "testBonusBlock",
           "friendlyName": "Test bonus block",
           "position": {
-            "fixed": 1,
+            "fixed": 2,
             "bonus": true
           },
           "nSlots": 1,
@@ -391,7 +512,470 @@
             {
               "name": "social",
               "position": {
-                "floating": "A"
+                "floating": "A",
+                "bonus": true
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mindWandering.socialOther",
+                  "questionName": "probe.mindWandering.socialOther",
+                  "position": {
+                    "floating": "A"
+                  }
+                },
+                {
+                  "name": "probe.mindWandering.socialSelf",
+                  "questionName": "probe.mindWandering.socialSelf",
+                  "position": {
+                    "floating": "A"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SODAS",
+      "intro": "Right before the app interrupted you...",
+      "type": "beginQuestionnaire",
+      "nSlots": 3,
+      "pageGroups": [
+        {
+          "name": "context",
+          "friendlyName": "Context",
+          "position": {
+            "fixed": 0
+          },
+          "nSlots": 2,
+          "pages": [
+            {
+              "name": "activity",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.currentActivity",
+                  "questionName": "probe.currentActivity",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "location",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.location",
+                  "questionName": "probe.location",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "mood",
+              "position": {
+                "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mood",
+                  "questionName": "probe.mood",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "testBonusBlock",
+          "friendlyName": "Test bonus block",
+          "position": {
+            "fixed": 2,
+            "bonus": true
+          },
+          "nSlots": 1,
+          "pages": [
+            {
+              "name": "test.bonusBlock.page1",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion1",
+                  "questionName": "test.bonusBlock.1",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page2",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion2",
+                  "questionName": "test.bonusBlock.2",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page3",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion3",
+                  "questionName": "test.bonusBlock.3",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page4",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion4",
+                  "questionName": "test.bonusBlock.4",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page5",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion5",
+                  "questionName": "test.bonusBlock.5",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mindWandering",
+          "friendlyName": "Mind-wandering",
+          "position": {
+            "fixed": 1
+          },
+          "nSlots": 2,
+          "pages": [
+            {
+              "name": "daydreaming",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mindWandering.daydreaming",
+                  "questionName": "probe.mindWandering.daydreaming",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "temporal",
+              "position": {
+                "floating": "A",
+                "bonus": true
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mindWandering.temporalPast",
+                  "questionName": "probe.mindWandering.temporalPast",
+                  "position": {
+                    "floating": "A"
+                  }
+                },
+                {
+                  "name": "probe.mindWandering.temporalFuture",
+                  "questionName": "probe.mindWandering.temporalFuture",
+                  "position": {
+                    "floating": "A"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "social",
+              "position": {
+                "floating": "A",
+                "bonus": true
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mindWandering.socialOther",
+                  "questionName": "probe.mindWandering.socialOther",
+                  "position": {
+                    "floating": "A"
+                  }
+                },
+                {
+                  "name": "probe.mindWandering.socialSelf",
+                  "questionName": "probe.mindWandering.socialSelf",
+                  "position": {
+                    "floating": "A"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MAAS",
+      "intro": "Right before the app interrupted you...",
+      "type": "beginQuestionnaire",
+      "nSlots": 3,
+      "pageGroups": [
+        {
+          "name": "context",
+          "friendlyName": "Context",
+          "position": {
+            "fixed": 0
+          },
+          "nSlots": 2,
+          "pages": [
+            {
+              "name": "activity",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.currentActivity",
+                  "questionName": "probe.currentActivity",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "location",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.location",
+                  "questionName": "probe.location",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "mood",
+              "position": {
+                "fixed": 1
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mood",
+                  "questionName": "probe.mood",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "testBonusBlock",
+          "friendlyName": "Test bonus block",
+          "position": {
+            "fixed": 2,
+            "bonus": true
+          },
+          "nSlots": 1,
+          "pages": [
+            {
+              "name": "test.bonusBlock.page1",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion1",
+                  "questionName": "test.bonusBlock.1",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page2",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion2",
+                  "questionName": "test.bonusBlock.2",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page3",
+              "position": {
+                "after": "test.bonusBlock.page1"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion3",
+                  "questionName": "test.bonusBlock.3",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page4",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion4",
+                  "questionName": "test.bonusBlock.4",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "test.bonusBlock.page5",
+              "position": {
+                "after": "test.bonusBlock.page2"
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "testQuestion5",
+                  "questionName": "test.bonusBlock.5",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mindWandering",
+          "friendlyName": "Mind-wandering",
+          "position": {
+            "fixed": 1
+          },
+          "nSlots": 2,
+          "pages": [
+            {
+              "name": "daydreaming",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mindWandering.daydreaming",
+                  "questionName": "probe.mindWandering.daydreaming",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
+            {
+              "name": "temporal",
+              "position": {
+                "floating": "A",
+                "bonus": true
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.mindWandering.temporalPast",
+                  "questionName": "probe.mindWandering.temporalPast",
+                  "position": {
+                    "floating": "A"
+                  }
+                },
+                {
+                  "name": "probe.mindWandering.temporalFuture",
+                  "questionName": "probe.mindWandering.temporalFuture",
+                  "position": {
+                    "floating": "A"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "social",
+              "position": {
+                "floating": "A",
+                "bonus": true
               },
               "nSlots": 1,
               "questions": [
@@ -417,11 +1001,11 @@
     }
   ],
   "glossary": {
-    "Imagery":"When you imagine images in your head.",
-    "Cupcake":"also British English: fairy cake; Australian English: fairy cake patty cake or cup cake) is a small cake designed to serve one person, which may be baked in a small thin paper or aluminium cup. As with larger cakes, icing and other cake decorations, such as sprinkles, may be applied.",
-    "Daydreaming":"Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
-    "Mind-wandering":"Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low.",
-    "mood":"Emotional state, can be happy, sad, etc",
-    "future":"Everything that is to come"
+    "Imagery": "When you imagine images in your head.",
+    "Cupcake": "also British English: fairy cake; Australian English: fairy cake patty cake or cup cake) is a small cake designed to serve one person, which may be baked in a small thin paper or aluminium cup. As with larger cakes, icing and other cake decorations, such as sprinkles, may be applied.",
+    "Daydreaming": "Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
+    "Mind-wandering": "Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low.",
+    "mood": "Emotional state, can be happy, sad, etc",
+    "future": "Everything that is to come"
   }
 }
