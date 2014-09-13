@@ -273,7 +273,7 @@
       "details": {
         "text": "What were you doing?",
         "hint": "Search for activites...",
-        "choices": [
+        "possibilities": [
           "Cooking|food, eat", "Eating", "Housework|dishes, cleaning", "Care|shower, makeup", "Nursing", "Petting|cat, dog",
           "Intimate relations|sex", "Having a nap|sleep", "Resting|sleep", "Playing music", "Making a drawing", "Video game|play, computer",
           "Watching a program|tv", "Reading|book, comic",
