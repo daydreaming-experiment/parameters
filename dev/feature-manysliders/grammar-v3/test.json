@@ -1,5 +1,5 @@
 {
-  "version": "3-test-14",
+  "version": "3-test-15",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -31,7 +31,9 @@
           "A lot"
         ],
         "initialPosition": 50,
-        "showLiveIndication": true
+        "showLiveIndication": true,
+        "addItemHint": "Search activities...",
+        "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
       }
     },
     {
