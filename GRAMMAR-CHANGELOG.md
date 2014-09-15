@@ -1,6 +1,16 @@
 Grammar Changelog
 =================
 
+Grammar v3
+----------
+
+Grammar `v3` is a great revamp the of grammar, not backwards compatible with previous grammar versions. There are many changes, not all described here, but here are the main ideas:
+* Removal of the `firstLaunch` field (that content stays hardcoded in the app, and the `tipiQuestionnaire` has disappeared)
+* Generalization of probes into *sequences*, which can represent either probes or questionnaires. Sequences are a structured way of ordering questions, with several levels are hierarchy: *pageGroups*, *pages*, and *questions*.
+* Separation of the *definition of questions* from the definitions of *sequences of questions*.
+* More flexibility in positioning: the ideas of "fixed" and "floating" remain, but this applies at each level of the sequence hierarchy. Additionally, items (be they page groups, pages, or questions) can be positioned *after* other named items.
+* Pages and page groups can also be marked as "bonus", i.e. skippable by the user.
+* There are 3 new question types: `matrixChoice`, `autoList`, and `manySliders`.
 
 Grammar v2.1
 ------------
