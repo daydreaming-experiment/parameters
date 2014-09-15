@@ -1,5 +1,5 @@
 {
-  "version": "3-production-10",
+  "version": "3-production-15",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -8,6 +8,34 @@
   "schedulingMinDelay": 300,
   "schedulingMeanDelay": 7200,
   "questions": [
+    {
+      "name": "probe.activity.manySliders",
+      "type": "manySliders",
+      "details": {
+        "text": "Blablabla how much do you do the following?",
+        "availableSliders": [
+          "Computer",
+          "Sport",
+          "Reading",
+          "Other stuff",
+          "Playing chess"
+        ],
+        "defaultSliders": [
+          "Computer",
+          "Reading",
+          "Other stuff"
+        ],
+        "hints": [
+          "Not at all",
+          "A little",
+          "A lot"
+        ],
+        "initialPosition": 50,
+        "showLiveIndication": true,
+        "addItemHint": "Search activities...",
+        "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
+      }
+    },
     {
       "name": "probe.mindWandering.daydreaming",
       "type": "slider",
@@ -318,12 +346,28 @@
           "position": {
             "fixed": 0
           },
-          "nSlots": 3,
+          "nSlots": 4,
           "pages": [
+            {
+              "name": "usualActivities",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "probe.activity.manySliders",
+                  "questionName": "probe.activity.manySliders",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            },
             {
               "name": "location",
               "position": {
-                "fixed": 0
+                "fixed": 1
               },
               "nSlots": 1,
               "questions": [
@@ -339,7 +383,7 @@
             {
               "name": "activity",
               "position": {
-                "fixed": 1
+                "fixed": 2
               },
               "nSlots": 1,
               "questions": [
@@ -355,7 +399,7 @@
             {
               "name": "mood",
               "position": {
-                "fixed": 2
+                "fixed": 3
               },
               "nSlots": 1,
               "questions": [
