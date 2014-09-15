@@ -5,6 +5,7 @@ See [`GRAMMAR-CHANGELOG.md`](https://github.com/daydreaming-experiment/parameter
 
 Below is the full description of the grammar.
 
+
 Rules
 -----
 
@@ -93,7 +94,20 @@ The grammar is defined by the following rules (hold on, this is long!):
   * `bonus`: a *boolean* defining if this item is bonus or not. Only pages and page groups can be bonus, *not* question references.
   * `fixed`, `floating`, and `after` are all mutually exclusive: only one of them can be defined, and exactly one must be defined. `bonus` is optional, and is compatible with any of `fixed`, `floating`, and `after` (provided that your item is a page or a page group, but not a question reference). Note that having the first question of a probe appear as `bonus` is pretty bad UI (the bonus dialog will appear before anything else), so you should try to avoid that possibility.
 
-TODO: about sequences
+
+About sequences
+---------------
+
+*Sequences* are a generalized form of what the previous grammar versions called *probes*. Basically, they represent a set of questions (by referencing the questions defined separately in the first part of the parameters file), with three levels of grouping to enable fine-grained positioning and randomization: *questions* are grouped into *pages*, which represent a single screen in the app (note that the `matrixChoice`, `manySliders`, and `autoList` questions are single-page: they must be alone in their page). *Pages* are grouped into *pageGroups*, representing blocks of screens (like context-related questions, or thoughts-related questions). Finally, a sequence is made of `pageGroups`.
+
+Sequences have a type, which defines how they're used by the app: the type tells the app if we're talking about a probe, about a morning questionnaire, an evening questionnaire, or a beginning/ending questionnaire. For the moment, there should be:
+* A single sequence of type `probe`, which should also be named `"probe"`
+* A single sequence of type `morningQuestionnaire`, also named `morningQuestionnaire`
+* A single sequence of type `eveningQuestionnaire`, also named `eveningQuestionnaire`
+* As many sequences as you want with type `beginEndQuestionnaire`, each named as you like
+
+Positioning of items inside sequences is a bit involved. See the description in the following section.
+
 
 About slots and positioning
 ---------------------------
