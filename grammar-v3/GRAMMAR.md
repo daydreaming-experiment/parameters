@@ -128,4 +128,8 @@ Final notes:
 * Don't try stupid things with slot positioning: if you define `nSlots` to be 5, and define a fixed-position item at position `"-7"`, I don't know what will happen (especially if there's another fixed-position item at position `"3"`).
 * There must always be enough slots to fit all the fixed-position items: so the number of different fixed-positions must be less than or equal to `nSlots`.
 
-TODO: about possibilities with tags
+
+About tags
+----------
+
+`manySliders` and `autoList` question types define possibilities that can be "tagged". Tags are like keywords for search: when the user searches for a string in an `autoList` drop-down list, if his query matches a tag, the corresponding possibility is shown (with its tags). That way I can type in "book" and find "reading" (I can also type in "rea" to find "reading"). Tags are defined as a comma-separated list of items after the main text of a possibility: `"main text of the possibility|tag1, tag2, tag3"`. They can have spaces, as long as they're separated by commas. Tags are optional (simply omit the `|` and what comes after it).
