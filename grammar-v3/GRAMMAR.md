@@ -5,7 +5,6 @@ See [`GRAMMAR-CHANGELOG.md`](https://github.com/daydreaming-experiment/parameter
 
 Below is the full description of the grammar.
 
-
 Rules
 -----
 
@@ -94,7 +93,6 @@ The grammar is defined by the following rules (hold on, this is long!):
   * `bonus`: a *boolean* defining if this item is bonus or not. Only pages and page groups can be bonus, *not* question references.
   * `fixed`, `floating`, and `after` are all mutually exclusive: only one of them can be defined, and exactly one must be defined. `bonus` is optional, and is compatible with any of `fixed`, `floating`, and `after` (provided that your item is a page or a page group, but not a question reference). Note that having the first question of a probe appear as `bonus` is pretty bad UI (the bonus dialog will appear before anything else), so you should try to avoid that possibility.
 
-
 About sequences
 ---------------
 
@@ -107,7 +105,6 @@ Sequences have a type, which defines how they're used by the app: the type tells
 * As many sequences as you want with type `beginEndQuestionnaire`, each named as you like
 
 Positioning of items inside sequences is a bit involved. See the description in the following section.
-
 
 About slots and positioning
 ---------------------------
@@ -127,7 +124,6 @@ Finally, page groups and pages can also be "bonus" if so defined in their `posit
 Final notes:
 * Don't try stupid things with slot positioning: if you define `nSlots` to be 5, and define a fixed-position item at position `"-7"`, I don't know what will happen (especially if there's another fixed-position item at position `"3"`).
 * There must always be enough slots to fit all the fixed-position items: so the number of different fixed-positions must be less than or equal to `nSlots`.
-
 
 About tags
 ----------
