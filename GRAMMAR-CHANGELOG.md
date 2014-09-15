@@ -4,7 +4,7 @@ Grammar Changelog
 Grammar v3
 ----------
 
-Grammar `v3` is a great revamp the of grammar, not backwards compatible with previous grammar versions. There are many changes, not all described here, but here are the main ideas:
+Grammar `v3` is a great revamp of the grammar, not backwards compatible with previous grammar versions. There are many changes, not all described here, but here are the main ideas:
 * Removal of the `firstLaunch` field (that content stays hardcoded in the app, and the `tipiQuestionnaire` has disappeared)
 * Generalization of probes into *sequences*, which can represent either probes or questionnaires. Sequences are a structured way of ordering questions, with several levels are hierarchy: *pageGroups*, *pages*, and *questions*.
 * Separation of the *definition of questions* from the definitions of *sequences of questions*.
