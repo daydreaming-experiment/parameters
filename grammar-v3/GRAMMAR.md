@@ -15,7 +15,7 @@ The grammar is defined by the following rules:
   * `version`: a *string* defining the version of the parameters.
   * `backendExpId`: a *string* defining the identity of the experiment for the backend.
   * `backendDbName`: a *string* defining the name of the database to upload the results to in the backend.
-  * `expDuration`: an *integer* defining the duration before publication of results if users use the app as intented.
+  * `expDuration`: an *integer* defining the duration before publication of results if users use the app as intended.
   * `backendApiUrl`: a *string* defining the url of the backend API.
   * `resultsPageUrl`: a *string* defining the url of the results page.
   * `schedulingMinDelay`: an *integer* defining the minimal delay between two probes (in seconds).
@@ -65,7 +65,33 @@ The grammar is defined by the following rules:
       * `numStars`: a positive *integer* defining the number of stars the rating would have if it were really displayed as a star-rating (and not as a discreet slider as is the case now); combined with `stepSize`, these two parameters define the number of discreet values the rating allows; defaults to `5`.
       * `stepSize`: a positive *float* defining the size of the interval between two discreet values; the total number of values allowed by the star-rating is `1 + ceiling(numStars  / stepSize)`; defaults to `0.5`.
       * `initialRating`: a *float* between `0.0` and `numStars` (included) defining the initial rating when the question is asked; this doesn't need to be a multiple of `stepSize`; defaults to `0.0` (i.e. to the left).
-
+5. A *sequence definition* object is used to define sequences, which represent any list of questions, with additional positioning parameters. Such an object has the following mandatory fields:
+  * `name`: a *string* defining the name of the sequence, as it will appear in the uploaded results (e.g. `morningQuestionnaire`, or `personalityQuestionnaireSODAS`).
+  * `type`: a *string* defining the type of the sequence, which can be either `probe`, `beginEndQuestionnaire`, `morningQuestionnaire`, or `eveningQuestionnaire.`
+  * `intro`: a *string* defining the text that will appear at the top of all questions in the sequence.
+  * `nSlots`: an *integer* defining the number of slots available in the sequence for `pageGroups` (see below the explanation about positioning).
+  * `pageGroups`: a *list* of *pageGroup* objects, as defined in the following rule.
+6. A *pageGroup* object represents a block of screens in the app. It contains the following fields (all mandatory):
+  * `name`: a *string* defining the name of the page group, as it will appear in the uploaded results (e.g. `context`, or `thoughts`). Names must be unique across page groups, as they're used for positioning.
+  * `friendlyName`: a *string* defining a name to be shown to the user, which can be used in the future to display a progress bar during a sequence.
+  * `position`: a *position* object defining how the page group is positioned in the sequence. See rule 9 for what positions look like.
+  * `nSlots`: an *integer* defining the number of slots available in the page group for `page` objects (see below the explanation about positioning).
+  * `pages`: a *list* of *page* objects, as defined in the following rule.
+7. A *page* object represents a bunch of questions shown on a single screen in the app. It contains the following fields (all mandatory):
+  * `name`: a *string* defining the name of the page, as it will appear in the uploaded results (e.g. `context.location`, or `thoughts.future`). Names must be unique across pages, as they're used for positioning.
+  * `position`: a *position* object defining how the page is positioned in the page group. See rule 9 for what positions look like.
+  * `nSlots`: an *integer* defining the number of slots available in the page for `question reference` objects (see below the explanation about positioning).
+  * `questions`: a *list* of *question references*, as defined in the following rule.
+8. A *question reference* points to a question defined in the `questions` list defined at the top of the file, and positions this question. It has the following fields (all mandatory):
+  * `name`: a *string* defining the name of question reference (note, it's the name of the *reference* to the question, not the name of the question itself). Names must be unique across pages, as they're used for positioning.
+  * `questionName`: a *string* corresponding to a name of one of the questions defined in the `questions` list at the top of this file. This is the question that will be shown, of course. Note that this appears in the uploaded results, whereas the name of the question reference (field right above this one) does not appear in the results.
+  * `position`: a *position* object defining how the question is positioned in the page. See rule 9 below for what positions look like.
+9. A *position* object defines how items are positioned at each level of the hierarchy in the sequence. See below for a detailed explanation on how positioning is done. These objects can have the following fields:
+  * `fixed`: an *integer* defining the fixed position of the item.
+  * `floating`: a *string* defining the floating group of the item.
+  * `after`: a *string* corresponding the *name* of an item at the same hierarchy level. For instance, ff you're positioning a question, must be the name of a question.
+  * `bonus`: a *boolean* defining if this item is bonus or not. Only pages and page groups can be bonus, *not* question references.
+  * `fixed`, `floating`, and `after` are all mutually exclusive: only one of them can be defined, and exactly one must be defined. `bonus` is optional, and is compatible with any of `fixed`, `floating`, and `after` (provided that your item is a page or a page group, but not a question reference). Note that having the first question of a probe appear as `bonus` is pretty bad UI (the bonus dialog will appear before anything else), so you should try to avoid that possibility.
 
 
 
