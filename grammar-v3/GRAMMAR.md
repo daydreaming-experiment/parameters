@@ -8,7 +8,7 @@ Below is the full description of the grammar.
 Rules
 -----
 
-The grammar is defined by the following rules:
+The grammar is defined by the following rules (hold on, this is long!):
 
 1. The parameters file contains pure [JSON](http://json.org/).
 2. The root node in the file is a JSON object (`{}`) containing the following *mandatory* properties:
@@ -84,51 +84,34 @@ The grammar is defined by the following rules:
   * `questions`: a *list* of *question references*, as defined in the following rule.
 8. A *question reference* points to a question defined in the `questions` list defined at the top of the file, and positions this question. It has the following fields (all mandatory):
   * `name`: a *string* defining the name of question reference (note, it's the name of the *reference* to the question, not the name of the question itself). Names must be unique across pages, as they're used for positioning.
-  * `questionName`: a *string* corresponding to a name of one of the questions defined in the `questions` list at the top of this file. This is the question that will be shown, of course. Note that this appears in the uploaded results, whereas the name of the question reference (field right above this one) does not appear in the results.
+  * `questionName`: a *string* corresponding to a name of one of the questions defined in the `questions` list at the top of this file. This is the question that will be shown, of course. Note that this appears in the uploaded results, whereas the name of the question reference (field right above this one) does not appear in the results. Note that `matrixChoice`, `manySliders`, and `autoList` question are what we call "single-page" questions: they must be alone in their page.
   * `position`: a *position* object defining how the question is positioned in the page. See rule 9 below for what positions look like.
 9. A *position* object defines how items are positioned at each level of the hierarchy in the sequence. See below for a detailed explanation on how positioning is done. These objects can have the following fields:
-  * `fixed`: an *integer* defining the fixed position of the item.
+  * `fixed`: an *integer* defining the fixed position of the item (can be positive or negative).
   * `floating`: a *string* defining the floating group of the item.
   * `after`: a *string* corresponding the *name* of an item at the same hierarchy level. For instance, ff you're positioning a question, must be the name of a question.
   * `bonus`: a *boolean* defining if this item is bonus or not. Only pages and page groups can be bonus, *not* question references.
   * `fixed`, `floating`, and `after` are all mutually exclusive: only one of them can be defined, and exactly one must be defined. `bonus` is optional, and is compatible with any of `fixed`, `floating`, and `after` (provided that your item is a page or a page group, but not a question reference). Note that having the first question of a probe appear as `bonus` is pretty bad UI (the bonus dialog will appear before anything else), so you should try to avoid that possibility.
 
-
-
-
-
-
-
-
-
-
-
-
-About question groups, slots, and positioning
----------------------------------------------
-
-*Slots* and *groups* are used to express the way questions are selected and randomized when a probe is created. Basically, we want to be able to group questions together, randomize the *intra-group* order, randomize the *inter-group* order, and still have the possibility to put particular questions or groups of questions at specific positions in the question sequence (like the first or last).
-
-So when creating a probe, the daydreaming app allocates `nSlotsPerProbe` *slots* to be filled, and `nSlotsPerProbe` *groups* of questions to be inserted in these slots (one group per slot). The slot into which a group is inserted can be either predefined or randomly selected (more about that below). Once the question groups are formed (more about that below, again), the predefined-position groups are inserted into their corresponding slots, and the random-position groups are inserted in random order into the remaining slots. Finally, each group of questions is itself internally randomized. This procedure allows for a broad range of question orderings and randomizations to be defined.
-
-TODO: about positioning, slots and after
 TODO: about sequences
-TODO: about possibilities with tags
 
-### Question selection and grouping
+About slots and positioning
+---------------------------
 
-The parameters file assigns each question to a group that has either a predefined position or a random position. This is done thanks to the `slot` property, which serves to define both the group to which a question belongs and the given group's position (i.e. the slot: either predefined or random).
+*Slots* are used to express the way items are selected and randomized when a sequence is created. Basically, we want to be able to group questions together in great question groups, in pages containing a bunch of questions, and randomize all this at every possible level, while still being able to position questions at particular positions, or after other questions.
 
-Here's how:
+Enter *slots*. Imagine you have a list of items (they can be questions, pages, or page groups), and you want to define their order. First, you define the number of slots your final order will have. Each slot will contain a bunch of items, and the items inside a slot are randomized. The position of each item (which slot it falls into) can be either "fixed" or "floating": if "fixed", an item will go in the slot indicated by its fixed position (this position can be negative, counting from the end as in python). So all items with position `"fixed": 0` will be put in the very first slot (and then randomized inside the slot). On the other hand, "floating" items are grouped together with the other items having the same "floating" position, randomized, and put in any free slot once all the "fixed" groups have been positioned. So all items with position `"floating": "A"` will be grouped together, randomized, and put in a free slot once all "fixed" items are positioned. All items with position `"floating": "B"` will also be grouped, randomized, and put in a free slot.
 
-* All questions with an identical `slot` property belong to the same group; this is how groups are defined. There must be at least `nSlotsPerProbe` groups.
-* `slot` is always a string, but if that string represents an *integer* (e.g. `"0"`, `"-1"`, or `"-2"`), then the corresponding group has a predefined position (so, respectively, the first, last, or penultimate slot). If `slot` does *not* represent an integer (e.g. `"A"` or `"B"`), the corresponding group will be randomly positioned.
+Note that "floating" items are positioned in the free slots left by "fixed" items. So for instance, if you allocate 5 slots and you have 3 different "fixed" positions (say you have 12 items, each assigned to positions 0, 1, and -1), and 4 different "floating" positions, then only 2 of your 4 "floating" groups will be used (selected randomly), since there's only two free slots after positioning all the "fixed" items. This is useful if you want some questions to appear sometimes but not always.
 
-Forming the question groups involves simply grouping together all the questions with identical `slot`, keeping *all* the predefined-position groups, and keeping only as many random-position groups as necessary (themselves randomly selected) to reach `nSlotsPerProbe` groups. So if the parameters file defines e.g. three predefined-position groups and four random-position groups, and `nSlotsPerProbe` is 5, two random-position groups are randomly selected among the available four, and the resulting five groups are fed to the slot-insertion process.
+Items can also be positioned "after" other items (by naming the item after which the current one should appear). As with "fixed" and "floating", all items coming "after" a given parent item are grouped together, randomized, and inserted after the parent item in that order. Note that this operation comes *after* positioning of "fixed" and "floating" items, so these items don't count in the number of slots you defined (they are inserted "between" slots, so to speak). This operation works recursively, i.e. you can position an item after an item positioned after another item, etc. The grouping also works recursively: you can have items `d` and `e` after `d`, and `d` and `b` after `a`, then you'll get `a->c->b->e->d` or `a->c->b->d->e` or `a->b->d->e->c` or `a->b->e->d->c`), although I don't see how that could ever be useful.
 
-Note that if a group is to be inserted in the probe, *all* questions in that group will appear (i.e. there is no intra-group selection).
+This randomizing and positioning works at each level of the sequence hierarchy: page groups are positioned like that in the sequence, pages are positioned like that in page group, and questions are positioned like that in pages, and that's why each item at each level has its own `position` field. So this gives you a lot of liberty.
+
+Finally, page groups and pages can also be "bonus" if so defined in their `position` field, i.e. the user can skip them. Setting a page group to bonus will set all pages inside to bonus. When the app is asking a sequence to the user and it meets a bonus item, it asks the user if she want bonus questions or not, and then either skips all bonus questions or shows them all. Note that questions themselves can't be bonus, only pages or page groups.
 
 Final notes:
-* Don't try stupid things with group positionning: if you define `nSlotsPerProbe` to be 5, and define a predefined-position group at position `"-7"`, I don't know what will happen (especially if there's another predefined-position group at position `"3"`).
-* If there are more predefined-position groups than `nSlotsPerProbe`, I don't know what will happen either.
-* `"1.0"`, `"1,0"`, `"2-1"`, etc., do **not** represent integers.
+* Don't try stupid things with slot positioning: if you define `nSlots` to be 5, and define a fixed-position item at position `"-7"`, I don't know what will happen (especially if there's another fixed-position item at position `"3"`).
+* There must always be enough slots to fit all the fixed-position items: so the number of different fixed-positions must be less than or equal to `nSlots`.
+
+TODO: about possibilities with tags
