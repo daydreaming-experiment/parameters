@@ -8,9 +8,9 @@
 import json
 import unittest
 import os
-import re
+#import re
 import sys
-from functools import partial
+#from functools import partial
 from random import shuffle
 from pprint import pprint
 
@@ -54,14 +54,15 @@ class LoadedTestCase(ParametersFileTestCase):
         self.params = json.load(self.f)
 
     def checkInstance(self, obj, attr_name, tipe):
-        err = self.error_type.format(attr_name, obj.name,
+        err = self.error_type.format(obj.name_err, attr_name,
                                      self.type_names[tipe])
         attr = obj.__getattribute__(attr_name)
         self.assertIsInstance(attr, tipe, err)
 
     def checkIn(self, obj, container, attr_name):
-        err = self.error_in.format(obj.name, attr_name)
+        err = self.error_in.format(obj.name_err, attr_name)
         self.assertIn(attr_name, container, err)
+        return container[attr_name]
 
 
 class TypesTestCase(LoadedTestCase):
@@ -70,42 +71,38 @@ class TypesTestCase(LoadedTestCase):
                    'and have the right types')
 
     def test_types(self):
-        parameters = Parameters(self)
+        parameters = Parameters(self, self.params)
         parameters.test_types()
 
 
-class Parameters(object):
+class Parameters:
 
-    def __init__(self, tc):
+    def __init__(self, tc, loaded):
         # The test case
         self.tc = tc
 
         # Error message suffix
-        self.name = 'root of paramters'
+        self.name_err = 'root of parameters'
 
         # Fill members
-        loaded = tc.params
-
-        tc.checkIn(self, loaded, 'version')
-        self.version = loaded['version']
-        tc.checkIn(self, loaded, 'backendExpId')
-        self.backendExpId = loaded['backendExpId']
-        tc.checkIn(self, loaded, 'backendApiUrl')
-        self.backendApiUrl = loaded['backendApiUrl']
-        tc.checkIn(self, loaded, 'resultsPageUrl')
-        self.resultsPageUrl = loaded['resultsPageUrl']
-        tc.checkIn(self, loaded, 'schedulingMinDelay')
-        self.schedulingMinDelay = loaded['schedulingMinDelay']
-        tc.checkIn(self, loaded, 'schedulingMeanDelay')
-        self.schedulingMeanDelay = loaded['schedulingMeanDelay']
-        tc.checkIn(self, loaded, 'questions')
-        self.questions = loaded['questions']
-        tc.checkIn(self, loaded, 'sequences')
-        self.sequences = loaded['sequences']
+        self.version = tc.checkIn(self, loaded, 'version')
+        self.backendExpId = tc.checkIn(self, loaded, 'backendExpId')
+        self.backendDbName = tc.checkIn(self, loaded, 'backendDbName')
+        self.expDuration = tc.checkIn(self, loaded, 'expDuration')
+        self.backendApiUrl = tc.checkIn(self, loaded, 'backendApiUrl')
+        self.resultsPageUrl = tc.checkIn(self, loaded, 'resultsPageUrl')
+        self.schedulingMinDelay = tc.checkIn(self, loaded,
+                                             'schedulingMinDelay')
+        self.schedulingMeanDelay = tc.checkIn(self, loaded,
+                                              'schedulingMeanDelay')
+        self.questions = tc.checkIn(self, loaded, 'questions')
+        self.sequences = tc.checkIn(self, loaded, 'sequences')
 
     def test_types(self):
         self.tc.checkInstance(self, 'version', str)
         self.tc.checkInstance(self, 'backendExpId', str)
+        self.tc.checkInstance(self, 'backendDbName', str)
+        self.tc.checkInstance(self, 'expDuration', int)
         self.tc.checkInstance(self, 'backendApiUrl', str)
         self.tc.checkInstance(self, 'resultsPageUrl', str)
         self.tc.checkInstance(self, 'schedulingMinDelay', int)
@@ -113,14 +110,68 @@ class Parameters(object):
         self.tc.checkInstance(self, 'questions', list)
         self.tc.checkInstance(self, 'sequences', list)
 
-        #for q in self.questions:
-            #Question(tc, self, q).test_types()
+        for i, q in enumerate(self.questions):
+            Question(self.tc, self, i, q).test_types()
 
         #for s in self.sequences:
             #Sequence(tc, self, s).test_types()
 
 
-class bcolors(object):
+class MultipleChoiceDetails:
+    pass
+
+
+class MatrixChoiceDetails:
+    pass
+
+
+class AutoListDetails:
+    pass
+
+
+class ManySlidersDetails:
+    pass
+
+
+class SliderDetails:
+    pass
+
+
+class StarRatingDetails:
+    pass
+
+
+class Question:
+
+    type_classes = {'multipleChoice': MultipleChoiceDetails,
+                    'matrixChoice': MatrixChoiceDetails,
+                    'autoList': AutoListDetails,
+                    'manySliders': ManySlidersDetails,
+                    'slider': SliderDetails,
+                    'starRating': StarRatingDetails}
+
+    def __init__(self, tc, root, i, loaded):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'question definition #{}'.format(i)
+
+        # Fill members
+        self.name = tc.checkIn(self, loaded, 'name')
+        self.type = tc.checkIn(self, loaded, 'type')
+        self.details = tc.checkIn(self, loaded, 'details')
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'name', str)
+        self.tc.checkInstance(self, 'type', str)
+        self.tc.checkInstance(self, 'details', dict)
+
+        details = self.type_classes[self.type]()
+        #details.test_types()
+
+
+class bcolors:
 
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
