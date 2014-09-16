@@ -111,34 +111,91 @@ class Parameters:
         self.tc.checkInstance(self, 'sequences', list)
 
         for i, q in enumerate(self.questions):
-            Question(self.tc, self, i, q).test_types()
+            Question(self.tc, i, q, self).test_types()
 
         #for s in self.sequences:
             #Sequence(tc, self, s).test_types()
 
 
+class Choice:
+
+    def __init__(self, tc, i, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'choice #{} in '.format(i) + parent.name_err
+
+        # Fill members
+        self.string = loaded
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'string', str)
+
+
 class MultipleChoiceDetails:
-    pass
+
+    def __init__(self, tc, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'multipleChoiceDetails in ' + parent.name_err
+
+        # Fill members
+        self.text = tc.checkIn(self, loaded, 'text')
+        self.choices = tc.checkIn(self, loaded, 'choices')
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'text', str)
+        self.tc.checkInstance(self, 'choices', list)
+        for i, c in enumerate(self.choices):
+            Choice(self.tc, i, c, self).test_types()
 
 
 class MatrixChoiceDetails:
-    pass
+
+    def __init__(self, tc, loaded, parent):
+        pass
+
+    def test_types(self):
+        pass
 
 
 class AutoListDetails:
-    pass
+
+    def __init__(self, tc, loaded, parent):
+        pass
+
+    def test_types(self):
+        pass
 
 
 class ManySlidersDetails:
-    pass
+
+    def __init__(self, tc, loaded, parent):
+        pass
+
+    def test_types(self):
+        pass
 
 
 class SliderDetails:
-    pass
+
+    def __init__(self, tc, loaded, parent):
+        pass
+
+    def test_types(self):
+        pass
 
 
 class StarRatingDetails:
-    pass
+
+    def __init__(self, tc, loaded, parent):
+        pass
+
+    def test_types(self):
+        pass
 
 
 class Question:
@@ -150,12 +207,13 @@ class Question:
                     'slider': SliderDetails,
                     'starRating': StarRatingDetails}
 
-    def __init__(self, tc, root, i, loaded):
+    def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
 
         # Error message suffix
-        self.name_err = 'question definition #{}'.format(i)
+        self.name_err = 'question definition #{} in '.format(i) \
+            + parent.name_err
 
         # Fill members
         self.name = tc.checkIn(self, loaded, 'name')
@@ -167,8 +225,8 @@ class Question:
         self.tc.checkInstance(self, 'type', str)
         self.tc.checkInstance(self, 'details', dict)
 
-        details = self.type_classes[self.type]()
-        #details.test_types()
+        details = self.type_classes[self.type](self.tc, self.details, self)
+        details.test_types()
 
 
 class bcolors:
