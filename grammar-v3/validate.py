@@ -157,6 +157,25 @@ class Parameters:
                           'schedulingMinDelay should be at least 5 minutes')
         self.tc.checkNotEmpty(self, 'questions')
         self.tc.checkNotEmpty(self, 'sequences')
+        # Number of sequences of each type
+        probes = [s for s in self.sequences if s['type'] == 'probe']
+        self.tc.checkTrue(self, len(probes) == 1,
+                          'there must be exactly one sequence of type probe')
+        morningQs = [s for s in self.sequences
+                     if s['type'] == 'morningQuestionnaire']
+        self.tc.checkTrue(self, len(morningQs) == 1,
+                          'there must be exactly one sequence of type '
+                          'morningQuestionnaire')
+        eveningQs = [s for s in self.sequences
+                     if s['type'] == 'eveningQuestionnaire']
+        self.tc.checkTrue(self, len(eveningQs) == 1,
+                          'there must be exactly one sequence of type '
+                          'eveningQuestionnaire')
+        beginEndQs = [s for s in self.sequences
+                      if s['type'] == 'beginEndQuestionnaire']
+        self.tc.checkTrue(self, len(beginEndQs) >= 1,
+                          'there must be at least one sequence of type '
+                          'beginEndQuestionnaire')
         self.kiddos('test_values')
 
 
@@ -585,9 +604,14 @@ class Question:
 
 class Sequence:
 
+    available_types = {'probe', 'beginEndQuestionnaire',
+                       'morningQuestionnaire', 'eveningQuestionnaire'}
+
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.root = parent
+        self.parent = parent
 
         # Error message suffix
         self.name_err = 'sequence definition #{} in '.format(i) \
@@ -614,14 +638,33 @@ class Sequence:
         self.kiddos('test_types')
 
     def test_values(self):
-        pass
-        # Not empty pageGroups
-        # values of type
-        # type = name for certain types
+        self.tc.checkNotEmpty(self, 'pageGroups')
+        self.tc.checkInList(self, self.available_types, self.type,
+                            'type', 'available types')
+        # Values of type
+        if self.type == 'probe':
+            self.tc.checkTrue(self, self.type == self.name,
+                              'for a probe, name must equal type (=probe)')
+        if self.type == 'morningQuestionnaire':
+            self.tc.checkTrue(self, self.type == self.name,
+                              'for an morningQuestionnaire, name must equal '
+                              'type (=morningQuestionnaire)')
+        if self.type == 'eveningQuestionnaire':
+            self.tc.checkTrue(self, self.type == self.name,
+                              'for an eveningQuestionnaire, name must equal '
+                              'type (=eveningQuestionnaire)')
         # nSlots is more than fixed positions
-        # pageGroup names unique
-        # no wrapping positions
-        # kiddos
+        fixeds = {p['position']['fixed'] for p in self.pageGroups
+                  if 'fixed' in p['position']}
+        self.tc.checkTrue(self, self.nSlots >= len(fixeds),
+                          'nSlots must be >= number of fixed positions')
+        floats = {p['position']['floating'] for p in self.pageGroups
+                  if 'floating' in p['position']}
+        self.tc.checkTrue(self, self.nSlots <= len(fixeds) + len(floats),
+                          'nSlots must be <= number of fixed positions + '
+                          'number floats')
+
+        self.kiddos('test_values')
 
 
 class PageGroup:
@@ -629,6 +672,8 @@ class PageGroup:
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.root = parent.root
+        self.parent = parent
 
         # Error message suffix
         self.name_err = 'pageGroup definition #{} in '.format(i) \
@@ -658,12 +703,11 @@ class PageGroup:
 
     def test_values(self):
         pass
+        # pageGroup names unique
+        # no wrapping positions
         # not empty pages
         # nSlots is more than fixed positions
-        # no bonus question insde a bonus
         # not all bonus quesitons inside a non bonus
-        # page names unique
-        # no wrapping positions
         # kiddos
 
 
@@ -672,6 +716,8 @@ class Page:
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.root = parent.root
+        self.parent = parent
 
         # Error message suffix
         self.name_err = 'page definition #{} in '.format(i) \
@@ -687,7 +733,7 @@ class Page:
         p = Position(self.tc, self.position, self)
         p.__getattribute__(test_name)()
         for i, q in enumerate(self.questions):
-            qq = QuestionReference(self.tc, i, p, self)
+            qq = QuestionReference(self.tc, i, q, self)
             qq.__getattribute__(test_name)()
 
     def test_types(self):
@@ -699,10 +745,11 @@ class Page:
 
     def test_values(self):
         pass
+        # no wrapping positions
+        # page names unique
+        # no bonus page insde a bonus gropu
         # not empty pages
         # nSlots is more than fixed positions
-        # question names unique
-        # no wrapping positions
         # kiddos
 
 
@@ -711,6 +758,8 @@ class QuestionReference:
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.root = parent.root
+        self.parent = parent
 
         # Error message suffix
         self.name_err = 'questionReference definition #{} in '.format(i) \
@@ -733,18 +782,21 @@ class QuestionReference:
 
     def test_values(self):
         pass
+        # question names unique
+        # no wrapping positions
         # kiddos
 
 
 class Position:
 
-    def __init__(self, tc, i, loaded, parent):
+    def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.root = parent.root
+        self.parent = parent
 
         # Error message suffix
-        self.name_err = 'position definition #{} in '.format(i) \
-            + parent.name_err
+        self.name_err = 'position definition in ' + parent.name_err
 
         # Fill members
         self.fixed = tc.checkIn(self, loaded, 'fixed', True)
