@@ -93,7 +93,7 @@ class TypesTestCase(LoadedTestCase):
 
 class ValuesTestCase(LoadedTestCase):
 
-    description = 'Checking all the values are correct'
+    description = 'Checking all the values are correct and consistent'
 
     def test_values(self):
         parameters = Parameters(self, self.params)
@@ -157,6 +157,11 @@ class Parameters:
                           'schedulingMinDelay should be at least 5 minutes')
         self.tc.checkNotEmpty(self, 'questions')
         self.tc.checkNotEmpty(self, 'sequences')
+        # question names unique
+        names = [q['name'] for q in self.questions]
+        numbers = [names.count(n) for n in names]
+        self.tc.checkTrue(self, max(numbers) == min(numbers) == 1,
+                          'question names must be unique')
         # Number of sequences of each type
         probes = [s for s in self.sequences if s['type'] == 'probe']
         self.tc.checkTrue(self, len(probes) == 1,
@@ -176,6 +181,11 @@ class Parameters:
         self.tc.checkTrue(self, len(beginEndQs) >= 1,
                           'there must be at least one sequence of type '
                           'beginEndQuestionnaire')
+        # sequence names unique
+        names = [s['name'] for s in self.sequences]
+        numbers = [names.count(n) for n in names]
+        self.tc.checkTrue(self, max(numbers) == min(numbers) == 1,
+                          'sequence names must be unique')
         self.kiddos('test_values')
 
 
@@ -653,8 +663,13 @@ class Sequence:
             self.tc.checkTrue(self, self.type == self.name,
                               'for an eveningQuestionnaire, name must equal '
                               'type (=eveningQuestionnaire)')
+        # pageGroup names unique
+        names = [p['name'] for p in self.pageGroups]
+        numbers = [names.count(n) for n in names]
+        self.tc.checkTrue(self, max(numbers) == min(numbers) == 1,
+                          'pageGroup names must be unique')
         # nSlots is more than fixed positions
-        fixeds = {p['position']['fixed'] for p in self.pageGroups
+        fixeds = {p['position']['fixed'] % self.nSlots for p in self.pageGroups
                   if 'fixed' in p['position']}
         self.tc.checkTrue(self, self.nSlots >= len(fixeds),
                           'nSlots must be >= number of fixed positions')
@@ -663,6 +678,22 @@ class Sequence:
         self.tc.checkTrue(self, self.nSlots <= len(fixeds) + len(floats),
                           'nSlots must be <= number of fixed positions + '
                           'number floats')
+        if len(floats) > 0:
+            self.tc.checkTrue(self, self.nSlots > len(fixeds),
+                              'you defined floatings that will never appear '
+                              'because nSlots is too small')
+        # No defining a position once positive once negative
+        positiveFixeds = [p['position']['fixed'] for p in self.pageGroups
+                          if 'fixed' in p['position']
+                          and p['position']['fixed'] >= 0]
+        wrappedNegatives = [p['position']['fixed'] % self.nSlots
+                            for p in self.pageGroups
+                            if 'fixed' in p['position']
+                            and p['position']['fixed'] < 0]
+        for w in wrappedNegatives:
+            self.tc.checkTrue(self, w not in positiveFixeds,
+                              "can't define a fixed position once negative "
+                              "once positive")
 
         self.kiddos('test_values')
 
@@ -702,13 +733,54 @@ class PageGroup:
         self.kiddos('test_types')
 
     def test_values(self):
-        pass
-        # pageGroup names unique
-        # no wrapping positions
-        # not empty pages
+        self.tc.checkNotEmpty(self, 'pages')
+        # pages names unique
+        names = [p['name'] for p in self.pages]
+        numbers = [names.count(n) for n in names]
+        self.tc.checkTrue(self, max(numbers) == min(numbers) == 1,
+                          'page names must be unique')
         # nSlots is more than fixed positions
-        # not all bonus quesitons inside a non bonus
+        fixeds = {p['position']['fixed'] % self.nSlots for p in self.pages
+                  if 'fixed' in p['position']}
+        self.tc.checkTrue(self, self.nSlots >= len(fixeds),
+                          'nSlots must be >= number of fixed positions')
+        floats = {p['position']['floating'] for p in self.pages
+                  if 'floating' in p['position']}
+        self.tc.checkTrue(self, self.nSlots <= len(fixeds) + len(floats),
+                          'nSlots must be <= number of fixed positions + '
+                          'number floats')
+        if len(floats) > 0:
+            self.tc.checkTrue(self, self.nSlots > len(fixeds),
+                              'you defined floatings that will never appear '
+                              'because nSlots is too small')
+        # No defining a position once positive once negative
+        positiveFixeds = [p['position']['fixed'] for p in self.pages
+                          if 'fixed' in p['position']
+                          and p['position']['fixed'] >= 0]
+        wrappedNegatives = [p['position']['fixed'] % self.nSlots
+                            for p in self.pages
+                            if 'fixed' in p['position']
+                            and p['position']['fixed'] < 0]
+        for w in wrappedNegatives:
+            self.tc.checkTrue(self, w not in positiveFixeds,
+                              "can't define a fixed position once negative "
+                              "once positive")
+        # Bonus stuff
+        bonus = self.position.get('bonus', False)
+        if bonus:
+            # No bonus page insde a bonus pageGroup
+            for p in self.pages:
+                self.tc.checkTrue(
+                    self, p['position'].get('bonus', False) is False,
+                    "can't have a bonus page inside a bonus pageGroup")
+        else:
+            # Not all bonus quesitons inside a non bonus
+            nonbonuses = [p['position'].get('bonus', False) is False
+                          for p in self.pages]
+            self.tc.checkTrue(self, sum(nonbonuses), "can't have all "
+                              "bonus pages in a non-bonus pageGroup")
         # kiddos
+        self.kiddos('test_values')
 
 
 class Page:
@@ -744,13 +816,40 @@ class Page:
         self.kiddos('test_types')
 
     def test_values(self):
-        pass
-        # no wrapping positions
-        # page names unique
-        # no bonus page insde a bonus gropu
-        # not empty pages
+        self.tc.checkNotEmpty(self, 'questions')
+        # question reference names unique
+        names = [q['name'] for q in self.questions]
+        numbers = [names.count(n) for n in names]
+        self.tc.checkTrue(self, max(numbers) == min(numbers) == 1,
+                          'question reference names must be unique')
         # nSlots is more than fixed positions
-        # kiddos
+        fixeds = {q['position']['fixed'] % self.nSlots for q in self.questions
+                  if 'fixed' in q['position']}
+        self.tc.checkTrue(self, self.nSlots >= len(fixeds),
+                          'nSlots must be >= number of fixed positions')
+        floats = {q['position']['floating'] for q in self.questions
+                  if 'floating' in q['position']}
+        self.tc.checkTrue(self, self.nSlots <= len(fixeds) + len(floats),
+                          'nSlots must be <= number of fixed positions + '
+                          'number floats')
+        if len(floats) > 0:
+            self.tc.checkTrue(self, self.nSlots > len(fixeds),
+                              'you defined floatings that will never appear '
+                              'because nSlots is too small')
+        # No defining a position once positive once negative
+        positiveFixeds = [q['position']['fixed'] for q in self.questions
+                          if 'fixed' in q['position']
+                          and q['position']['fixed'] >= 0]
+        wrappedNegatives = [q['position']['fixed'] % self.nSlots
+                            for q in self.questions
+                            if 'fixed' in q['position']
+                            and q['position']['fixed'] < 0]
+        for w in wrappedNegatives:
+            self.tc.checkTrue(self, w not in positiveFixeds,
+                              "can't define a fixed position once negative "
+                              "once positive")
+
+        self.kiddos('test_values')
 
 
 class QuestionReference:
@@ -781,10 +880,23 @@ class QuestionReference:
         self.kiddos('test_types')
 
     def test_values(self):
-        pass
-        # question names unique
-        # no wrapping positions
-        # kiddos
+        # Reference exists
+        qnames = [q['name'] for q in self.root.questions]
+        self.tc.checkInList(self, qnames, self.questionName,
+                            'question reference', 'question names')
+        # After references an existing item
+        if 'after' in self.position:
+            rnames = [r['name'] for r in self.parent.questions]
+            self.tc.checkInList(self, rnames, self.position['after'],
+                                'after position', 'question reference names')
+            self.tc.checkTrue(self, self.name != self.position['after'],
+                              "a question reference can't reference itself "
+                              "with an after position")
+        # Question can't be bonus
+        self.tc.checkTrue(self, self.position.get('bonus', False) is False,
+                          'a question cannot be bonus')
+
+        self.kiddos('test_values')
 
 
 class Position:
@@ -811,13 +923,27 @@ class Position:
         self.tc.checkInstance(self, 'bonus', bool, True)
 
     def test_values(self):
-        pass
-        # only one of fixed, floating, after is defined
-        # not bonus if question
-        # after rerferences an existing item
-        # questionName referencdes and existing question
-
-
+        # No wrapping positions
+        nSlots = self.parent.parent.nSlots
+        if self.fixed is not None:
+            self.tc.checkTrue(self, -nSlots <= self.fixed < nSlots,
+                              "fixed positions can't double wrap")
+        # Only one of fixed, floating, after is defined
+        if self.fixed is not None:
+            self.tc.checkTrue(self,
+                              self.floating is None and self.after is None,
+                              'only one of fixed, floating and after '
+                              'can be defined')
+        if self.floating is not None:
+            self.tc.checkTrue(self,
+                              self.after is None and self.fixed is None,
+                              'only one of fixed, floating and after '
+                              'can be defined')
+        if self.after is not None:
+            self.tc.checkTrue(self,
+                              self.fixed is None and self.floating is None,
+                              'only one of fixed, floating and after '
+                              'can be defined')
 
 
 class bcolors:
@@ -861,10 +987,6 @@ if __name__ == '__main__':
 
     # Our test cases and encouragements
     test_cases = [JSONTestCase, TypesTestCase, ValuesTestCase]
-                  #, RootTestCase, FirstLaunchTestCase,
-                  #TipiQuestionnaireTestCase, TipiSubQuestionsTestCase,
-                  #QuestionsTestCase, QuestionDetailsTestCase,
-                  #SubQuestionsTestCase, ConsistencyTestCase]
     ok_texts = ['Yep!', 'Ok!', 'Great!', 'Brilliant!', 'Fantastic!',
                 'Perfect!', 'Good!', 'Right you are!', 'Well done!']
     shuffle(ok_texts)
