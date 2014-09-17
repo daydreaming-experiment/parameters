@@ -46,7 +46,6 @@ class LoadedTestCase(ParametersFileTestCase):
     error_in_list = "{1} (={2}) (in {0}) is not in {3}"
     error_true = "{1} (in {0})"
     error_empty_list = "'{1}' (in {0}) is an empty list"
-    warn_default = "You defined '{1}' (in {0}) but set it to its default value"
 
     def setUp(self):
         super(LoadedTestCase, self).setUp()
@@ -79,6 +78,11 @@ class LoadedTestCase(ParametersFileTestCase):
         err = self.error_empty_list.format(obj.name_err, attr_name)
         attr = obj.__getattribute__(attr_name)
         self.assertTrue(len(attr) > 0, err)
+
+    def checkRegex(self, obj, attr_name, regex, regex_err):
+        err = self.error_type.format(obj.name_err, attr_name, regex_err)
+        attr = obj.__getattribute__(attr_name)
+        self.assertRegexpMatches(attr, regex, err)
 
 
 class TypesTestCase(LoadedTestCase):
@@ -155,6 +159,10 @@ class Parameters:
                           'schedulingMinDelay should be at least 1 minute')
         self.tc.checkTrue(self, self.schedulingMeanDelay > 5 * 60,
                           'schedulingMinDelay should be at least 5 minutes')
+        self.tc.checkRegex(self, 'backendApiUrl', r'^https?://.*[^/]$',
+                           'a properly formed url with no trailing slash')
+        self.tc.checkRegex(self, 'resultsPageUrl', r'^https?://.*[^/]$',
+                           'a properly formed url with no trailing slash')
         self.tc.checkNotEmpty(self, 'questions')
         self.tc.checkNotEmpty(self, 'sequences')
         # question names unique
@@ -944,6 +952,7 @@ class Position:
                               self.fixed is None and self.floating is None,
                               'only one of fixed, floating and after '
                               'can be defined')
+        # No kiddos
 
 
 class bcolors:
