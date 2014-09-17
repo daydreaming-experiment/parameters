@@ -4,7 +4,7 @@
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
   "backendApiUrl": "http://api.qa.naja.cc",
-  "resultsPageUrl": "http://daydreaming-the-app.net/results/device/",
+  "resultsPageUrl": "http://daydreaming-the-app.net/results/device",
   "schedulingMinDelay": 300,
   "schedulingMeanDelay": 7200,
   "questions": [
