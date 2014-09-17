@@ -7,12 +7,12 @@ for folder in $(ls -d grammar-v*); do
         echo "##"
         echo "## Validating test file in $folder"
         echo "##"
-        python $folder/validate.py $folder/test.json
+        $folder/validate.py $folder/test.json
         echo
         echo "##"
         echo "## Validating production file in $folder"
         echo "##"
-        python $folder/validate.py $folder/production.json
+        $folder/validate.py $folder/production.json
     else
         echo "##"
         echo "## No validator found for $folder, skipping"
