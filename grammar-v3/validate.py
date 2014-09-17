@@ -75,6 +75,11 @@ class LoadedTestCase(ParametersFileTestCase):
         err = self.error_true.format(obj.name_err, msg)
         self.assertTrue(assertion, err)
 
+    def checkNotEmpty(self, obj, attr_name):
+        err = self.error_empty_list.format(obj.name_err, attr_name)
+        attr = obj.__getattribute__(attr_name)
+        self.assertTrue(len(attr) > 0, err)
+
 
 class TypesTestCase(LoadedTestCase):
 
@@ -123,9 +128,9 @@ class Parameters:
             qq = Question(self.tc, i, q, self)
             qq.__getattribute__(test_name)()
 
-        #for s in self.sequences:
-            #ss = Sequence(tc, self, s)
-            #ss.__getattribute__(test_name)()
+        for i, s in enumerate(self.sequences):
+            ss = Sequence(self.tc, i, s, self)
+            ss.__getattribute__(test_name)()
 
     def test_types(self):
         self.tc.checkInstance(self, 'version', str)
@@ -150,6 +155,8 @@ class Parameters:
                           'schedulingMinDelay should be at least 1 minute')
         self.tc.checkTrue(self, self.schedulingMeanDelay > 5 * 60,
                           'schedulingMinDelay should be at least 5 minutes')
+        self.tc.checkNotEmpty(self, 'questions')
+        self.tc.checkNotEmpty(self, 'sequences')
         self.kiddos('test_values')
 
 
@@ -387,8 +394,9 @@ class ManySlidersDetails:
     def test_values(self):
         self.tc.checkTrue(self, len(self.hints) >= 2,
                           'there must be at least two hints')
-        self.tc.checkTrue(self, 0 <= self.initialPosition <= 100,
-                          'initialPosition must be between 0 and 100')
+        if self.initialPosition is not None:
+            self.tc.checkTrue(self, 0 <= self.initialPosition <= 100,
+                              'initialPosition must be between 0 and 100')
         for ds in self.defaultSliders:
             self.tc.checkInList(self, self.availableSliders, ds,
                                 'this defaultSlider', 'availableSliders')
@@ -430,8 +438,9 @@ class SliderSubQuestion:
     def test_values(self):
         self.tc.checkTrue(self, len(self.hints) >= 2,
                           'there must be at least two hints')
-        self.tc.checkTrue(self, 0 <= self.initialPosition <= 100,
-                          'initialPosition must be between 0 and 100')
+        if self.initialPosition is not None:
+            self.tc.checkTrue(self, 0 <= self.initialPosition <= 100,
+                              'initialPosition must be between 0 and 100')
         # No kiddos
 
 
@@ -453,9 +462,11 @@ class SliderDetails:
             ss.__getattribute__(test_name)()
 
     def test_types(self):
+        self.tc.checkInstance(self, 'subQuestions', list)
         self.kiddos('test_types')
 
     def test_values(self):
+        self.tc.checkNotEmpty(self, 'subQuestions')
         self.kiddos('test_values')
 
 
@@ -497,10 +508,15 @@ class StarRatingSubQuestion:
     def test_values(self):
         self.tc.checkTrue(self, len(self.hints) >= 2,
                           'there must be at least two hints')
-        self.tc.checkTrue(self, 0 <= self.initialRating <= self.numStars,
-                          'initialRating must be between 0 and numStars')
-        self.tc.checkTrue(self, 0 < self.numStars, 'numStars must be positive')
-        self.tc.checkTrue(self, 0 < self.stepSize, 'stepSize must be positive')
+        if self.initialRating is not None and self.numStars is not None:
+            self.tc.checkTrue(self, 0 <= self.initialRating <= self.numStars,
+                              'initialRating must be between 0 and numStars')
+        if self.numStars is not None:
+            self.tc.checkTrue(self, 0 < self.numStars,
+                              'numStars must be positive')
+        if self.stepSize is not None:
+            self.tc.checkTrue(self, 0 < self.stepSize,
+                              'stepSize must be positive')
         # No kiddos
 
 
@@ -522,9 +538,11 @@ class StarRatingDetails:
             ss.__getattribute__(test_name)()
 
     def test_types(self):
+        self.tc.checkInstance(self, 'subQuestions', list)
         self.kiddos('test_types')
 
     def test_values(self):
+        self.tc.checkNotEmpty(self, 'subQuestions')
         self.kiddos('test_values')
 
 
@@ -563,6 +581,191 @@ class Question:
     def test_values(self):
         self.tc.checkInList(self, self.type_classes.keys(), self.type, 'type')
         self.kiddos('test_values')
+
+
+class Sequence:
+
+    def __init__(self, tc, i, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'sequence definition #{} in '.format(i) \
+            + parent.name_err
+
+        # Fill members
+        self.name = tc.checkIn(self, loaded, 'name')
+        self.type = tc.checkIn(self, loaded, 'type')
+        self.intro = tc.checkIn(self, loaded, 'intro')
+        self.nSlots = tc.checkIn(self, loaded, 'nSlots')
+        self.pageGroups = tc.checkIn(self, loaded, 'pageGroups')
+
+    def kiddos(self, test_name):
+        for i, p in enumerate(self.pageGroups):
+            pp = PageGroup(self.tc, i, p, self)
+            pp.__getattribute__(test_name)()
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'name', str)
+        self.tc.checkInstance(self, 'type', str)
+        self.tc.checkInstance(self, 'intro', str)
+        self.tc.checkInstance(self, 'nSlots', int)
+        self.tc.checkInstance(self, 'pageGroups', list)
+        self.kiddos('test_types')
+
+    def test_values(self):
+        pass
+        # Not empty pageGroups
+        # values of type
+        # type = name for certain types
+        # nSlots is more than fixed positions
+        # pageGroup names unique
+        # no wrapping positions
+        # kiddos
+
+
+class PageGroup:
+
+    def __init__(self, tc, i, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'pageGroup definition #{} in '.format(i) \
+            + parent.name_err
+
+        # Fill members
+        self.name = tc.checkIn(self, loaded, 'name')
+        self.friendlyName = tc.checkIn(self, loaded, 'friendlyName')
+        self.position = tc.checkIn(self, loaded, 'position')
+        self.nSlots = tc.checkIn(self, loaded, 'nSlots')
+        self.pages = tc.checkIn(self, loaded, 'pages')
+
+    def kiddos(self, test_name):
+        p = Position(self.tc, self.position, self)
+        p.__getattribute__(test_name)()
+        for i, p in enumerate(self.pages):
+            pp = Page(self.tc, i, p, self)
+            pp.__getattribute__(test_name)()
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'name', str)
+        self.tc.checkInstance(self, 'friendlyName', str)
+        self.tc.checkInstance(self, 'position', dict)
+        self.tc.checkInstance(self, 'nSlots', int)
+        self.tc.checkInstance(self, 'pages', list)
+        self.kiddos('test_types')
+
+    def test_values(self):
+        pass
+        # not empty pages
+        # nSlots is more than fixed positions
+        # no bonus question insde a bonus
+        # not all bonus quesitons inside a non bonus
+        # page names unique
+        # no wrapping positions
+        # kiddos
+
+
+class Page:
+
+    def __init__(self, tc, i, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'page definition #{} in '.format(i) \
+            + parent.name_err
+
+        # Fill members
+        self.name = tc.checkIn(self, loaded, 'name')
+        self.position = tc.checkIn(self, loaded, 'position')
+        self.nSlots = tc.checkIn(self, loaded, 'nSlots')
+        self.questions = tc.checkIn(self, loaded, 'questions')
+
+    def kiddos(self, test_name):
+        p = Position(self.tc, self.position, self)
+        p.__getattribute__(test_name)()
+        for i, q in enumerate(self.questions):
+            qq = QuestionReference(self.tc, i, p, self)
+            qq.__getattribute__(test_name)()
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'name', str)
+        self.tc.checkInstance(self, 'position', dict)
+        self.tc.checkInstance(self, 'nSlots', int)
+        self.tc.checkInstance(self, 'questions', list)
+        self.kiddos('test_types')
+
+    def test_values(self):
+        pass
+        # not empty pages
+        # nSlots is more than fixed positions
+        # question names unique
+        # no wrapping positions
+        # kiddos
+
+
+class QuestionReference:
+
+    def __init__(self, tc, i, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'questionReference definition #{} in '.format(i) \
+            + parent.name_err
+
+        # Fill members
+        self.name = tc.checkIn(self, loaded, 'name')
+        self.questionName = tc.checkIn(self, loaded, 'questionName')
+        self.position = tc.checkIn(self, loaded, 'position')
+
+    def kiddos(self, test_name):
+        p = Position(self.tc, self.position, self)
+        p.__getattribute__(test_name)()
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'name', str)
+        self.tc.checkInstance(self, 'questionName', str)
+        self.tc.checkInstance(self, 'position', dict)
+        self.kiddos('test_types')
+
+    def test_values(self):
+        pass
+        # kiddos
+
+
+class Position:
+
+    def __init__(self, tc, i, loaded, parent):
+        # The test case
+        self.tc = tc
+
+        # Error message suffix
+        self.name_err = 'position definition #{} in '.format(i) \
+            + parent.name_err
+
+        # Fill members
+        self.fixed = tc.checkIn(self, loaded, 'fixed', True)
+        self.floating = tc.checkIn(self, loaded, 'floating', True)
+        self.after = tc.checkIn(self, loaded, 'after', True)
+        self.bonus = tc.checkIn(self, loaded, 'bonus', True)
+
+    def test_types(self):
+        self.tc.checkInstance(self, 'fixed', int, True)
+        self.tc.checkInstance(self, 'floating', str, True)
+        self.tc.checkInstance(self, 'after', str, True)
+        self.tc.checkInstance(self, 'bonus', bool, True)
+
+    def test_values(self):
+        pass
+        # only one of fixed, floating, after is defined
+        # not bonus if question
+        # after rerferences an existing item
+        # questionName referencdes and existing question
+
+
 
 
 class bcolors:
