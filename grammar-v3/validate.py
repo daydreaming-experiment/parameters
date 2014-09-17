@@ -1004,7 +1004,7 @@ if __name__ == '__main__':
     error = False
 
     # Say hello
-    hello = "Validating '{}' against grammar version 2.1".format(basefilename)
+    hello = "Validating '{}' against grammar version 3".format(basefilename)
     print()
     print(hello)
     print("-" * len(hello))
