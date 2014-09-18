@@ -1944,7 +1944,7 @@
                   "name": "probe.thought.focus",
                   "questionName": "probe.thought.focus",
                   "position": {
-                    "fixed": 0
+                    "floating": A
                   }
                 },
                 {
