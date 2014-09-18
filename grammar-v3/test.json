@@ -1857,14 +1857,14 @@
           "name": "context",
           "friendlyName": "Context",
           "position": {
-            "fixed": 1
+            "fixed": 0
           },
           "nSlots": 3,
           "pages": [
             {
               "name": "location",
               "position": {
-                "fixed": 1
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
@@ -1872,7 +1872,7 @@
                   "name": "probe.location",
                   "questionName": "probe.location",
                   "position": {
-                    "fixed": 1
+                    "fixed": 0
                   }
                 }
               ]
@@ -1880,7 +1880,7 @@
             {
               "name": "activity",
               "position": {
-                "fixed": 2
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
@@ -1888,7 +1888,7 @@
                   "name": "probe.currentActivityAutoList",
                   "questionName": "probe.currentActivityAutoList",
                   "position": {
-                    "fixed": 1
+                    "fixed": 0
                   }
                 }
               ]
@@ -1896,7 +1896,7 @@
             {
               "name": "noise",
               "position": {
-                "fixed": 3
+                "fixed": 0
               },
               "nSlots": 3,
               "questions": [
@@ -1904,21 +1904,21 @@
                   "name": "probe.noise",
                   "questionName": "probe.noise",
                   "position": {
-                    "fixed": 1
+                    "fixed": 0
                   }
                 },
                 {
                   "name": "probe.people",
                   "questionName": "probe.people",
                   "position": {
-                    "fixed": 1
+                    "fixed": 0
                   }
                 },
                 {
                   "name": "probe.interaction",
                   "questionName": "probe.interaction",
                   "position": {
-                    "fixed": 1
+                    "fixed": 0
                   }
                 }
               ]
@@ -1929,14 +1929,14 @@
           "name": "thought",
           "friendlyName": "Thought",
           "position": {
-            "fixed": 1
+            "fixed": 0
           },
           "nSlots": 1,
           "pages": [
             {
               "name": "thought",
               "position": {
-                "fixed": 1
+                "fixed": 0
               },
               "nSlots": 5,
               "questions": [
@@ -1983,7 +1983,7 @@
           "name": "testBonusBlock",
           "friendlyName": "Test bonus block",
           "position": {
-            "fixed": 2,
+            "fixed": 1,
             "bonus": true
           },
           "nSlots": 1,
