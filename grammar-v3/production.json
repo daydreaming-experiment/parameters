@@ -1,5 +1,5 @@
 {
-  "version": "3-production-15",
+  "version": "3-test-15",
   "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
   "backendDbName": "daydreaming-qa",
   "expDuration": 30,
@@ -8,316 +8,6 @@
   "schedulingMinDelay": 300,
   "schedulingMeanDelay": 7200,
   "questions": [
-    {
-      "name": "probe.activity.manySliders",
-      "type": "manySliders",
-      "details": {
-        "text": "Blablabla how much do you do the following?",
-        "availableSliders": [
-          "Computer",
-          "Sport",
-          "Reading",
-          "Other stuff",
-          "Playing chess"
-        ],
-        "defaultSliders": [
-          "Computer",
-          "Reading",
-          "Other stuff"
-        ],
-        "hints": [
-          "Not at all",
-          "A little",
-          "A lot"
-        ],
-        "initialPosition": 50,
-        "showLiveIndication": true,
-        "addItemHint": "Search activities...",
-        "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
-      }
-    },
-    {
-      "name": "probe.mindWandering.daydreaming",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "Were you daydreaming?",
-            "hints": [
-              "Not at all",
-              "Completely"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.mindWandering.temporalFuture",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "Were you thinking about the future?",
-            "hints": [
-              "Not at all",
-              "Completely"
-            ],
-            "initialPosition": 50
-          },
-          {
-            "text": "If so, how far in the future?",
-            "hints": [
-              "Later today",
-              "In a week",
-              "In a month",
-              "In six months",
-              "In more than a year"
-            ],
-            "initialPosition": 50,
-            "notApplyAllowed": true,
-            "showLiveIndication": true
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.mindWandering.temporalPast",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "Were you thinking about the past?",
-            "hints": [
-              "Not at all",
-              "Completely"
-            ],
-            "initialPosition": 50
-          },
-          {
-            "text": "If so, how far into the past?",
-            "hints": [
-              "More than a year back",
-              "Six months back",
-              "A month back",
-              "A week back",
-              "Earlier today"
-            ],
-            "initialPosition": 50,
-            "notApplyAllowed": true,
-            "showLiveIndication": true
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.mindWandering.socialOther",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "Were you thinking about other people?",
-            "hints": [
-              "Not at all",
-              "Completely"
-            ],
-            "initialPosition": 50
-          },
-          {
-            "text": "If so, how close to you are those people?",
-            "hints": [
-              "Complete stranger",
-              "Very close"
-            ],
-            "initialPosition": 50,
-            "notApplyAllowed": true
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.mindWandering.socialSelf",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "Were you thinking about yourself?",
-            "hints": [
-              "Not at all",
-              "Completely"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.mood",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "What was your mood?",
-            "hints": [
-              "Very negative",
-              "Very positive"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "test.bonusPage",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "test.bonusPage",
-            "hints": [
-              "1",
-              "2",
-              "3"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "test.bonusBlock.1",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "test.bonusBlock.1",
-            "hints": [
-              "1",
-              "2",
-              "3"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "test.bonusBlock.2",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "test.bonusBlock.2",
-            "hints": [
-              "1",
-              "2",
-              "3"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "test.bonusBlock.3",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "test.bonusBlock.3",
-            "hints": [
-              "1",
-              "2",
-              "3"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "test.bonusBlock.4",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "test.bonusBlock.4",
-            "hints": [
-              "1",
-              "2",
-              "3"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "test.bonusBlock.5",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "test.bonusBlock.5",
-            "hints": [
-              "1",
-              "2",
-              "3"
-            ],
-            "initialPosition": 50
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.currentActivity",
-      "type": "multipleChoice",
-      "details": {
-        "text": "What were you doing?",
-        "choices": [
-          "Commuting",
-          "Working",
-          "Studying",
-          "Shopping",
-          "Preparing food",
-          "Doing housework",
-          "Taking care of your children",
-          "Eating",
-          "Praying, worshiping, or meditating",
-          "Socializing",
-          "Watching TV",
-          "Having a nap, resting",
-          "Computer, Internet, or Email",
-          "Relaxing",
-          "On the phone",
-          "Intimate relations",
-          "Exercising"
-        ]
-      }
-    },
-    {
-      "name": "probe.currentActivityAutoList",
-      "type": "autoList",
-      "details": {
-        "text": "What were you doing?",
-        "hint": "Activites...",
-        "possibilities": [
-          "Cooking|food, eat", "Eating", "Housework|dishes, cleaning", "Care|shower, makeup", "Nursing", "Petting|cat, dog",
-          "Intimate relations|sex", "Having a nap|sleep", "Resting|sleep", "Playing music", "Making a drawing", "Video game|play, computer",
-          "Watching a program|tv", "Reading|book, comic",
-
-          "Driving|car", "Biking|bicyle", "Walking", "Train, metro, bus", "Listening to music or the radio",
-          "Attempting to daydream", "Writing or texting|sms", "Talking", "Video game (on phone)|play", "Writing (coding)|programming",
-
-          "Gardening", "Shopping", "Exercising", "Physical game|outside",
-
-          "Shopping, groceries|food, clothes", "Reading (library)|book, comic", "Watching screen (cinema)|movie", "Eating (restaurant)",
-
-          "Attending a presentation, conference, or class", "Computer, Internet or Email|google, facebook, twitter, social network",
-          "Waiting", "Actively thinking (reasoning)"
-        ]
-      }
-    },
     {
       "name": "probe.location",
       "type": "matrixChoice",
@@ -331,14 +21,1837 @@
           "Public place"
         ]
       }
+    },
+    {
+      "name": "probe.currentActivityAutoList",
+      "type": "autoList",
+      "details": {
+        "text": "What were you doing?",
+        "hint": "Activites...",
+        "possibilities": [
+          "Cooking|food, eat",
+          "Eating",
+          "Housework|dishes, cleaning",
+          "Care|shower, makeup",
+          "Nursing",
+          "Petting|cat, dog",
+          "Intimate relations|sex",
+          "Having a nap|sleep",
+          "Resting|sleep",
+          "Playing music",
+          "Making a drawing",
+          "Video game|play, computer",
+          "Watching a program|tv",
+          "Reading|book, comic",
+          "Driving|car",
+          "Biking|bicyle",
+          "Walking",
+          "Train, metro, bus",
+          "Listening to music or the radio",
+          "Attempting to daydream",
+          "Writing or texting|sms",
+          "Talking",
+          "Video game (on phone)|play",
+          "Writing (coding)|programming",
+          "Gardening",
+          "Shopping",
+          "Exercising",
+          "Physical game|outside",
+          "Shopping, groceries|food, clothes",
+          "Reading (library)|book, comic",
+          "Watching screen (cinema)|movie",
+          "Eating (restaurant)",
+          "Attending a presentation, conference, or class",
+          "Computer, Internet or Email|google, facebook, twitter, social network",
+          "Waiting",
+          "Actively thinking (reasoning)"
+        ]
+      }
+    },
+    {
+      "name": "probe.noise",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "What kind of noise is around?",
+            "hints": [
+              "One person speaking",
+              "Many persons speaking",
+              "Music",
+              "TV/Radio/Computer",
+              "Human-related noise",
+              "Non-human noise"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.people",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How many people are there?",
+            "hints": [
+              "0",
+              "1",
+              "2-5",
+              "6-15",
+              "more than 15"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.interaction",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How many people are you interacting with?",
+            "hints": [
+              "No-one",
+              "One person here",
+              "One person far away",
+              "Many persons here",
+              "Many persons far away"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.thought.focus",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How focused were you on what you were doing?",
+            "hints": [
+              "Totally focused",
+              "Mostly Focused",
+              "Both focused and mind wandering",
+              "Mostly mind wandering",
+              "Totally mind wandering"
+            ],
+            "initialPosition": 50
+          },
+          {
+            "text": "How absorbed were you in what you were doing?",
+            "hints": [
+              "Totally absorbed",
+              "Quite absorbed",
+              "A bit absorbed",
+              "Not absorbed at all"
+            ],
+            "initialPosition": 50,
+            "notApplyAllowed": true,
+            "showLiveIndication": true
+          },
+          {
+            "text": "How aware were you that your mind was wandering?",
+            "hints": [
+              "I knew it explicitly",
+              "I knew it somehow",
+              "The phone might have helped me notice",
+              "I was totally unaware"
+            ],
+            "initialPosition": 50,
+            "notApplyAllowed": true,
+            "showLiveIndication": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.thought.words",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Were you thinking in words?",
+            "hints": [
+              "Not at all",
+              "In some abstract way",
+              "With some precise words",
+              "In clear and precise words"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.thought.visual",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Were you thinking with visual images?",
+            "hints": [
+              "Not at all",
+              "In some abstract way",
+              "With some visual features",
+              "With vivid images"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.thought.auditory",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Were you thinking with sounds?",
+            "hints": [
+              "Not at all",
+              "In some abstract way",
+              "With some acoustic features",
+              "With vivid sounds"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.thought.default",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "If you were not focused but also not experiencing any of the linguistic/visual/auditory features above, were you...?",
+            "hints": [
+              "Distracted",
+              "Lapsing",
+              "Daydreaming",
+              "Else"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.bonus.social",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Who were you thinking about?",
+            "hints": [
+              "No one",
+              "About myself",
+              "About a lover",
+              "About friends",
+              "About family",
+              "About a co-worker",
+              "Else"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.bonus.control",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How controlled was your thought?",
+            "hints": [
+              "Desired & effortful to have",
+              "Desired & fluid",
+              "Neutral & automatic thought",
+              "Undesired & fluid",
+              "Undesired & failed to avoid"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.bonus.mood",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How do you feel?",
+            "hints": [
+              "Very Happy",
+              "Very Unhappy"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.bonus.temporal",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How far into the past or the future were you thinking about?",
+            "hints": [
+              "More than a week ago",
+              "A few days ago",
+              "Earlier today",
+              "Now",
+              "Later today",
+              "In a few days",
+              "In more than a week"
+            ],
+            "initialPosition": 50,
+            "notApplyAllowed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.bonus.new",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How new was your thought?",
+            "hints": [
+              "Brand new, never had it",
+              "New perspective on current concern",
+              "Recurrent thought",
+              "Memory Recollection"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "evening.activity.manySliders",
+      "type": "manySliders",
+      "details": {
+        "text": "How long have done these activities today?",
+        "availableSliders": [
+          "Sport",
+          "Arts",
+          "Music",
+          "Reading",
+          "Jigsaw/Modeling",
+          "Playing chess",
+          "Playing cards",
+          "Playing videogames",
+          "Watching Programs/Movies",
+          "Meditating / Praying"
+        ],
+        "defaultSliders": [
+          "Sport",
+          "Music",
+          "Reading",
+          "Playing videogames",
+          "Watching Programs/Movies"
+        ],
+        "hints": [
+          "Not at all",
+          "A few minutes",
+          "About an hour",
+          "A couple of hours",
+          "More than three hours"
+        ],
+        "initialPosition": 50,
+        "addItemHint": "Search activities...",
+        "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
+      }
+    },
+    {
+      "name": "morning.sleep",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How long have you slept",
+            "hints": [
+              "Not that much",
+              "Normally",
+              "A lot"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "morning.dreams",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How vivid were your dreams?",
+            "hints": [
+              "Cannot remember any",
+              "Blurry memory of my dreams",
+              "Parts of my dreams were clear",
+              "I had very vivid dreams"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "morning.valence",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How were your dreams?",
+            "hints": [
+              "Negative",
+              "Neutral",
+              "Positive"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS1",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I could be experiencing some emotion and not be conscious of it until some time later.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS2",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I break or spill things because of carelessness, not paying attention, or thinking of something else.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS3",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I find it difficult to stay focused on what’s happening in the present.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS4",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I tend to walk quickly to get where I’m going without paying attention to what I experience along the way.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS5",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I tend not to notice feelings of physical tension or discomfort until they really grab my attention.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS6",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I forget a person’s name almost as soon as I’ve been told it for the first time. ",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS7",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "It seems I am “running on automatic” without much awareness of what I’m doing.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS8",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I rush through activities without being really attentive to them.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS9",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I get so focused on the goal I want to achieve that I lose touch with what I am doing right now to get there.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS10",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I do jobs or tasks automatically, without being aware of what I’m doing.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS11",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I find myself listening to someone with one ear, doing something else at the same time.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS12",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I drive/walk places on “automatic pilot” and then wonder why I went there. ",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS13",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I find myself preoccupied with the future or the past.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS14",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I find myself doing things without paying attention.",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "MAAS15",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I snack without being aware that I’m eating. ",
+            "hints": [
+              "almost always",
+              "very frequently",
+              "somewhat frequently",
+              "somewhat infrequently",
+              "very infrequently",
+              "almost never"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR1",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "My attention is often focused on aspects of myself I wish I'd stop thinking about.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR2",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I always seem to be rehashing in my mind recent things I've said or done.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR3",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Sometimes it is hard for me to shut off thoughts about myself.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR4",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Long after an argument or disagreement is over with, my thoughts keep going back to what happened.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR5",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I tend to 'ruminate' or dwell over things that happen to me for a really long time afterward.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR6",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I don't waste time rethinking things that are over and done with.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR7",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Often I'm playing back over in my mind how I acted in a past situation.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR8",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I often find myself reevaluating something I've done.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR9",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I never ruminate or dwell on myself for very long.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR10",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "It is easy for me to put unwanted thoughts out of my mind.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR11",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I often reflect on episodes in my life that I should no longer concern myself with.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR12",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I spent a great deal of time thinking back over my embarrassing or disappointing moments.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR13",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Philosophical or abstract thinking doesn't appeal to me that much.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR14",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I'm not really a meditative type of person.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR15",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I love exploring my 'inner' self.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR16",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "My attitudes and feelings about things fascinate me.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR17",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I don't really care for introspective or self-reflective thinking.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR18",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I love analyzing why I do things.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR19",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "People often say I'm a 'deep', introspective type of person.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR20",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I don't care much for self-analysis.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR21",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I'm very self-inquisitive by nature.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR22",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I love to meditate on the nature and meaning of things.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR23",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I often love to look at my life in philosophical ways.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "RR24",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "Contemplating myself isn't my idea of fun.",
+            "hints": [
+              "Strongly disagree", 
+              "Disagree",	
+              "Neutral", 
+              "Agree",	
+              "Strongly agree"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS1",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS2",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "My mind wanders off.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS3",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have periods when I feel like I am detached or separate from my body.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS4",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are occasions when I discover that I have done something even though I have no recollection of doing it.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS5",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when places that were once familiar to me appear strange or different.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS6",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are periods when I experience myself as having different personalities.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS7",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I take comfort in retreating into my own inner world.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS8",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when I feel I have little control over my actions or behavior.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS9",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "When I listen to people speak, I “space out” or have difficulty attending to what they say.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS10",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when I feel like I am in a daze or trance.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS11",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when I have difficulty distinguishing what I thought about doing from what I actually did do.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS12",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are periods during which I “lose time,” or am unaware of what happened during extended periods of time.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS13",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I engage in daydreaming.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS14",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I feel numb.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS15",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I find things in my possession which I don't remember acquiring.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS16",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when I feel a deep, dark void within me.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS17",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are periods when I lose my sense of how much time has gone by.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS18",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are occasions when people who I know momentarily seem unfamiliar to me.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS19",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have difficulty focusing my attention or concentration for long periods of time.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS20",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when I find myself emerge from a period during which I had clearly been doing something, but I cannot remember what it was that I was doing.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS21",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have feelings of emptiness.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS22",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I am bothered by not having a clear sense of who I really am.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS23",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are occasions when I have the experience of hearing sounds associated with my past, even though there is nothing in my present environment that produced those sounds.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS24",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have experiences where I find myself questioning if aspects of the environment I am in are real.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS25",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "When I imagine experiences or events or when I daydream, it seems like what I am imagining is actually occurring.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS26",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.I have difficulty describing what I am experiencing on the inside because those experiences are so mixed up or confused.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS27",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are times when I am overcome by feelings of non-existence or nothingness.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS28",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "When I walk, drive, or ride a bicycle, I have the experience of wondering what I was doing during the various points along the way.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS29",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There have been times when I had difficulty deciding whether my environment was real or part of a dream.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS30",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "When I perceive my situation as threatening, punishing, or dangerous, I respond by “spacing out” or by mentally “checking out” from the situation.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS31",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "There are occasions when I have the experience of watching myself and feeling like I am watching another person.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS32",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "When I engage in some type of behavior or activity, I am mentally disconnected from what I am doing.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS33",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I or others have noticed that at times I stare off into space and seem disconnected from what is going on around me.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS34",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "I have had the feeling that my body was an empty shell.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "SODAS35",
+      "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "When alone, I have difficulty focusing my attention in the present.",
+            "hints": [
+              "Never", 
+              "Rarely",	
+              "Occasionally", 
+              "Frequently",	
+              "Very frequently"	
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
     }
   ],
   "sequences": [
     {
       "name": "probe",
-      "intro": "Right before the app interrupted you...",
+      "intro": "Surprise!",
       "type": "probe",
-      "nSlots": 3,
+      "nSlots": 2,
       "pageGroups": [
         {
           "name": "context",
@@ -346,28 +1859,12 @@
           "position": {
             "fixed": 0
           },
-          "nSlots": 4,
+          "nSlots": 1,
           "pages": [
-            {
-              "name": "usualActivities",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.activity.manySliders",
-                  "questionName": "probe.activity.manySliders",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
             {
               "name": "location",
               "position": {
-                "fixed": 1
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
@@ -383,7 +1880,7 @@
             {
               "name": "activity",
               "position": {
-                "fixed": 2
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
@@ -397,17 +1894,85 @@
               ]
             },
             {
-              "name": "mood",
+              "name": "noise",
               "position": {
-                "fixed": 3
+                "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "probe.mood",
-                  "questionName": "probe.mood",
+                  "name": "probe.noise",
+                  "questionName": "probe.noise",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.people",
+                  "questionName": "probe.people",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.interaction",
+                  "questionName": "probe.interaction",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "thought",
+          "friendlyName": "Thought",
+          "position": {
+            "fixed": 0
+          },
+          "nSlots": 1,
+          "pages": [
+            {
+              "name": "thought",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 2,
+              "questions": [
+                {
+                  "name": "probe.thought.focus",
+                  "questionName": "probe.thought.focus",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.thought.words",
+                  "questionName": "probe.thought.words",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.thought.visual",
+                  "questionName": "probe.thought.visual",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.thought.auditory",
+                  "questionName": "probe.thought.auditory",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.thought.default",
+                  "questionName": "probe.thought.default",
+                  "position": {
+                    "fixed": 1
                   }
                 }
               ]
@@ -418,7 +1983,7 @@
           "name": "testBonusBlock",
           "friendlyName": "Test bonus block",
           "position": {
-            "fixed": 2,
+            "fixed": 1,
             "bonus": true
           },
           "nSlots": 1,
@@ -431,148 +1996,38 @@
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "testQuestion1",
-                  "questionName": "test.bonusBlock.1",
+                  "name": "probe.bonus.mood",
+                  "questionName": "probe.bonus.mood",
                   "position": {
                     "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page2",
-              "position": {
-                "after": "test.bonusBlock.page1"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion2",
-                  "questionName": "test.bonusBlock.2",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page3",
-              "position": {
-                "after": "test.bonusBlock.page1"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion3",
-                  "questionName": "test.bonusBlock.3",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page4",
-              "position": {
-                "after": "test.bonusBlock.page2"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion4",
-                  "questionName": "test.bonusBlock.4",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page5",
-              "position": {
-                "after": "test.bonusBlock.page2"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion5",
-                  "questionName": "test.bonusBlock.5",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "mindWandering",
-          "friendlyName": "Mind-wandering",
-          "position": {
-            "fixed": 1
-          },
-          "nSlots": 2,
-          "pages": [
-            {
-              "name": "daydreaming",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mindWandering.daydreaming",
-                  "questionName": "probe.mindWandering.daydreaming",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "temporal",
-              "position": {
-                "floating": "A",
-                "bonus": true
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mindWandering.temporalPast",
-                  "questionName": "probe.mindWandering.temporalPast",
-                  "position": {
-                    "floating": "A"
                   }
                 },
                 {
-                  "name": "probe.mindWandering.temporalFuture",
-                  "questionName": "probe.mindWandering.temporalFuture",
+                  "name": "probe.bonus.control",
+                  "questionName": "probe.bonus.control",
                   "position": {
-                    "floating": "A"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "social",
-              "position": {
-                "floating": "A",
-                "bonus": true
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mindWandering.socialOther",
-                  "questionName": "probe.mindWandering.socialOther",
-                  "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
                 },
                 {
-                  "name": "probe.mindWandering.socialSelf",
-                  "questionName": "probe.mindWandering.socialSelf",
+                  "name": "probe.bonus.new",
+                  "questionName": "probe.bonus.new",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.bonus.social",
+                  "questionName": "probe.bonus.social",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.bonus.temporal",
+                  "questionName": "probe.bonus.temporal",
+                  "position": {
+                    "fixed": 0
                   }
                 }
               ]
@@ -582,10 +2037,58 @@
       ]
     },
     {
-      "name": "SODAS",
-      "intro": "Right before the app interrupted you...",
-      "type": "beginEndQuestionnaire",
-      "nSlots": 3,
+      "name": "morningQuestionnaire",
+      "intro": "Good morning!",
+      "type": "morningQuestionnaire",
+      "nSlots": 1,
+      "pageGroups": [
+        {
+          "name": "morning",
+          "friendlyName": "Morning",
+          "position": {
+            "fixed": 0
+          },
+          "nSlots": 1,
+          "pages": [
+            {
+              "name": "MorningUniquePage",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
+                {
+                  "name": "morning.sleep",
+                  "questionName": "morning.sleep",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "morning.dreams",
+                  "questionName": "morning.dreams",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "morning.valence",
+                  "questionName": "morning.valence",
+                  "position": {
+                    "fixed": 0
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "eveningQuestionnaire",
+      "intro": "Good evening",
+      "type": "eveningQuestionnaire",
+      "nSlots": 1,
       "pageGroups": [
         {
           "name": "context",
@@ -593,217 +2096,20 @@
           "position": {
             "fixed": 0
           },
-          "nSlots": 2,
-          "pages": [
-            {
-              "name": "activity",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.currentActivity",
-                  "questionName": "probe.currentActivity",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "location",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.location",
-                  "questionName": "probe.location",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "mood",
-              "position": {
-                "fixed": 1
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mood",
-                  "questionName": "probe.mood",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "testBonusBlock",
-          "friendlyName": "Test bonus block",
-          "position": {
-            "fixed": 2,
-            "bonus": true
-          },
           "nSlots": 1,
           "pages": [
             {
-              "name": "test.bonusBlock.page1",
+              "name": "usualActivities",
               "position": {
                 "fixed": 0
               },
               "nSlots": 1,
               "questions": [
                 {
-                  "name": "testQuestion1",
-                  "questionName": "test.bonusBlock.1",
+                  "name": "evening.activity.manySliders",
+                  "questionName": "evening.activity.manySliders",
                   "position": {
                     "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page2",
-              "position": {
-                "after": "test.bonusBlock.page1"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion2",
-                  "questionName": "test.bonusBlock.2",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page3",
-              "position": {
-                "after": "test.bonusBlock.page1"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion3",
-                  "questionName": "test.bonusBlock.3",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page4",
-              "position": {
-                "after": "test.bonusBlock.page2"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion4",
-                  "questionName": "test.bonusBlock.4",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page5",
-              "position": {
-                "after": "test.bonusBlock.page2"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion5",
-                  "questionName": "test.bonusBlock.5",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "mindWandering",
-          "friendlyName": "Mind-wandering",
-          "position": {
-            "fixed": 1
-          },
-          "nSlots": 2,
-          "pages": [
-            {
-              "name": "daydreaming",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mindWandering.daydreaming",
-                  "questionName": "probe.mindWandering.daydreaming",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "temporal",
-              "position": {
-                "floating": "A",
-                "bonus": true
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mindWandering.temporalPast",
-                  "questionName": "probe.mindWandering.temporalPast",
-                  "position": {
-                    "floating": "A"
-                  }
-                },
-                {
-                  "name": "probe.mindWandering.temporalFuture",
-                  "questionName": "probe.mindWandering.temporalFuture",
-                  "position": {
-                    "floating": "A"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "social",
-              "position": {
-                "floating": "A",
-                "bonus": true
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.mindWandering.socialOther",
-                  "questionName": "probe.mindWandering.socialOther",
-                  "position": {
-                    "floating": "A"
-                  }
-                },
-                {
-                  "name": "probe.mindWandering.socialSelf",
-                  "questionName": "probe.mindWandering.socialSelf",
-                  "position": {
-                    "floating": "A"
                   }
                 }
               ]
@@ -814,227 +2120,694 @@
     },
     {
       "name": "MAAS",
-      "intro": "Right before the app interrupted you...",
+      "intro": "How frequently do you have these experiences?",
       "type": "beginEndQuestionnaire",
-      "nSlots": 3,
+      "nSlots": 1,
       "pageGroups": [
         {
-          "name": "context",
-          "friendlyName": "Context",
+          "name": "MAAS",
+          "friendlyName": "MAAS",
           "position": {
             "fixed": 0
           },
-          "nSlots": 2,
+          "nSlots": 3,
           "pages": [
             {
-              "name": "activity",
+              "name": "MAASPage1",
               "position": {
                 "fixed": 0
               },
-              "nSlots": 1,
+              "nSlots": 5,
               "questions": [
                 {
-                  "name": "probe.currentActivity",
-                  "questionName": "probe.currentActivity",
+                  "name": "MAAS1",
+                  "questionName": "MAAS1",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "MAAS2",
+                  "questionName": "MAAS2",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "MAAS3",
+                  "questionName": "MAAS3",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "MAAS4",
+                  "questionName": "MAAS4",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "MAAS5",
+                  "questionName": "MAAS5",
+                  "position": {
+                    "fixed": 4
                   }
                 }
               ]
             },
             {
-              "name": "location",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "probe.location",
-                  "questionName": "probe.location",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "mood",
+              "name": "MAASPage2",
               "position": {
                 "fixed": 1
               },
-              "nSlots": 1,
+              "nSlots": 5,
               "questions": [
                 {
-                  "name": "probe.mood",
-                  "questionName": "probe.mood",
+                  "name": "MAAS6",
+                  "questionName": "MAAS6",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "MAAS7",
+                  "questionName": "MAAS7",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "MAAS8",
+                  "questionName": "MAAS8",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "MAAS9",
+                  "questionName": "MAAS9",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "MAAS10",
+                  "questionName": "MAAS10",
+                  "position": {
+                    "fixed": 4
+                  }
+                }
+              ]
+            },
+            {
+              "name": "MAASPage3",
+              "position": {
+                "fixed": 2
+              },
+              "nSlots": 5,
+              "questions": [
+                {
+                  "name": "MAAS11",
+                  "questionName": "MAAS11",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "MAAS12",
+                  "questionName": "MAAS12",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "MAAS13",
+                  "questionName": "MAAS13",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "MAAS14",
+                  "questionName": "MAAS14",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "MAAS15",
+                  "questionName": "MAAS15",
+                  "position": {
+                    "fixed": 4
                   }
                 }
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "name": "SODAS",
+      "intro": "How often do you have these experiences?",
+      "type": "beginEndQuestionnaire",
+      "nSlots": 1,
+      "pageGroups": [
         {
-          "name": "testBonusBlock",
-          "friendlyName": "Test bonus block",
+          "name": "SODAS",
+          "friendlyName": "SODAS",
           "position": {
-            "fixed": 2,
-            "bonus": true
+            "fixed": 0
           },
-          "nSlots": 1,
+          "nSlots": 6,
           "pages": [
             {
-              "name": "test.bonusBlock.page1",
+              "name": "SODASPage1",
               "position": {
                 "fixed": 0
               },
-              "nSlots": 1,
+              "nSlots": 6,
               "questions": [
                 {
-                  "name": "testQuestion1",
-                  "questionName": "test.bonusBlock.1",
+                  "name": "SODAS1",
+                  "questionName": "SODAS1",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "SODAS2",
+                  "questionName": "SODAS2",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "SODAS3",
+                  "questionName": "SODAS3",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "SODAS4",
+                  "questionName": "SODAS4",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "SODAS5",
+                  "questionName": "SODAS5",
+                  "position": {
+                    "fixed": 4
+                  }
+                },
+                {
+                  "name": "SODAS6",
+                  "questionName": "SODAS6",
+                  "position": {
+                    "fixed": 5
                   }
                 }
               ]
             },
             {
-              "name": "test.bonusBlock.page2",
+              "name": "SODASPage2",
               "position": {
-                "after": "test.bonusBlock.page1"
+                "fixed": 1
               },
-              "nSlots": 1,
+              "nSlots": 6,
               "questions": [
                 {
-                  "name": "testQuestion2",
-                  "questionName": "test.bonusBlock.2",
+                  "name": "SODAS7",
+                  "questionName": "SODAS7",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "SODAS8",
+                  "questionName": "SODAS8",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "SODAS9",
+                  "questionName": "SODAS9",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "SODAS10",
+                  "questionName": "SODAS10",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "SODAS11",
+                  "questionName": "SODAS11",
+                  "position": {
+                    "fixed": 4
+                  }
+                },
+                {
+                  "name": "SODAS12",
+                  "questionName": "SODAS12",
+                  "position": {
+                    "fixed": 5
                   }
                 }
               ]
             },
             {
-              "name": "test.bonusBlock.page3",
+              "name": "SODASPage3",
               "position": {
-                "after": "test.bonusBlock.page1"
+                "fixed": 2
               },
-              "nSlots": 1,
+              "nSlots": 6,
               "questions": [
                 {
-                  "name": "testQuestion3",
-                  "questionName": "test.bonusBlock.3",
+                  "name": "SODAS13",
+                  "questionName": "SODAS13",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "SODAS14",
+                  "questionName": "SODAS14",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "SODAS15",
+                  "questionName": "SODAS15",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "SODAS16",
+                  "questionName": "SODAS16",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "SODAS17",
+                  "questionName": "SODAS17",
+                  "position": {
+                    "fixed": 4
+                  }
+                },
+                {
+                  "name": "SODAS18",
+                  "questionName": "SODAS18",
+                  "position": {
+                    "fixed": 5
                   }
                 }
               ]
             },
             {
-              "name": "test.bonusBlock.page4",
+              "name": "SODASPage4",
               "position": {
-                "after": "test.bonusBlock.page2"
+                "fixed": 3
               },
-              "nSlots": 1,
+              "nSlots": 6,
               "questions": [
                 {
-                  "name": "testQuestion4",
-                  "questionName": "test.bonusBlock.4",
+                  "name": "SODAS19",
+                  "questionName": "SODAS19",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "SODAS20",
+                  "questionName": "SODAS20",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "SODAS21",
+                  "questionName": "SODAS21",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "SODAS22",
+                  "questionName": "SODAS22",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "SODAS23",
+                  "questionName": "SODAS23",
+                  "position": {
+                    "fixed": 4
+                  }
+                },
+                {
+                  "name": "SODAS24",
+                  "questionName": "SODAS24",
+                  "position": {
+                    "fixed": 5
                   }
                 }
               ]
             },
             {
-              "name": "test.bonusBlock.page5",
+              "name": "SODASPage5",
               "position": {
-                "after": "test.bonusBlock.page2"
+                "fixed": 4
               },
-              "nSlots": 1,
+              "nSlots": 6,
               "questions": [
                 {
-                  "name": "testQuestion5",
-                  "questionName": "test.bonusBlock.5",
+                  "name": "SODAS25",
+                  "questionName": "SODAS25",
                   "position": {
                     "fixed": 0
+                  }
+                },
+                {
+                  "name": "SODAS26",
+                  "questionName": "SODAS26",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "SODAS27",
+                  "questionName": "SODAS27",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "SODAS28",
+                  "questionName": "SODAS28",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "SODAS29",
+                  "questionName": "SODAS29",
+                  "position": {
+                    "fixed": 4
+                  }
+                },
+                {
+                  "name": "SODAS30",
+                  "questionName": "SODAS30",
+                  "position": {
+                    "fixed": 5
+                  }
+                }
+              ]
+            },
+            {
+              "name": "SODASPage6",
+              "position": {
+                "fixed": 5
+              },
+              "nSlots": 5,
+              "questions": [
+                {
+                  "name": "SODAS31",
+                  "questionName": "SODAS31",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "SODAS32",
+                  "questionName": "SODAS32",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "SODAS33",
+                  "questionName": "SODAS33",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "SODAS34",
+                  "questionName": "SODAS34",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "SODAS35",
+                  "questionName": "SODAS35",
+                  "position": {
+                    "fixed": 4
                   }
                 }
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "name": "RR",
+      "intro": "How much do you agree with each of these statements?",
+      "type": "beginEndQuestionnaire",
+      "nSlots": 1,
+      "pageGroups": [
         {
-          "name": "mindWandering",
-          "friendlyName": "Mind-wandering",
+          "name": "RR",
+          "friendlyName": "RR",
           "position": {
-            "fixed": 1
+            "fixed": 0
           },
-          "nSlots": 2,
+          "nSlots": 5,
           "pages": [
             {
-              "name": "daydreaming",
+              "name": "RRPage1",
               "position": {
                 "fixed": 0
               },
-              "nSlots": 1,
+              "nSlots": 5,
               "questions": [
                 {
-                  "name": "probe.mindWandering.daydreaming",
-                  "questionName": "probe.mindWandering.daydreaming",
+                  "name": "RR1",
+                  "questionName": "RR1",
                   "position": {
                     "fixed": 0
                   }
+                },
+                {
+                  "name": "RR2",
+                  "questionName": "RR2",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "RR3",
+                  "questionName": "RR3",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "RR4",
+                  "questionName": "RR4",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "RR5",
+                  "questionName": "RR5",
+                  "position": {
+                    "fixed": 4
+                  }
                 }
               ]
             },
             {
-              "name": "temporal",
+              "name": "RRPage2",
               "position": {
-                "floating": "A",
-                "bonus": true
+                "fixed": 1
               },
-              "nSlots": 1,
+              "nSlots": 5,
               "questions": [
                 {
-                  "name": "probe.mindWandering.temporalPast",
-                  "questionName": "probe.mindWandering.temporalPast",
+                  "name": "RR6",
+                  "questionName": "RR6",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
                 },
                 {
-                  "name": "probe.mindWandering.temporalFuture",
-                  "questionName": "probe.mindWandering.temporalFuture",
+                  "name": "RR7",
+                  "questionName": "RR7",
                   "position": {
-                    "floating": "A"
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "RR8",
+                  "questionName": "RR8",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "RR9",
+                  "questionName": "RR9",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "RR10",
+                  "questionName": "RR10",
+                  "position": {
+                    "fixed": 4
                   }
                 }
               ]
             },
             {
-              "name": "social",
+              "name": "RRPage3",
               "position": {
-                "floating": "A",
-                "bonus": true
+                "fixed": 2
               },
-              "nSlots": 1,
+              "nSlots": 5,
               "questions": [
                 {
-                  "name": "probe.mindWandering.socialOther",
-                  "questionName": "probe.mindWandering.socialOther",
+                  "name": "RR11",
+                  "questionName": "RR11",
                   "position": {
-                    "floating": "A"
+                    "fixed": 0
                   }
                 },
                 {
-                  "name": "probe.mindWandering.socialSelf",
-                  "questionName": "probe.mindWandering.socialSelf",
+                  "name": "RR12",
+                  "questionName": "RR12",
                   "position": {
-                    "floating": "A"
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "RR13",
+                  "questionName": "RR13",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "RR14",
+                  "questionName": "RR14",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "RR15",
+                  "questionName": "RR15",
+                  "position": {
+                    "fixed": 4
+                  }
+                }
+              ]
+            },
+            {
+              "name": "RRPage4",
+              "position": {
+                "fixed": 3
+              },
+              "nSlots": 5,
+              "questions": [
+                {
+                  "name": "RR16",
+                  "questionName": "RR16",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "RR17",
+                  "questionName": "RR17",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "RR18",
+                  "questionName": "RR18",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "RR19",
+                  "questionName": "RR19",
+                  "position": {
+                    "fixed": 3
+                  }
+                },
+                {
+                  "name": "RR20",
+                  "questionName": "RR20",
+                  "position": {
+                    "fixed": 4
+                  }
+                }
+              ]
+            },
+            {
+              "name": "RRPage5",
+              "position": {
+                "fixed": 4
+              },
+              "nSlots": 4,
+              "questions": [
+                {
+                  "name": "RR21",
+                  "questionName": "RR21",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "RR22",
+                  "questionName": "RR22",
+                  "position": {
+                    "fixed": 1
+                  }
+                },
+                {
+                  "name": "RR23",
+                  "questionName": "RR23",
+                  "position": {
+                    "fixed": 2
+                  }
+                },
+                {
+                  "name": "RR24",
+                  "questionName": "RR24",
+                  "position": {
+                    "fixed": 3
                   }
                 }
               ]
@@ -1050,6 +2823,8 @@
     "Daydreaming": "Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
     "Mind-wandering": "Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low.",
     "mood": "Emotional state, can be happy, sad, etc",
-    "future": "Everything that is to come"
+    "future": "Everything that is to come",
+    "absorbed": "When absorbed, you forget you are here and now, as when watching a very good movie",
+    "aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
