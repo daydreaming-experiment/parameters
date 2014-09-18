@@ -158,7 +158,7 @@ class Parameters:
         self.tc.checkTrue(self, self.schedulingMinDelay > 60,
                           'schedulingMinDelay should be at least 1 minute')
         self.tc.checkTrue(self, self.schedulingMeanDelay > 5 * 60,
-                          'schedulingMinDelay should be at least 5 minutes')
+                          'schedulingMeanDelay should be at least 5 minutes')
         self.tc.checkRegex(self, 'backendApiUrl', r'^https?://.*[^/]$',
                            'a properly formed url with no trailing slash')
         self.tc.checkRegex(self, 'resultsPageUrl', r'^https?://.*[^/]$',
