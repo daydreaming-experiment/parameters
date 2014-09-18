@@ -1857,7 +1857,7 @@
           "name": "context",
           "friendlyName": "Context",
           "position": {
-            "fixed": 0
+            "fixed": 1
           },
           "nSlots": 3,
           "pages": [
@@ -1929,7 +1929,7 @@
           "name": "thought",
           "friendlyName": "Thought",
           "position": {
-            "fixed": 0
+            "fixed": 1
           },
           "nSlots": 1,
           "pages": [
@@ -1938,7 +1938,7 @@
               "position": {
                 "fixed": 1
               },
-              "nSlots": 7,
+              "nSlots": 5,
               "questions": [
                 {
                   "name": "probe.thought.focus",
@@ -1983,7 +1983,7 @@
           "name": "testBonusBlock",
           "friendlyName": "Test bonus block",
           "position": {
-            "fixed": 1,
+            "fixed": 2,
             "bonus": true
           },
           "nSlots": 1,
@@ -2031,70 +2031,6 @@
                   }
                 }
               ]
-            },
-            {
-              "name": "test.bonusBlock.page2",
-              "position": {
-                "after": "test.bonusBlock.page1"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion2",
-                  "questionName": "test.bonusBlock.2",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page3",
-              "position": {
-                "after": "test.bonusBlock.page1"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion3",
-                  "questionName": "test.bonusBlock.3",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page4",
-              "position": {
-                "after": "test.bonusBlock.page2"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion4",
-                  "questionName": "test.bonusBlock.4",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
-            },
-            {
-              "name": "test.bonusBlock.page5",
-              "position": {
-                "after": "test.bonusBlock.page2"
-              },
-              "nSlots": 1,
-              "questions": [
-                {
-                  "name": "testQuestion5",
-                  "questionName": "test.bonusBlock.5",
-                  "position": {
-                    "fixed": 0
-                  }
-                }
-              ]
             }
           ]
         }
@@ -2119,7 +2055,7 @@
               "position": {
                 "fixed": 0
               },
-              "nSlots": 2,
+              "nSlots": 3,
               "questions": [
                 {
                   "name": "morning.sleep",
@@ -2606,7 +2542,7 @@
               "position": {
                 "fixed": 5
               },
-              "nSlots": 6,
+              "nSlots": 5,
               "questions": [
                 {
                   "name": "SODAS31",
@@ -2661,7 +2597,7 @@
           "position": {
             "fixed": 0
           },
-          "nSlots": 3,
+          "nSlots": 5,
           "pages": [
             {
               "name": "RRPage1",
@@ -2844,7 +2780,7 @@
               "position": {
                 "fixed": 4
               },
-              "nSlots": 5,
+              "nSlots": 4,
               "questions": [
                 {
                   "name": "RR21",
