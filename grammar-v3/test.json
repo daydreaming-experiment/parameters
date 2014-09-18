@@ -807,7 +807,7 @@
       "details": {
         "subQuestions": [
           {
-            "text": "I tend to "ruminate" or dwell over things that happen to me for a really long time afterward.",
+            "text": "I tend to 'ruminate' or dwell over things that happen to me for a really long time afterward.",
             "hints": [
               "Strongly disagree", 
               "Disagree",	
@@ -1681,7 +1681,7 @@
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "There are times when I am overcome by feelings of non-existence or nothingness.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1700,7 +1700,7 @@
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "When I walk, drive, or ride a bicycle, I have the experience of wondering what I was doing during the various points along the way.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1719,7 +1719,7 @@
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "There have been times when I had difficulty deciding whether my environment was real or part of a dream.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1733,12 +1733,12 @@
       }
     },
     {
-      "name": "SODAS3",
+      "name": "SODAS30",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "When I perceive my situation as threatening, punishing, or dangerous, I respond by “spacing out” or by mentally “checking out” from the situation.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1752,12 +1752,12 @@
       }
     },
     {
-      "name": "SODAS3",
+      "name": "SODAS31",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "There are occasions when I have the experience of watching myself and feeling like I am watching another person.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1771,12 +1771,12 @@
       }
     },
     {
-      "name": "SODAS3",
+      "name": "SODAS32",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "When I engage in some type of behavior or activity, I am mentally disconnected from what I am doing.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1790,12 +1790,12 @@
       }
     },
     {
-      "name": "SODAS3",
+      "name": "SODAS33",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "I or others have noticed that at times I stare off into space and seem disconnected from what is going on around me.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1809,12 +1809,12 @@
       }
     },
     {
-      "name": "SODAS3",
+      "name": "SODAS34",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "I have had the feeling that my body was an empty shell.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1828,12 +1828,12 @@
       }
     },
     {
-      "name": "SODAS3",
+      "name": "SODAS35",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.",
+            "text": "When alone, I have difficulty focusing my attention in the present.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -2888,6 +2888,8 @@
     "Daydreaming": "Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
     "Mind-wandering": "Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low.",
     "mood": "Emotional state, can be happy, sad, etc",
-    "future": "Everything that is to come"
+    "future": "Everything that is to come",
+    "absorbed": "When absorbed, you forget you are here and now, as when watching a very good movie",
+    "aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
