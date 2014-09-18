@@ -1848,7 +1848,7 @@
   ],
   "sequences": [
     {
-      "name": "Probe",
+      "name": "probe",
       "intro": "Surprise!",
       "type": "probe",
       "nSlots": 3,
