@@ -2037,7 +2037,7 @@
       ]
     },
     {
-      "name": "morningquestionnaire",
+      "name": "morningQuestionnaire",
       "intro": "Good morning!",
       "type": "morningQuestionnaire",
       "nSlots": 1,
@@ -2085,7 +2085,7 @@
       ]
     },
     {
-      "name": "Evening",
+      "name": "eveningQuestionnaire",
       "intro": "Good evening",
       "type": "eveningQuestionnaire",
       "nSlots": 1,
