@@ -83,7 +83,8 @@
               "Human-related noise",
               "Non-human noise"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -102,7 +103,8 @@
               "6-15",
               "more than 15"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -121,7 +123,8 @@
               "Many persons here",
               "Many persons far away"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -140,7 +143,8 @@
               "Mostly mind wandering",
               "Totally mind wandering"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           },
           {
             "text": "How absorbed were you in what you were doing?",
@@ -182,7 +186,8 @@
               "With some precise words",
               "In clear and precise words"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -200,7 +205,8 @@
               "With some visual features",
               "With vivid images"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -218,7 +224,8 @@
               "With some acoustic features",
               "With vivid sounds"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -229,13 +236,15 @@
       "details": {
         "subQuestions": [
           {
-            "text": "If you were not focused but also not experiencing any of the linguistic/visual/auditory features above, were you...?",
+            "text": "If you were not focused, would you say you were distracted, lapsing or daydreaming?",
             "hints": [
               "Distracted",
               "Lapsing",
               "Daydreaming",
               "Else"
-            ]
+            ],
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -256,7 +265,8 @@
               "About a co-worker",
               "Else"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -275,7 +285,8 @@
               "Undesired & fluid",
               "Undesired & failed to avoid"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -291,7 +302,8 @@
               "Very Happy",
               "Very Unhappy"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -313,7 +325,8 @@
               "In more than a week"
             ],
             "initialPosition": 50,
-            "notApplyAllowed": true
+            "notApplyAllowed": true,
+            "showLiveIndication": true
           }
         ]
       }
@@ -331,7 +344,8 @@
               "Recurrent thought",
               "Memory Recollection"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -368,6 +382,7 @@
           "More than three hours"
         ],
         "initialPosition": 50,
+        "showLiveIndication": true
         "addItemHint": "Search activities...",
         "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
       }
@@ -384,7 +399,8 @@
               "Normally",
               "A lot"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -402,7 +418,8 @@
               "Parts of my dreams were clear",
               "I had very vivid dreams"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -419,7 +436,8 @@
               "Neutral",
               "Positive"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -439,7 +457,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -459,7 +478,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -479,7 +499,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -499,7 +520,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -519,7 +541,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -539,7 +562,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -559,7 +583,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -579,7 +604,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -599,7 +625,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -619,7 +646,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -639,7 +667,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -659,7 +688,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -679,7 +709,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -699,7 +730,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -719,7 +751,8 @@
               "very infrequently",
               "almost never"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -738,7 +771,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -757,7 +791,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -776,7 +811,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -795,7 +831,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -814,7 +851,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -833,7 +871,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -852,7 +891,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -871,7 +911,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -890,7 +931,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -909,7 +951,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -928,7 +971,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -947,7 +991,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -966,7 +1011,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -985,7 +1031,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1004,7 +1051,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1023,7 +1071,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1042,7 +1091,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1061,7 +1111,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1080,7 +1131,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1099,7 +1151,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1118,7 +1171,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1137,7 +1191,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1156,7 +1211,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1175,7 +1231,8 @@
               "Agree",	
               "Strongly agree"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1194,7 +1251,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1213,7 +1271,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1232,7 +1291,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1251,7 +1311,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1270,7 +1331,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1289,7 +1351,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1308,7 +1371,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1327,7 +1391,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1346,7 +1411,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1365,7 +1431,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1384,7 +1451,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1403,7 +1471,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1422,7 +1491,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1441,7 +1511,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1460,7 +1531,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1479,7 +1551,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1498,7 +1571,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1517,7 +1591,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1536,7 +1611,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1555,7 +1631,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1574,7 +1651,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1593,7 +1671,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1612,7 +1691,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1631,7 +1711,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1650,7 +1731,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1669,7 +1751,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1688,7 +1771,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1707,7 +1791,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1726,7 +1811,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1745,7 +1831,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1764,7 +1851,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1783,7 +1871,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1802,7 +1891,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1821,7 +1911,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -1840,7 +1931,8 @@
               "Frequently",	
               "Very frequently"	
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "showLiveIndication": true
           }
         ]
       }
@@ -2818,13 +2910,14 @@
     }
   ],
   "glossary": {
-    "Imagery": "When you imagine images in your head.",
-    "Cupcake": "also British English: fairy cake; Australian English: fairy cake patty cake or cup cake) is a small cake designed to serve one person, which may be baked in a small thin paper or aluminium cup. As with larger cakes, icing and other cake decorations, such as sprinkles, may be applied.",
-    "Daydreaming": "Daydreaming is a short-term detachment from one's immediate surroundings, during which a person's contact with reality is blurred and partially substituted by a visionary fantasy, especially one of happy, pleasant thoughts, hopes or ambitions, imagined as coming to pass, and experienced while awake.",
-    "Mind-wandering": "Mind-wandering (sometimes referred to as task-unrelated thought) is the experience of thoughts not remaining on a single topic for a long period of time, particularly when people are not engaged in an attention-demanding task. Mind-wandering tends to occur during driving, reading and other activities where vigilance may be low.",
-    "mood": "Emotional state, can be happy, sad, etc",
-    "future": "Everything that is to come",
-    "absorbed": "When absorbed, you forget you are here and now, as when watching a very good movie",
-    "aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
+    "Daydreaming": "Your were thinking about something that was not around you.",
+    "Distracted": "Your were attending to something you did not particularly want to attend to.",
+    "Lapsing": "Your were not attending to what you were doing, yet your mind was quite blank.",
+    "Thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
+    "Thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
+    "Thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
+    "How absorbed": "When absorbed, you forget you are here and now, as when watching a very good movie",
+    "How aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
+
