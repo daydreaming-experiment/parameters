@@ -382,7 +382,7 @@
           "More than three hours"
         ],
         "initialPosition": 50,
-        "showLiveIndication": true
+        "showLiveIndication": true,
         "addItemHint": "Search activities...",
         "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
       }
@@ -2920,4 +2920,3 @@
     "How aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
-
