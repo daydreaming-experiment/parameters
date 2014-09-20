@@ -84,10 +84,11 @@
               "Music",
               "TV/Radio/Computer",
               "Human-related noise",
-              "Non-human noise"
+              "Non-human noise",
+              "Silence"
             ],
-            "initialRating": 0.0,
-            "numStars": 5,
+            "initialRating": 1,
+            "numStars": 6,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -108,7 +109,7 @@
               "6-15",
               "more than 15"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 4,
             "stepSize": 1.0,
             "showLiveIndication": true
@@ -130,7 +131,7 @@
               "Many persons here",
               "Many persons far away"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 4,
             "stepSize": 1.0,
             "showLiveIndication": true
@@ -152,7 +153,7 @@
               "Mostly mind wandering",
               "Totally mind wandering"
             ],
-            "initialRating": 0.0,
+           "initialRating": 3,
             "numStars": 4,
             "stepSize": 1.0,
             "showLiveIndication": true
@@ -165,7 +166,7 @@
               "A bit absorbed",
               "Not absorbed at all"
             ],
-            "initialRating": 0.0,
+            "initialRating": 50,
             "numStars": 3,
             "stepSize": 1.0,
             "notApplyAllowed": true,
@@ -179,7 +180,7 @@
               "The phone might have helped me notice",
               "I was totally unaware"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 3,
             "stepSize": 1.0,
             "notApplyAllowed": true,
@@ -201,7 +202,7 @@
               "With some precise words",
               "In clear and precise words"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
@@ -222,7 +223,7 @@
               "With some visual features",
               "With vivid images"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
@@ -243,7 +244,7 @@
               "With some acoustic features",
               "With vivid sounds"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
@@ -264,7 +265,7 @@
               "Daydreaming",
               "Else"
             ],
-            "initialRating": 0.0,
+            "initialRating": 1,
             "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
