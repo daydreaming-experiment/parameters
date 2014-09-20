@@ -109,6 +109,7 @@
               "6-15",
               "more than 15"
             ],
+
             "initialRating": 2.0,
             "numStars": 4,
             "stepSize": 1.0,
@@ -173,7 +174,7 @@
             "showLiveIndication": true
           },
           {
-            "text": "How aware were you that your mind was wandering?",
+            "text": "How meta-aware were you that your mind was wandering?",
             "hints": [
               "I knew it explicitly",
               "I knew it somehow",
@@ -275,7 +276,7 @@
     },
     {
       "name": "probe.bonus.social",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -289,7 +290,9 @@
               "About a co-worker",
               "Else"
             ],
-            "initialPosition": 50,
+            "initialRating": 3.0,
+            "numStars": 6,
+            "stepSize": 1.0,
             "showLiveIndication": true
           }
         ]
@@ -297,7 +300,7 @@
     },
     {
       "name": "probe.bonus.control",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -309,7 +312,9 @@
               "Undesired & fluid",
               "Undesired & failed to avoid"
             ],
-            "initialPosition": 50,
+            "initialRating": 2.0,
+            "numStars": 4,
+            "stepSize": 1.0,
             "showLiveIndication": true
           }
         ]
@@ -323,8 +328,8 @@
           {
             "text": "How do you feel?",
             "hints": [
-              "Very Happy",
-              "Very Unhappy"
+              "Very Unhappy",
+              "Very Happy"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -357,7 +362,7 @@
     },
     {
       "name": "probe.bonus.new",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -368,7 +373,9 @@
               "Recurrent thought",
               "Memory Recollection"
             ],
-            "initialPosition": 50,
+            "initialRating": 1.5,
+            "numStars": 3,
+            "stepSize": 1.0,
             "showLiveIndication": true
           }
         ]
@@ -412,26 +419,76 @@
       }
     },
     {
-      "name": "morning.sleep",
+      "name": "evening.happy",
       "type": "slider",
       "details": {
         "subQuestions": [
           {
-            "text": "How long have you slept",
+            "text": "How did you feel overall today?",
             "hints": [
-              "Not that much",
-              "Normally",
-              "A lot"
+              "Very Unhappy",
+              "Very Happy"
             ],
-            "initialPosition": 50,
-            "showLiveIndication": true
+            "initialPosition": 50
           }
         ]
       }
     },
     {
-      "name": "morning.dreams",
+      "name": "evening.mindful",
       "type": "slider",
+      "details": {
+        "subQuestions": [
+          {
+            "text": "How much have you paid attention to the things you've engaged in today?",
+            "hints": [
+              "I paid attention to every moment",
+              "I was on total automatic pilot"
+            ],
+            "initialPosition": 50
+          }
+        ]
+      }
+    },
+    {
+      "name": "morning.sleep",
+      "type": "autoList",
+      "details": {
+        "text": "How long have you slept?",
+        "hint": "Duration...",
+        "possibilities": [
+          "I didn't sleep|None, not, 0 hour",
+          "1 hour",
+          "2 hours",
+          "3 hours",
+          "4 hours",
+          "5 hours",
+          "6 hours",
+          "7 hours",
+          "8 hours",
+          "9 hours",
+          "10 hours",
+          "11 hours",
+          "12 hours",
+          "13 hours",
+          "14 hours",
+          "15 hours",
+          "16 hours",
+          "17 hours",
+          "18 hours",
+          "19 hours",
+          "20 hours",
+          "21 hours",
+          "22 hours",
+          "23 hours",
+          "24 hours",
+          "more than 24 hours"
+        ]
+      }
+    },
+    {
+      "name": "morning.dreams",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -442,7 +499,9 @@
               "Parts of my dreams were clear",
               "I had very vivid dreams"
             ],
-            "initialPosition": 50,
+            "initialRating": 1.5,
+            "numStars": 3,
+            "stepSize": 1.0,
             "showLiveIndication": true
           }
         ]
@@ -474,12 +533,12 @@
           {
             "text": "I could be experiencing some emotion and not be conscious of it until some time later.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -495,12 +554,12 @@
           {
             "text": "I break or spill things because of carelessness, not paying attention, or thinking of something else.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -516,12 +575,12 @@
           {
             "text": "I find it difficult to stay focused on what’s happening in the present.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -537,12 +596,12 @@
           {
             "text": "I tend to walk quickly to get where I’m going without paying attention to what I experience along the way.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -558,12 +617,12 @@
           {
             "text": "I tend not to notice feelings of physical tension or discomfort until they really grab my attention.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -579,12 +638,12 @@
           {
             "text": "I forget a person’s name almost as soon as I’ve been told it for the first time. ",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -600,12 +659,12 @@
           {
             "text": "It seems I am “running on automatic” without much awareness of what I’m doing.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -621,12 +680,12 @@
           {
             "text": "I rush through activities without being really attentive to them.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -642,12 +701,12 @@
           {
             "text": "I get so focused on the goal I want to achieve that I lose touch with what I am doing right now to get there.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -663,12 +722,12 @@
           {
             "text": "I do jobs or tasks automatically, without being aware of what I’m doing.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -684,12 +743,12 @@
           {
             "text": "I find myself listening to someone with one ear, doing something else at the same time.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -705,12 +764,12 @@
           {
             "text": "I drive/walk places on “automatic pilot” and then wonder why I went there. ",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -726,12 +785,12 @@
           {
             "text": "I find myself preoccupied with the future or the past.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -747,12 +806,12 @@
           {
             "text": "I find myself doing things without paying attention.",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -768,12 +827,12 @@
           {
             "text": "I snack without being aware that I’m eating. ",
             "hints": [
-              "almost always",
-              "very frequently",
-              "somewhat frequently",
-              "somewhat infrequently",
-              "very infrequently",
-              "almost never"
+              "Almost always",
+              "Very frequently",
+              "Somewhat frequently",
+              "Somewhat infrequently",
+              "Very infrequently",
+              "Almost never"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -2227,6 +2286,20 @@
                   "position": {
                     "fixed": 0
                   }
+                },
+                {
+                  "name": "evening.happy",
+                  "questionName": "evening.happy",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "evening.mindful",
+                  "questionName": "evening.mindful",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             }
@@ -2934,13 +3007,13 @@
     }
   ],
   "glossary": {
-    "Daydreaming": "Your were thinking about something that was not around you.",
-    "Distracted": "Your were attending to something you did not particularly want to attend to.",
-    "Lapsing": "Your were not attending to what you were doing, yet your mind was quite blank.",
-    "Thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
-    "Thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
-    "Thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
-    "How absorbed": "When absorbed, you forget you are here and now, as when watching a very good movie",
-    "How aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
+    "daydreaming": "Thinking about something that was not around you.",
+    "distracted": "Attending to something you did not particularly want to attend to.",
+    "lapsing": "Not attending to what you were doing, yet your mind was quite blank.",
+    "thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
+    "thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
+    "thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
+    "absorbed": "Forgetting the here and now, as when watching a very good movie",
+    "meta-aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
