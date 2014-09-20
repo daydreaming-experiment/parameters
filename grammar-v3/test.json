@@ -164,7 +164,7 @@
             ],
             "initialPosition": 50,
             "numStar": 3,
-            "stepSize": 1,
+            "stepSize": 1.0,
             "notApplyAllowed": true,
             "showLiveIndication": true
           },
