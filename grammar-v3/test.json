@@ -173,7 +173,7 @@
             "showLiveIndication": true
           },
           {
-            "text": "How aware were you that your mind was wandering?",
+            "text": "How meta-aware were you that your mind was wandering?",
             "hints": [
               "I knew it explicitly",
               "I knew it somehow",
@@ -3005,13 +3005,13 @@
     }
   ],
   "glossary": {
-    "Daydreaming": "Your were thinking about something that was not around you.",
-    "Distracted": "Your were attending to something you did not particularly want to attend to.",
-    "Lapsing": "Your were not attending to what you were doing, yet your mind was quite blank.",
-    "Thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
-    "Thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
-    "Thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
-    "How absorbed": "When absorbed, you forget you are here and now, as when watching a very good movie",
-    "How aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
+    "daydreaming": "Thinking about something that was not around you.",
+    "distracted": "Attending to something you did not particularly want to attend to.",
+    "lapsing": "Not attending to what you were doing, yet your mind was quite blank.",
+    "thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
+    "thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
+    "thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
+    "absorbed": "Forgetting the here and now, as when watching a very good movie",
+    "meta-aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
