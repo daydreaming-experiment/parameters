@@ -2284,6 +2284,20 @@
                   "position": {
                     "fixed": 0
                   }
+                },
+                {
+                  "name": "evening.happy",
+                  "questionName": "evening.happy",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "evening.mindful",
+                  "questionName": "evening.mindful",
+                  "position": {
+                    "fixed": 0
+                  }
                 }
               ]
             }
