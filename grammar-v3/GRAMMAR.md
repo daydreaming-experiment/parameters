@@ -21,7 +21,8 @@ The grammar is defined by the following rules (hold on, this is long!):
   * `schedulingMinDelay`: an *integer* defining the minimal delay between two probes (in seconds).
   * `schedulingMeanDelay`: an *integer* defining the average delay between two probes (in seconds).
   * `questions`: a *list* of question definition objects (see below for a description of what question definition objects should contain).
-  * `sequences`: a *list* of sequence definition objects (see below for what they should contain)
+  * `sequences`: a *list* of sequence definition objects (see below for what they should contain).
+  * `glossary`: a JSON *object* containing glossary definitions, where they key name is the definition name, and the key value is the definition body (both must be *strings*).
 3. A *question definition* object contains the following *mandatory* properties:
   * `name`: a *string* defining a name for the question (used to reference questions when defining sequences); question names must be unique across questions.
   * `type`: a *string* representing the type of question asked; can be either `"multipleChoice"`, `"matrixChoice"`, `"autoList"`, `"manySliders"`, `"slider"`, or `"starRating"` (star-ratings appear like sliders in the app, but behave in a discreet manner instead of continuous).
