@@ -12,7 +12,7 @@
       "name": "probe.location",
       "type": "matrixChoice",
       "details": {
-        "text": "Where are you right now?",
+        "text": "Where are you?",
         "choices": [
           "Home",
           "Outside",
@@ -1961,6 +1961,7 @@
   "sequences": [
     {
       "name": "probe",
+      "intro": " ",
       "type": "probe",
       "nSlots": 1,
       "pageGroups": [
