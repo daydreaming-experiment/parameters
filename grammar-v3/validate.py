@@ -127,7 +127,9 @@ class FixedKeysObject:
             for key in self.loaded.keys():
                 msg = key + ' is not an allowed parameter'
                 self.tc.checkTrue(self, key in self.authorized_keys, msg)
-            self.kiddos('test_keys')
+        kiddos = getattr(self, 'kiddos', None)
+        if kiddos is not None:
+            kiddos('test_keys')
 
 
 class Parameters(FixedKeysObject):
