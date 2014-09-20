@@ -58,6 +58,12 @@ class LoadedTestCase(ParametersFileTestCase):
             attr = obj.__getattribute__(attr_name)
             self.assertIsInstance(attr, tipe, err)
 
+    def checkInstanceDirectly(self, obj, attr, attr_name, tipe, optional=False):
+        if not optional or attr is not None:
+            err = self.error_type.format(obj.name_err, attr_name,
+                                         self.type_names[tipe])
+            self.assertIsInstance(attr, tipe, err)
+
     def checkIn(self, obj, container, attr_name, optional=False):
         if not optional:
             err = self.error_in.format(obj.name_err, attr_name)
@@ -85,6 +91,16 @@ class LoadedTestCase(ParametersFileTestCase):
         self.assertRegexpMatches(attr, regex, err)
 
 
+class KeysTestCase(LoadedTestCase):
+
+    description = ('Checking all the parameters defined '
+                   'are allowed parameters')
+
+    def test_keys(self):
+        parameters = Parameters(self, self.params)
+        parameters.test_keys()
+
+
 class TypesTestCase(LoadedTestCase):
 
     description = ('Checking all the attributes are present '
@@ -104,11 +120,27 @@ class ValuesTestCase(LoadedTestCase):
         parameters.test_values()
 
 
-class Parameters:
+class FixedKeysObject:
+
+    def test_keys(self):
+        if isinstance(self.loaded, dict):
+            for key in self.loaded.keys():
+                msg = key + ' is not an allowed parameter'
+                self.tc.checkTrue(self, key in self.authorized_keys, msg)
+            self.kiddos('test_keys')
+
+
+class Parameters(FixedKeysObject):
+
+    authorized_keys = ['version', 'backendExpId', 'backendDbName',
+                       'expDuration', 'backendApiUrl', 'resultsPageUrl',
+                       'schedulingMinDelay', 'schedulingMeanDelay',
+                       'questions', 'sequences', 'glossary']
 
     def __init__(self, tc, loaded):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'root of parameters'
@@ -126,6 +158,7 @@ class Parameters:
                                               'schedulingMeanDelay')
         self.questions = tc.checkIn(self, loaded, 'questions')
         self.sequences = tc.checkIn(self, loaded, 'sequences')
+        self.glossary = tc.checkIn(self, loaded, 'glossary')
 
     def kiddos(self, test_name):
         for i, q in enumerate(self.questions):
@@ -135,6 +168,9 @@ class Parameters:
         for i, s in enumerate(self.sequences):
             ss = Sequence(self.tc, i, s, self)
             ss.__getattribute__(test_name)()
+
+        g = Glossary(self.tc, self.glossary, self)
+        g.__getattribute__(test_name)()
 
     def test_types(self):
         self.tc.checkInstance(self, 'version', str)
@@ -147,6 +183,7 @@ class Parameters:
         self.tc.checkInstance(self, 'schedulingMeanDelay', int)
         self.tc.checkInstance(self, 'questions', list)
         self.tc.checkInstance(self, 'sequences', list)
+        self.tc.checkInstance(self, 'glossary', dict)
         self.kiddos('test_types')
 
     def test_values(self):
@@ -197,11 +234,37 @@ class Parameters:
         self.kiddos('test_values')
 
 
-class Choice:
+# Not a fixed keys object
+class Glossary:
+
+    def __init__(self, tc, loaded, parent):
+        # The test case
+        self.tc = tc
+        self.loaded = loaded
+
+        # Error message suffix
+        self.name_err = 'glossary in ' + parent.name_err
+
+        self.terms = loaded
+
+    def test_types(self):
+        for k, v in self.terms.items():
+            self.tc.checkInstanceDirectly(self, k, 'key ' + k, str)
+            self.tc.checkInstanceDirectly(self, v, 'value ' + v, str)
+
+    def test_values(self):
+        pass
+
+    def test_keys(self):
+        pass
+
+
+class Choice(FixedKeysObject):
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'choice #{} in '.format(i) + parent.name_err
@@ -213,7 +276,7 @@ class Choice:
         self.tc.checkInstance(self, 'string', str)
 
 
-class MatrixChoice:
+class MatrixChoice(FixedKeysObject):
 
     possible_choices = {'Home', 'Commuting', 'Outside',
                         'Public place', 'Work'}
@@ -221,6 +284,7 @@ class MatrixChoice:
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'choice #{} in '.format(i) + parent.name_err
@@ -236,11 +300,12 @@ class MatrixChoice:
                             'this matrix choice')
 
 
-class Hint:
+class Hint(FixedKeysObject):
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'hint #{} in '.format(i) + parent.name_err
@@ -256,11 +321,12 @@ class Hint:
         pass
 
 
-class Slider:
+class Slider(FixedKeysObject):
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'slider #{} in '.format(i) + parent.name_err
@@ -276,11 +342,12 @@ class Slider:
                           'there must be at most one "|"')
 
 
-class Possibility:
+class Possibility(FixedKeysObject):
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'possibility #{} in '.format(i) + parent.name_err
@@ -296,11 +363,14 @@ class Possibility:
                           'there must be at most one "|"')
 
 
-class MultipleChoiceDetails:
+class MultipleChoiceDetails(FixedKeysObject):
+
+    authorized_keys = ['text', 'choices']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'multipleChoiceDetails in ' + parent.name_err
@@ -325,11 +395,14 @@ class MultipleChoiceDetails:
         # No kiddos
 
 
-class MatrixChoiceDetails:
+class MatrixChoiceDetails(FixedKeysObject):
+
+    authorized_keys = ['text', 'choices']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'matrixChoiceDetails in ' + parent.name_err
@@ -354,11 +427,14 @@ class MatrixChoiceDetails:
         self.kiddos('test_values')
 
 
-class AutoListDetails:
+class AutoListDetails(FixedKeysObject):
+
+    authorized_keys = ['text', 'hint', 'possibilities']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'autoListDetails in ' + parent.name_err
@@ -385,11 +461,16 @@ class AutoListDetails:
         self.kiddos('test_values')
 
 
-class ManySlidersDetails:
+class ManySlidersDetails(FixedKeysObject):
+
+    authorized_keys = ['text', 'availableSliders', 'defaultSliders',
+                       'hints', 'addItemHint', 'dialogText',
+                       'showLiveIndication', 'initialPosition']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'manySlidersDetails in ' + parent.name_err
@@ -440,11 +521,15 @@ class ManySlidersDetails:
         self.kiddos('test_values')
 
 
-class SliderSubQuestion:
+class SliderSubQuestion(FixedKeysObject):
+
+    authorized_keys = ['text', 'hints', 'notApplyAllowed',
+                       'showLiveIndication', 'initialPosition']
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'subQuestion #{} in '.format(i) + parent.name_err
@@ -481,11 +566,14 @@ class SliderSubQuestion:
         # No kiddos
 
 
-class SliderDetails:
+class SliderDetails(FixedKeysObject):
+
+    authorized_keys = ['subQuestions']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'sliderDetails in ' + parent.name_err
@@ -507,11 +595,16 @@ class SliderDetails:
         self.kiddos('test_values')
 
 
-class StarRatingSubQuestion:
+class StarRatingSubQuestion(FixedKeysObject):
+
+    authorized_keys = ['text', 'hints', 'notApplyAllowed',
+                       'showLiveIndication', 'numStars', 'stepSize',
+                       'initialRating']
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'subQuestion #{} in '.format(i) + parent.name_err
@@ -557,11 +650,14 @@ class StarRatingSubQuestion:
         # No kiddos
 
 
-class StarRatingDetails:
+class StarRatingDetails(FixedKeysObject):
+
+    authorized_keys = ['subQuestions']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'starRatingDetails in ' + parent.name_err
@@ -583,7 +679,9 @@ class StarRatingDetails:
         self.kiddos('test_values')
 
 
-class Question:
+class Question(FixedKeysObject):
+
+    authorized_keys = ['name', 'type', 'details']
 
     type_classes = {'multipleChoice': MultipleChoiceDetails,
                     'matrixChoice': MatrixChoiceDetails,
@@ -595,6 +693,7 @@ class Question:
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
 
         # Error message suffix
         self.name_err = 'question definition #{} in '.format(i) \
@@ -620,7 +719,9 @@ class Question:
         self.kiddos('test_values')
 
 
-class Sequence:
+class Sequence(FixedKeysObject):
+
+    authorized_keys = ['name', 'type', 'intro', 'nSlots', 'pageGroups']
 
     available_types = {'probe', 'beginEndQuestionnaire',
                        'morningQuestionnaire', 'eveningQuestionnaire'}
@@ -628,6 +729,7 @@ class Sequence:
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
         self.root = parent
         self.parent = parent
 
@@ -706,11 +808,14 @@ class Sequence:
         self.kiddos('test_values')
 
 
-class PageGroup:
+class PageGroup(FixedKeysObject):
+
+    authorized_keys = ['name', 'friendlyName', 'position', 'nSlots', 'pages']
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
         self.root = parent.root
         self.parent = parent
 
@@ -791,11 +896,14 @@ class PageGroup:
         self.kiddos('test_values')
 
 
-class Page:
+class Page(FixedKeysObject):
+
+    authorized_keys = ['name', 'position', 'nSlots', 'questions']
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
         self.root = parent.root
         self.parent = parent
 
@@ -860,11 +968,14 @@ class Page:
         self.kiddos('test_values')
 
 
-class QuestionReference:
+class QuestionReference(FixedKeysObject):
+
+    authorized_keys = ['name', 'questionName', 'position']
 
     def __init__(self, tc, i, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
         self.root = parent.root
         self.parent = parent
 
@@ -907,11 +1018,14 @@ class QuestionReference:
         self.kiddos('test_values')
 
 
-class Position:
+class Position(FixedKeysObject):
+
+    authorized_keys = ['fixed', 'floating', 'after', 'bonus']
 
     def __init__(self, tc, loaded, parent):
         # The test case
         self.tc = tc
+        self.loaded = loaded
         self.root = parent.root
         self.parent = parent
 
@@ -995,7 +1109,7 @@ if __name__ == '__main__':
     sys.argv = sys.argv[:1]
 
     # Our test cases and encouragements
-    test_cases = [JSONTestCase, TypesTestCase, ValuesTestCase]
+    test_cases = [JSONTestCase, KeysTestCase, TypesTestCase, ValuesTestCase]
     ok_texts = ['Yep!', 'Ok!', 'Great!', 'Brilliant!', 'Fantastic!',
                 'Perfect!', 'Good!', 'Right you are!', 'Well done!']
     shuffle(ok_texts)
