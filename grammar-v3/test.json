@@ -29,15 +29,15 @@
         "text": "What were you doing?",
         "hint": "Activites...",
         "possibilities": [
-          "Cooking|food, eat",
-          "Eating",
+          "Cooking|food",
+          "Eating, lunch, dining",
           "Housework|dishes, cleaning",
           "Care|shower, makeup",
           "Nursing",
           "Petting|cat, dog",
           "Intimate relations|sex",
           "Having a nap|sleep",
-          "Resting|sleep",
+          "Resting",
           "Playing music",
           "Making a drawing",
           "Video game|play, computer",
@@ -55,8 +55,8 @@
           "Writing (coding)|programming",
           "Gardening",
           "Shopping",
-          "Exercising",
-          "Physical game|outside",
+          "Exercising|running|yoga",
+          "Physical game|outside|playing",
           "Shopping, groceries|food, clothes",
           "Reading (library)|book, comic",
           "Watching screen (cinema)|movie",
@@ -70,7 +70,7 @@
     },
     {
       "name": "probe.noise",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -84,6 +84,8 @@
               "Non-human noise"
             ],
             "initialPosition": 50,
+            "numStar": 5,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -91,7 +93,7 @@
     },
     {
       "name": "probe.people",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -104,6 +106,8 @@
               "more than 15"
             ],
             "initialPosition": 50,
+            "numStar": 4,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -111,7 +115,7 @@
     },
     {
       "name": "probe.interaction",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -124,6 +128,8 @@
               "Many persons far away"
             ],
             "initialPosition": 50,
+            "numStar": 4,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -131,7 +137,7 @@
     },
     {
       "name": "probe.thought.focus",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -144,6 +150,8 @@
               "Totally mind wandering"
             ],
             "initialPosition": 50,
+            "numStar": 4,
+            "stepSize": 1,
             "showLiveIndication": true
           },
           {
@@ -155,6 +163,8 @@
               "Not absorbed at all"
             ],
             "initialPosition": 50,
+            "numStar": 3,
+            "stepSize": 1,
             "notApplyAllowed": true,
             "showLiveIndication": true
           },
@@ -167,6 +177,8 @@
               "I was totally unaware"
             ],
             "initialPosition": 50,
+            "numStar": 3,
+            "stepSize": 1,
             "notApplyAllowed": true,
             "showLiveIndication": true
           }
@@ -175,7 +187,7 @@
     },
     {
       "name": "probe.thought.words",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -187,6 +199,8 @@
               "In clear and precise words"
             ],
             "initialPosition": 50,
+            "numStar": 3,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -194,7 +208,7 @@
     },
     {
       "name": "probe.thought.visual",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -206,6 +220,8 @@
               "With vivid images"
             ],
             "initialPosition": 50,
+            "numStar": 3,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -213,7 +229,7 @@
     },
     {
       "name": "probe.thought.auditory",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -225,6 +241,8 @@
               "With vivid sounds"
             ],
             "initialPosition": 50,
+            "numStar": 3,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -232,7 +250,7 @@
     },
     {
       "name": "probe.thought.default",
-      "type": "slider",
+      "type": "starRating",
       "details": {
         "subQuestions": [
           {
@@ -244,6 +262,8 @@
               "Else"
             ],
             "initialPosition": 50,
+            "numStar": 3,
+            "stepSize": 1,
             "showLiveIndication": true
           }
         ]
@@ -1743,7 +1763,7 @@
       "details": {
         "subQuestions": [
           {
-            "text": "I have difficulty staying mentally engaged when I participate in routine tasks.I have difficulty describing what I am experiencing on the inside because those experiences are so mixed up or confused.",
+            "text": "I have difficulty describing what I am experiencing on the inside because those experiences are so mixed up or confused.",
             "hints": [
               "Never", 
               "Rarely",	
@@ -1941,9 +1961,8 @@
   "sequences": [
     {
       "name": "probe",
-      "intro": "Surprise!",
       "type": "probe",
-      "nSlots": 2,
+      "nSlots": 1,
       "pageGroups": [
         {
           "name": "context",
@@ -2075,7 +2094,7 @@
           "name": "testBonusBlock",
           "friendlyName": "Test bonus block",
           "position": {
-            "fixed": 1,
+            "after": "thought",
             "bonus": true
           },
           "nSlots": 1,
