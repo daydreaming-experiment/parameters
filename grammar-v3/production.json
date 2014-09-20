@@ -86,8 +86,8 @@
               "Human-related noise",
               "Non-human noise"
             ],
-            "initialPosition": 50,
-            "numStar": 5,
+            "initialRating": 0.0,
+            "numStars": 5,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -108,8 +108,8 @@
               "6-15",
               "more than 15"
             ],
-            "initialPosition": 50,
-            "numStar": 4,
+            "initialRating": 0.0,
+            "numStars": 4,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -130,8 +130,8 @@
               "Many persons here",
               "Many persons far away"
             ],
-            "initialPosition": 50,
-            "numStar": 4,
+            "initialRating": 0.0,
+            "numStars": 4,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -152,8 +152,8 @@
               "Mostly mind wandering",
               "Totally mind wandering"
             ],
-            "initialPosition": 50,
-            "numStar": 4,
+            "initialRating": 0.0,
+            "numStars": 4,
             "stepSize": 1.0,
             "showLiveIndication": true
           },
@@ -165,8 +165,8 @@
               "A bit absorbed",
               "Not absorbed at all"
             ],
-            "initialPosition": 50,
-            "numStar": 3,
+            "initialRating": 0.0,
+            "numStars": 3,
             "stepSize": 1.0,
             "notApplyAllowed": true,
             "showLiveIndication": true
@@ -179,8 +179,8 @@
               "The phone might have helped me notice",
               "I was totally unaware"
             ],
-            "initialPosition": 50,
-            "numStar": 3,
+            "initialRating": 0.0,
+            "numStars": 3,
             "stepSize": 1.0,
             "notApplyAllowed": true,
             "showLiveIndication": true
@@ -201,8 +201,8 @@
               "With some precise words",
               "In clear and precise words"
             ],
-            "initialPosition": 50,
-            "numStar": 3,
+            "initialRating": 0.0,
+            "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -222,8 +222,8 @@
               "With some visual features",
               "With vivid images"
             ],
-            "initialPosition": 50,
-            "numStar": 3,
+            "initialRating": 0.0,
+            "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -243,8 +243,8 @@
               "With some acoustic features",
               "With vivid sounds"
             ],
-            "initialPosition": 50,
-            "numStar": 3,
+            "initialRating": 0.0,
+            "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
@@ -264,8 +264,8 @@
               "Daydreaming",
               "Else"
             ],
-            "initialPosition": 50,
-            "numStar": 3,
+            "initialRating": 0.0,
+            "numStars": 3,
             "stepSize": 1.0,
             "showLiveIndication": true
           }
