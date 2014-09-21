@@ -426,7 +426,7 @@
       "name": "morning.sleep",
       "type": "autoList",
       "details": {
-	"hint": "Duration...",
+      "hint": "Duration...",
         "text": "How long have you slept?",
         "possibilities": [
           "I didn't sleep|None, not, 0 hour",
@@ -2983,6 +2983,6 @@
     "thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
     "thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
     "thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
-    "absorbed": "Forgetting the here and now, as when watching a very good movie",
+    "absorbed": "Forgetting the here and now, as when watching a very good movie"
   }
 }
