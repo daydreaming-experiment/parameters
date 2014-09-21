@@ -86,7 +86,7 @@ The grammar is defined by the following rules (hold on, this is long!):
   * `questions`: a *list* of *question references*, as defined in the following rule.
 8. A *question reference* points to a question defined in the `questions` list defined at the top of the file, and positions this question. It has the following fields (all mandatory):
   * `name`: a *string* defining the name of question reference (note, it's the name of the *reference* to the question, not the name of the question itself). Names must be unique across pages, as they're used for positioning.
-  * `questionName`: a *string* corresponding to a name of one of the questions defined in the `questions` list at the top of this file. This is the question that will be shown, of course. Note that this appears in the uploaded results, whereas the name of the question reference (field right above this one) does not appear in the results. Note that `matrixChoice`, `manySliders`, and `autoList` question are what we call "single-page" questions: they must be alone in their page.
+  * `questionName`: a *string* corresponding to a name of one of the questions defined in the `questions` list at the top of this file. This is the question that will be shown, of course. Note that this appears in the uploaded results, whereas the name of the question reference (field right above this one) does not appear in the results.
   * `position`: a *position* object defining how the question is positioned in the page. See rule 9 below for what positions look like.
 9. A *position* object defines how items are positioned at each level of the hierarchy in the sequence. See below for a detailed explanation on how positioning is done. These objects can have the following fields:
   * `fixed`: an *integer* defining the fixed position of the item (can be positive or negative).
@@ -98,7 +98,7 @@ The grammar is defined by the following rules (hold on, this is long!):
 About sequences
 ---------------
 
-*Sequences* are a generalized form of what the previous grammar versions called *probes*. Basically, they represent a set of questions (by referencing the questions defined separately in the first part of the parameters file), with three levels of grouping to enable fine-grained positioning and randomization: *questions* are grouped into *pages*, which represent a single screen in the app (note that the `matrixChoice`, `manySliders`, and `autoList` questions are single-page: they must be alone in their page). *Pages* are grouped into *pageGroups*, representing blocks of screens (like context-related questions, or thoughts-related questions). Finally, a sequence is made of `pageGroups`.
+*Sequences* are a generalized form of what the previous grammar versions called *probes*. Basically, they represent a set of questions (by referencing the questions defined separately in the first part of the parameters file), with three levels of grouping to enable fine-grained positioning and randomization: *questions* are grouped into *pages*, which represent a single screen in the app. *Pages* are grouped into *pageGroups*, representing blocks of screens (like context-related questions, or thoughts-related questions). Finally, a sequence is made of `pageGroups`.
 
 Sequences have a type, which defines how they're used by the app: the type tells the app if we're talking about a probe, about a morning questionnaire, an evening questionnaire, or a beginning/ending questionnaire. For the moment, there should be:
 * A single sequence of type `probe`, which should also be named `"probe"`
