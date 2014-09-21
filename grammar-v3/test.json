@@ -342,10 +342,10 @@
           {
             "text": "How new was your thought?",
             "hints": [
-              "Brand new, never had it",
+              "Brand new, I've never had it before",
               "New perspective on current concern",
               "Recurrent thought",
-              "Memory Recollection"
+              "Memory or recollection"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -2256,7 +2256,16 @@
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "mindfulhappy",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions":[
                 {
                   "name": "evening.happy",
                   "questionName": "evening.happy",
@@ -2271,7 +2280,7 @@
                     "fixed": 0
                   }
                 }
-              ]
+                ]
             }
           ]
         }
