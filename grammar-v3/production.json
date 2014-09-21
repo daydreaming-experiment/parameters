@@ -73,7 +73,7 @@
     },
     {
       "name": "probe.noise",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -87,9 +87,7 @@
               "Non-human noise",
               "Silence"
             ],
-            "initialRating": 3,
-            "numStars": 6,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -97,7 +95,7 @@
     },
     {
       "name": "probe.people",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -109,9 +107,7 @@
               "6-15",
               "more than 15"
             ],
-            "initialRating": 2,
-            "numStars": 4,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -119,7 +115,7 @@
     },
     {
       "name": "probe.interaction",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -131,9 +127,7 @@
               "Many persons here",
               "Many persons far away"
             ],
-            "initialRating": 2,
-            "numStars": 4,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -141,21 +135,19 @@
     },
     {
       "name": "probe.thought.focus",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
             "text": "How focused were you on what you were doing?",
             "hints": [
-              "Totally focused",
-              "Mostly Focused",
-              "Both focused and mind wandering",
-              "Mostly mind wandering",
-              "Totally mind wandering"
+              "My mind was totally focused",
+              "My mind was mostly focused",
+              "my mind was both focused and wandering",
+              "My mind was mostly wandering",
+              "My mind was totally wandering"
             ],
-            "initialRating": 2,
-            "numStars": 4,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           },
           {
@@ -166,23 +158,19 @@
               "A bit absorbed",
               "Not absorbed at all"
             ],
-            "initialRating": 50,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition":50,
             "notApplyAllowed": true,
             "showLiveIndication": true
           },
           {
-            "text": "How meta-aware were you that your mind was wandering?",
+            "text": "How aware were you that your mind was wandering?",
             "hints": [
               "I knew it explicitly",
               "I knew it somehow",
               "The phone might have helped me notice",
               "I was totally unaware"
             ],
-            "initialRating": 1,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "notApplyAllowed": true,
             "showLiveIndication": true
           }
@@ -191,7 +179,7 @@
     },
     {
       "name": "probe.thought.words",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -202,9 +190,7 @@
               "With some precise words",
               "In clear and precise words"
             ],
-            "initialRating": 1.5,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -212,7 +198,7 @@
     },
     {
       "name": "probe.thought.visual",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -223,9 +209,7 @@
               "With some visual features",
               "With vivid images"
             ],
-            "initialRating": 1.5,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -233,7 +217,7 @@
     },
     {
       "name": "probe.thought.auditory",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -244,9 +228,7 @@
               "With some acoustic features",
               "With vivid sounds"
             ],
-            "initialRating": 1.5,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -254,7 +236,7 @@
     },
     {
       "name": "probe.thought.default",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -263,11 +245,9 @@
               "Distracted",
               "Lapsing",
               "Daydreaming",
-              "Else"
+              "Something else"
             ],
-            "initialRating": 1.5,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -275,7 +255,7 @@
     },
     {
       "name": "probe.bonus.social",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -287,11 +267,9 @@
               "About friends",
               "About family",
               "About a co-worker",
-              "Else"
+              "Someone else"
             ],
-            "initialRating": 3,
-            "numStars": 6,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -299,21 +277,19 @@
     },
     {
       "name": "probe.bonus.control",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
             "text": "How controlled was your thought?",
             "hints": [
-              "Desired & effortful to have",
-              "Desired & fluid",
-              "Neutral & automatic thought",
-              "Undesired & fluid",
-              "Undesired & failed to avoid"
+              "Desired thought requiring effort",
+              "Desired & fluid thought",
+              "Neutral/automatic thought",
+              "Undesired & fluid thought",
+              "Undesired thought I failed to avoid"
             ],
-            "initialRating": 2,
-            "numStars": 4,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -330,8 +306,7 @@
               "Very Unhappy",
               "Very Happy"
             ],
-            "initialPosition": 50,
-            "showLiveIndication": true
+            "initialPosition": 50
           }
         ]
       }
@@ -361,7 +336,7 @@
     },
     {
       "name": "probe.bonus.new",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -372,9 +347,7 @@
               "Recurrent thought",
               "Memory Recollection"
             ],
-            "initialRating": 1.5,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -486,7 +459,7 @@
     },
     {
       "name": "morning.dreams",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -497,9 +470,7 @@
               "Parts of my dreams were clear",
               "I had very vivid dreams"
             ],
-            "initialRating": 1.5,
-            "numStars": 3,
-            "stepSize": 1.0,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -3012,6 +2983,5 @@
     "thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
     "thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
     "absorbed": "Forgetting the here and now, as when watching a very good movie",
-    "meta-aware": "Someone unaware of her mind wandering would read a whole paragraph without noticing that she does not understand anything of what she is reading"
   }
 }
