@@ -1994,7 +1994,7 @@
   "sequences": [
     {
       "name": "probe",
-      "intro": " ",
+      "intro": "Right now...",
       "type": "probe",
       "nSlots": 1,
       "pageGroups": [
