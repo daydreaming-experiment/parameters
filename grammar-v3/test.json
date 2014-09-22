@@ -1,10 +1,10 @@
 {
-  "version": "3-test-15",
-  "backendExpId": "a5f0430af850a1c4cc278bf310379a0a65451a19c5a339d099fbb3c65cb14d2b",
-  "backendDbName": "daydreaming-qa",
+  "version": "3-test-19",
+  "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
+  "backendDbName": "daydreaming-prod",
   "expDuration": 30,
-  "backendApiUrl": "http://api.qa.naja.cc",
-  "resultsPageUrl": "http://daydreaming-the-app.net/results/device/",
+  "backendApiUrl": "http://api.naja.cc",
+  "resultsPageUrl": "http://daydreaming-the-app.net/results/device",
   "schedulingMinDelay": 300,
   "schedulingMeanDelay": 7200,
   "questions": [
@@ -248,6 +248,7 @@
               "Something else"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -424,36 +425,26 @@
     },
     {
       "name": "morning.sleep",
-      "type": "autoList",
+      "type": "slider",
       "details": {
-        "text": "How long have you slept?",
-        "possibilities": [
-          "I didn't sleep|None, not, 0 hour",
-          "1 hour",
-          "2 hours",
-          "3 hours",
-          "4 hours",
-          "5 hours",
-          "6 hours",
-          "7 hours",
-          "8 hours",
-          "9 hours",
-          "10 hours",
-          "11 hours",
-          "12 hours",
-          "13 hours",
-          "14 hours",
-          "15 hours",
-          "16 hours",
-          "17 hours",
-          "18 hours",
-          "19 hours",
-          "20 hours",
-          "21 hours",
-          "22 hours",
-          "23 hours",
-          "24 hours",
-          "more than 24 hours"
+        "subQuestions": [
+          {
+            "text": "How long have you slept?",
+            "hints": [
+              "I didn't sleep",
+              "1 hour",
+              "2-3 hours",
+              "4-5 hours",
+              "6-7 hours",
+              "8-9 hours",
+              "10-11 hours",
+              "12-13 hours",
+              "14-15 hours",
+              "More than 16 hours"
+            ],
+            "initialPosition": 50,
+            "showLiveIndication": true
+          }
         ]
       }
     },
@@ -471,6 +462,7 @@
               "I had very vivid dreams"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -489,6 +481,7 @@
               "Positive"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -1993,7 +1986,7 @@
   "sequences": [
     {
       "name": "probe",
-      "intro": " ",
+      "intro": "Right now...",
       "type": "probe",
       "nSlots": 1,
       "pageGroups": [
