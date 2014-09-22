@@ -248,6 +248,7 @@
               "Something else"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
