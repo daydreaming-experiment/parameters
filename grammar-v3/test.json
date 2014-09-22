@@ -425,37 +425,26 @@
     },
     {
       "name": "morning.sleep",
-      "type": "autoList",
+      "type": "slider",
       "details": {
-        "text": "How long have you slept?",
-        "hint": "Duration...",
-        "possibilities": [
-          "I didn't sleep|None, not, 0 hour",
-          "1 hour",
-          "2 hours",
-          "3 hours",
-          "4 hours",
-          "5 hours",
-          "6 hours",
-          "7 hours",
-          "8 hours",
-          "9 hours",
-          "10 hours",
-          "11 hours",
-          "12 hours",
-          "13 hours",
-          "14 hours",
-          "15 hours",
-          "16 hours",
-          "17 hours",
-          "18 hours",
-          "19 hours",
-          "20 hours",
-          "21 hours",
-          "22 hours",
-          "23 hours",
-          "24 hours",
-          "more than 24 hours"
+        "subQuestions": [
+          {
+            "text": "How long have you slept?",
+            "hints": [
+              "I didn't sleep",
+              "1 hour",
+              "2-3 hours",
+              "4-5 hours",
+              "6-7 hours",
+              "8-9 hours",
+              "10-11 hours",
+              "12-13 hours",
+              "14-15 hours",
+              "More than 16 hours"
+            ],
+            "initialPosition": 50,
+            "showLiveIndication": true
+          }
         ]
       }
     },
@@ -473,6 +462,7 @@
               "I had very vivid dreams"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -491,6 +481,7 @@
               "Positive"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
