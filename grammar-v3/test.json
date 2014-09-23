@@ -45,6 +45,7 @@
           "Reading|book, comic",
           "Playing Chess | Go",
           "Board Game",
+          "Phone (talking/listening)",
           "Driving|car",
           "Biking|bicyle",
           "Walking",
@@ -141,11 +142,11 @@
           {
             "text": "How focused were you on what you were doing?",
             "hints": [
-              "My mind was totally focused",
-              "My mind was mostly focused",
-              "my mind was both focused and wandering",
+              "My mind was totally wandering",
               "My mind was mostly wandering",
-              "My mind was totally wandering"
+              "my mind was both focused and wandering",
+              "My mind was mostly focused",
+              "My mind was totally focused"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -153,10 +154,10 @@
           {
             "text": "How absorbed were you in what you were doing?",
             "hints": [
-              "Totally absorbed",
-              "Quite absorbed",
+              "Not absorbed at all",
               "A bit absorbed",
-              "Not absorbed at all"
+              "Quite absorbed",
+              "Totally absorbed"
             ],
             "initialPosition":50,
             "notApplyAllowed": true,
@@ -165,10 +166,10 @@
           {
             "text": "How aware were you that your mind was wandering?",
             "hints": [
-              "I knew it explicitly",
-              "I knew it somehow",
+              "I was totally unaware",
               "The phone might have helped me notice",
-              "I was totally unaware"
+              "I knew it somehow",
+              "I knew it explicitly"
             ],
             "initialPosition": 50,
             "notApplyAllowed": true,
@@ -284,11 +285,11 @@
           {
             "text": "How controlled was your thought?",
             "hints": [
-              "Desired thought requiring effort",
-              "Desired & fluid thought",
-              "Neutral/automatic thought",
+              "Undesired thought I failed to avoid",
               "Undesired & fluid thought",
-              "Undesired thought I failed to avoid"
+              "Neutral/automatic thought",
+              "Desired & fluid thought",
+              "Desired thought requiring effort"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -343,10 +344,10 @@
           {
             "text": "How new was your thought?",
             "hints": [
-              "Brand new, I've never had it before",
-              "New perspective on current concern",
+              "Memory or recollection",
               "Recurrent thought",
-              "Memory or recollection"
+              "New perspective on current concern",
+              "Brand new, never had it before"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -415,8 +416,8 @@
           {
             "text": "How much have you paid attention to the things you've engaged in today?",
             "hints": [
-              "I paid attention to every moment",
-              "I was on total automatic pilot"
+              "I was on total automatic pilot",
+              "I paid attention to every moment"
             ],
             "initialPosition": 50
           }
@@ -495,12 +496,12 @@
           {
             "text": "I could be experiencing some emotion and not be conscious of it until some time later.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -516,12 +517,12 @@
           {
             "text": "I break or spill things because of carelessness, not paying attention, or thinking of something else.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -537,12 +538,12 @@
           {
             "text": "I find it difficult to stay focused on what’s happening in the present.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -558,12 +559,12 @@
           {
             "text": "I tend to walk quickly to get where I’m going without paying attention to what I experience along the way.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -579,12 +580,12 @@
           {
             "text": "I tend not to notice feelings of physical tension or discomfort until they really grab my attention.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -600,12 +601,12 @@
           {
             "text": "I forget a person’s name almost as soon as I’ve been told it for the first time. ",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -621,12 +622,12 @@
           {
             "text": "It seems I am “running on automatic” without much awareness of what I’m doing.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -642,12 +643,12 @@
           {
             "text": "I rush through activities without being really attentive to them.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -663,12 +664,12 @@
           {
             "text": "I get so focused on the goal I want to achieve that I lose touch with what I am doing right now to get there.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -684,12 +685,12 @@
           {
             "text": "I do jobs or tasks automatically, without being aware of what I’m doing.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -705,12 +706,12 @@
           {
             "text": "I find myself listening to someone with one ear, doing something else at the same time.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -726,12 +727,12 @@
           {
             "text": "I drive/walk places on “automatic pilot” and then wonder why I went there. ",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -747,12 +748,12 @@
           {
             "text": "I find myself preoccupied with the future or the past.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -768,12 +769,12 @@
           {
             "text": "I find myself doing things without paying attention.",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
@@ -789,12 +790,12 @@
           {
             "text": "I snack without being aware that I’m eating. ",
             "hints": [
-              "Almost always",
-              "Very frequently",
-              "Somewhat frequently",
-              "Somewhat infrequently",
+              "Almost never",
               "Very infrequently",
-              "Almost never"
+              "Somewhat infrequently",
+              "Somewhat frequently",
+              "Very frequently",
+              "Almost always"
             ],
             "initialPosition": 50,
             "showLiveIndication": true
