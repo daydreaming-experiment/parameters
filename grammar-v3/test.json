@@ -144,7 +144,7 @@
             "hints": [
               "My mind was totally wandering",
               "My mind was mostly wandering",
-              "my mind was both focused and wandering",
+              "My mind was both focused & wandering",
               "My mind was mostly focused",
               "My mind was totally focused"
             ],
@@ -359,7 +359,7 @@
       "name": "evening.activity.manySliders",
       "type": "manySliders",
       "details": {
-        "text": "How long have done these activities today?",
+        "text": "How long have you done these activities in your free time?",
         "availableSliders": [
           "Sport",
           "Arts",
@@ -373,23 +373,24 @@
           "Meditating / Praying"
         ],
         "defaultSliders": [
-          "Sport",
-          "Music",
-          "Reading",
+          "Watching Programs/Movies",
           "Playing videogames",
-          "Watching Programs/Movies"
+          "Reading",
+          "Sport",
+          "Music"
         ],
         "hints": [
           "Not at all",
           "A few minutes",
           "About an hour",
           "A couple of hours",
-          "More than three hours"
+          "3-4 hours",
+          "Five hours or more"
         ],
         "initialPosition": 50,
         "showLiveIndication": true,
         "addItemHint": "Search activities...",
-        "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you don't want, add the ones you want."
+        "dialogText": "You can edit what activites you want to appear here each time your answer this question. Remove the ones you never do, add the ones you do."
       }
     },
     {
@@ -398,7 +399,7 @@
       "details": {
         "subQuestions": [
           {
-            "text": "How did you feel overall today?",
+            "text": "How did you feel overall?",
             "hints": [
               "Very Unhappy",
               "Very Happy"
@@ -414,10 +415,10 @@
       "details": {
         "subQuestions": [
           {
-            "text": "How much have you paid attention to the things you've engaged in today?",
+            "text": "How much have you been on automatic pilot?",
             "hints": [
-              "I was on total automatic pilot",
-              "I paid attention to every moment"
+              "I paid attention to each moment",
+              "I was on total automatic pilot"
             ],
             "initialPosition": 50
           }
@@ -2224,7 +2225,7 @@
     },
     {
       "name": "eveningQuestionnaire",
-      "intro": "Good evening",
+      "intro": "Looking back on your day...",
       "type": "eveningQuestionnaire",
       "nSlots": 1,
       "pageGroups": [
@@ -2981,10 +2982,10 @@
   "glossary": {
     "daydreaming": "Thinking about something that was not around you.",
     "distracted": "Attending to something you did not particularly want to attend to.",
-    "lapsing": "Not attending to what you were doing, yet your mind was quite blank.",
+    "lapsing": "Not attending to what you were doing, yet your mind was blank.",
     "thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
-    "thinking with visual images": "Like when you wonder whether your bedroom door opens inward or outward from your bedroom. Do you see anything in your mind?",
-    "thinking with sounds": "Like when you think about your favorite singer voice: high pitch or low pitch?",
+    "thinking with visual images": "Like when you wonder whether your bedroom door opens inwards or outwards. Do you see anything in your mind?",
+    "thinking with sounds": "Like when you think about your favorite singer's voice: high pitch or low pitch?",
     "absorbed": "Forgetting the here and now, as when watching a very good movie"
   }
 }
