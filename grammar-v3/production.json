@@ -1,5 +1,5 @@
 {
-  "version": "3-production-20",
+  "version": "3-production-21",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
   "expDuration": 30,
@@ -152,21 +152,20 @@
             "showLiveIndication": true
           },
           {
-            "text": "How absorbed were you in what you were doing?",
+            "text": "How aware were you of your surroundings?",
             "hints": [
-              "Not absorbed at all",
-              "A bit absorbed",
-              "Quite absorbed",
-              "Totally absorbed"
+              "Not aware at all",
+              "A bit aware",
+              "Quite aware",
+              "Totally aware"
             ],
             "initialPosition":50,
-            "notApplyAllowed": true,
             "showLiveIndication": true
           },
           {
-            "text": "How aware were you that your mind was wandering?",
+            "text": "If you were not focused, how aware were you that your mind was wandering?",
             "hints": [
-              "I was totally unaware",
+              "Not aware at all",
               "The phone might have helped me notice",
               "I knew it somehow",
               "I knew it explicitly"
