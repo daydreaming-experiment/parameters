@@ -1,5 +1,5 @@
 {
-  "version": "3-test-21",
+  "version": "3-test-22",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
   "expDuration": 30,
@@ -358,33 +358,42 @@
       "name": "evening.activity.manySliders",
       "type": "manySliders",
       "details": {
-        "text": "How long have you done these activities in your free time?",
+        "text": "How long have you been...",
         "availableSliders": [
-          "Sport",
-          "Arts",
-          "Music",
+          "Doing sport",
+          "Doing art",
+          "Playing music",
           "Reading",
-          "Jigsaw/Modeling",
+          "Doing jigsaw/Modeling",
           "Playing chess",
           "Playing cards",
           "Playing videogames",
-          "Watching Programs/Movies",
+          "Watching programs/movies",
           "Meditating / Praying"
         ],
         "defaultSliders": [
-          "Watching Programs/Movies",
-          "Playing videogames",
+          "Doing sport",
+          "Doing art",
+          "Playing music",
           "Reading",
-          "Sport",
-          "Music"
+          "Doing jigsaw/Modeling",
+          "Playing chess",
+          "Playing cards",
+          "Playing videogames",
+          "Watching programs/movies",
+          "Meditating / Praying"
         ],
         "hints": [
           "Not at all",
-          "A few minutes",
-          "About an hour",
-          "A couple of hours",
-          "3-4 hours",
-          "Five hours or more"
+          "Less than 1 hour",
+          "1 hour",
+          "2 hours",
+          "3 hours",
+          "4 hours",
+          "5 hours",
+          "6 hours",
+          "7 hours",
+          "8 hours or more"
         ],
         "initialPosition": 50,
         "showLiveIndication": true,
@@ -2231,7 +2240,7 @@
     },
     {
       "name": "eveningQuestionnaire",
-      "intro": "Looking back on your day...",
+      "intro": "Since last night...",
       "type": "eveningQuestionnaire",
       "nSlots": 1,
       "pageGroups": [
