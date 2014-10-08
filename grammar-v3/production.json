@@ -2036,6 +2036,7 @@
   ],
   "sequences": [
     {
+      "intro": "",
       "name": "probe",
       "type": "probe",
       "nSlots": 1,
