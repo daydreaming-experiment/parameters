@@ -170,7 +170,7 @@
       "name": "probe.thought.surround",
       "type": "slider",
       "details":{
-        subQuestions: [
+        "subQuestions": [
           {
             "text": "How aware were you of your surroundings?",
             "hints": [
