@@ -1,5 +1,5 @@
 {
-  "version": "3-production-23",
+  "version": "3-production-24",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
   "expDuration": 30,
@@ -152,18 +152,7 @@
             "showLiveIndication": true
           },
           {
-            "text": "How aware were you of your surroundings?",
-            "hints": [
-              "Not aware at all",
-              "A bit aware",
-              "Quite aware",
-              "Totally aware"
-            ],
-            "initialPosition":50,
-            "showLiveIndication": true
-          },
-          {
-            "text": "If you were not focused, how aware were you that your mind was wandering?",
+            "text": "How aware were you of your mind wandering?",
             "hints": [
               "Not aware at all",
               "The phone might have helped me notice",
@@ -172,6 +161,25 @@
             ],
             "initialPosition": 50,
             "notApplyAllowed": true,
+            "showLiveIndication": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "probe.thought.surround",
+      "type": "slider",
+      "details":{
+        "subQuestions": [
+          {
+            "text": "How aware were you of your surroundings?",
+            "hints": [
+              "Not aware at all",
+              "A bit aware",
+              "Quite aware",
+              "Totally aware"
+            ],
+            "initialPosition":50,
             "showLiveIndication": true
           }
         ]
@@ -229,26 +237,6 @@
               "With vivid sounds"
             ],
             "initialPosition": 50,
-            "showLiveIndication": true
-          }
-        ]
-      }
-    },
-    {
-      "name": "probe.thought.default",
-      "type": "slider",
-      "details": {
-        "subQuestions": [
-          {
-            "text": "If you were not focused, would you say you were distracted, lapsing or daydreaming?",
-            "hints": [
-              "Distracted",
-              "Lapsing",
-              "Daydreaming",
-              "Something else"
-            ],
-            "initialPosition": 50,
-            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -2126,11 +2114,18 @@
               "position": {
                 "fixed": 0
               },
-              "nSlots": 2,
+              "nSlots": 1,
               "questions": [
                 {
                   "name": "probe.thought.focus",
                   "questionName": "probe.thought.focus",
+                  "position": {
+                    "fixed": 0
+                  }
+                },
+                {
+                  "name": "probe.thought.surround",
+                  "questionName": "probe.thought.surround",
                   "position": {
                     "fixed": 0
                   }
@@ -2154,13 +2149,6 @@
                   "questionName": "probe.thought.auditory",
                   "position": {
                     "fixed": 0
-                  }
-                },
-                {
-                  "name": "probe.thought.default",
-                  "questionName": "probe.thought.default",
-                  "position": {
-                    "fixed": 1
                   }
                 }
               ]
@@ -3036,12 +3024,10 @@
     }
   ],
   "glossary": {
-    "daydreaming": "Thinking about something that was not around you.",
-    "distracted": "Attending to something you did not particularly want to attend to.",
-    "lapsing": "Not attending to what you were doing, yet your mind was blank.",
-    "thinking in words": "Like when you recite a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
-    "thinking with visual images": "Like when you wonder whether your bedroom door opens inwards or outwards. Do you see anything in your mind?",
-    "thinking with sounds": "Like when you think about your favorite singer's voice: high pitch or low pitch?",
-    "absorbed": "Forgetting the here and now, as when watching a very good movie"
+    "thinking in words": "Like reciting a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
+    "thinking with visual images": "Like wondering whether your bedroom door opens inwards or outwards. Do you see anything in your mind?",
+    "thinking with sounds": "Like thinking about your favorite singer's voice: high pitch or low pitch?",
+    "mind wandering": "Like reading many times the same sentence, knowing that we fail to focus. Unlike reading a whole paragraph without noticing mind wandering",
+    "surroundings": "Like when searching for someone in the crowd. Unlike watching a very good movie"
   }
 }
