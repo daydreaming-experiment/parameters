@@ -1,6 +1,12 @@
 Grammar Changelog
 =================
 
+Grammar v3.1
+------------
+
+Grammar `v3.1` is an extension of grammar `v3`, with the following change in sequences:
+* There is a new optional *boolean* field, `showProgressHeader`, specifying whether or not to show the progress information at the top of sequence pages.
+
 Grammar v3
 ----------
 
