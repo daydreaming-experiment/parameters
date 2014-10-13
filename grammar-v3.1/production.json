@@ -2,7 +2,7 @@
   "version": "3.1-production-1",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
-  "expDuration": 30,
+  "expDuration": 15,
   "backendApiUrl": "http://api.naja.cc",
   "resultsPageUrl": "http://daydreaming-the-app.net/results/device",
   "schedulingMinDelay": 300,
