@@ -1,5 +1,5 @@
 {
-  "version": "3.1-test-1",
+  "version": "3.1-test-2",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
   "expDuration": 15,
@@ -2024,7 +2024,8 @@
   ],
   "sequences": [
     {
-      "intro": "Right now...",
+      "intro": "",
+      "showProgressHeader": false,
       "name": "probe",
       "type": "probe",
       "nSlots": 1,
