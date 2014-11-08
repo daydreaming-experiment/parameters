@@ -3,9 +3,8 @@ Grammar Changelog
 
 Grammar v3.2
 ------------
-Grammar `v3.2` is an extension of grammar `v3.1`, with the following changes:
-* `slider` and `starRating` sub-questions have a new optional *boolean* field, `alreadyValid`; if *true*, the original position of the slider or star-rating is accepted by the app by default (i.e. the user doesn't need to touch it).
-* `manySliders` question also gets this new field; if *true*, the original position of each slider in the question is accepted by the app by default.
+Grammar `v3.2` is an extension of grammar `v3.1`, with the following change in slider and star-rating questions:
+* There is a new optional *boolean* field, `alreadyValid`; if *true*, the original position of the slider or star-rating is accepted by the app by default (i.e. the user doesn't need to touch it).
 
 Grammar v3.1
 ------------

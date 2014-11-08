@@ -54,7 +54,6 @@ The grammar is defined by the following rules (hold on, this is long!):
     * Optional field:
       * `showLiveIndication`: a *boolean*; if `true`, show live indication of the user's rating as she makes her choice on sliders; defaults to `false`.
       * `initialPosition`: an *integer* between `0` and `100` (included), defining the initial position of the selector on the sliders when the question is asked; defaults to `0` (i.e. to the left).
-      * `alreadyValid`: a *boolean*; if `true`, each slider is considered already answered when it's shown to the user: they can change the value, but if they don't, the original value is accepted; defaults to `false`.
   * If `type` is `"slider"` or `"starRating"`:
     * There is a single mandatory field, `subQuestions`: it contains a *list* of sub-question objects; those sub-questions have the following *mandatory* fields:
       * `text`: a *string* containing the actual sub-question asked to the user.
