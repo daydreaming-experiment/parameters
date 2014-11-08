@@ -467,7 +467,8 @@ class ManySlidersDetails(FixedKeysObject):
 
     authorized_keys = ['text', 'availableSliders', 'defaultSliders',
                        'hints', 'addItemHint', 'dialogText',
-                       'showLiveIndication', 'initialPosition']
+                       'showLiveIndication', 'initialPosition',
+                       'alreadyValid']
 
     def __init__(self, tc, loaded, parent):
         # The test case
@@ -488,6 +489,7 @@ class ManySlidersDetails(FixedKeysObject):
                                              'showLiveIndication', True)
         self.initialPosition = tc.checkIn(self, loaded, 'initialPosition',
                                           True)
+        self.alreadyValid = tc.checkIn(self, loaded, 'alreadyValid', True)
 
     def kiddos(self, test_name):
         for i, s in enumerate(self.availableSliders):
@@ -509,6 +511,7 @@ class ManySlidersDetails(FixedKeysObject):
         self.tc.checkInstance(self, 'dialogText', str)
         self.tc.checkInstance(self, 'showLiveIndication', bool, True)
         self.tc.checkInstance(self, 'initialPosition', int, True)
+        self.tc.checkInstance(self, 'alreadyValid', bool, True)
         self.kiddos('test_types')
 
     def test_values(self):
