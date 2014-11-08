@@ -1,5 +1,5 @@
 {
-  "version": "3.2-test-1-dev.3",
+  "version": "3.2-test-1-dev.4",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
   "expDuration": 15,
@@ -199,7 +199,6 @@
               "In clear and precise words"
             ],
             "alreadyValid": true,
-            "initialRating": 1.5,
             "showLiveIndication": true
           }
         ]
@@ -219,7 +218,6 @@
               "With vivid images"
             ],
             "alreadyValid": true,
-            "initialPosition": 75,
             "showLiveIndication": true
           }
         ]
@@ -419,7 +417,6 @@
           "7 hours",
           "8 hours or more"
         ],
-        "initialPosition": 25,
         "showLiveIndication": true,
         "alreadyValid": true,
         "addItemHint": "Search activities...",
