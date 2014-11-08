@@ -187,7 +187,7 @@
     },
     {
       "name": "probe.thought.words",
-      "type": "starRating",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
@@ -199,7 +199,7 @@
               "In clear and precise words"
             ],
             "alreadyValid": true,
-            "initialRating": 1.5,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
@@ -218,8 +218,7 @@
               "With some visual features",
               "With vivid images"
             ],
-            "alreadyValid": true,
-            "initialPosition": 75,
+            "initialPosition": 50,
             "showLiveIndication": true
           }
         ]
