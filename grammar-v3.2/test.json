@@ -89,7 +89,7 @@
               "Silence"
               ],
             "alreadyValid": true,
-            "initialPosition": 0,
+            "initialPosition": 100,
             "showLiveIndication": true
           }
         ]
