@@ -74,12 +74,12 @@
     },
     {
       "name": "probe.noise",
-      "type": "MultipleChoice",
+      "type": "slider",
       "details": {
         "subQuestions": [
           {
             "text": "What kind of noise is around?",
-            "choices": [
+            "hints": [
               "One person speaking",
               "Many persons speaking",
               "Music",
@@ -87,7 +87,10 @@
               "Human-related noise",
               "Non-human noise",
               "Silence"
-            ]
+              ],
+            "alreadyValid": true,
+            "initialPosition": 100,
+            "showLiveIndication": true
           }
         ]
       }
