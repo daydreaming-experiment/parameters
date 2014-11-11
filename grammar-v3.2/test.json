@@ -76,8 +76,6 @@
       "name": "probe.noise",
       "type": "MultipleChoice",
       "details": {
-        "subQuestions": [
-          {
             "text": "What kind of noise is around?",
             "choices": [
               "One person speaking",
@@ -87,9 +85,7 @@
               "Human-related noise",
               "Non-human noise",
               "Silence"
-            ]
-          }
-        ]
+              ]
       }
     },
     {
