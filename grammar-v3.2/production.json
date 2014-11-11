@@ -339,8 +339,8 @@
               "Very Unhappy",
               "Very Happy"
             ],
-            "initialPosition": 50
-            "notApplyAllowed": true,
+            "initialPosition": 50,
+            "notApplyAllowed": true
           }
         ]
       }
