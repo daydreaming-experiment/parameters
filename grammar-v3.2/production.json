@@ -1,8 +1,8 @@
 {
-  "version": "3.2-production-1",
+  "version": "3.2-test-1",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
-  "expDuration": 15,
+  "expDuration": 30,
   "backendApiUrl": "http://api.naja.cc",
   "resultsPageUrl": "http://daydreaming-the-app.net/results/device",
   "schedulingMinDelay": 300,
@@ -74,12 +74,12 @@
     },
     {
       "name": "probe.noise",
-      "type": "slider",
+      "type": "MultipleChoice",
       "details": {
         "subQuestions": [
           {
             "text": "What kind of noise is around?",
-            "hints": [
+            "choices": [
               "One person speaking",
               "Many persons speaking",
               "Music",
@@ -87,9 +87,7 @@
               "Human-related noise",
               "Non-human noise",
               "Silence"
-            ],
-            "initialPosition": 50,
-            "showLiveIndication": true
+            ]
           }
         ]
       }
@@ -106,9 +104,10 @@
               "1",
               "2-5",
               "6-15",
-              "more than 15"
+              "More than 15"
             ],
-            "initialPosition": 50,
+            "alreadyValid": true,
+            "initialPosition": 0,
             "showLiveIndication": true
           }
         ]
@@ -122,13 +121,14 @@
           {
             "text": "How many people are you interacting with?",
             "hints": [
-              "No-one",
-              "One person here",
-              "One person far away",
+              "0",
+              "1 person here",
+              "1 person far away",
               "Many persons here",
               "Many persons far away"
             ],
-            "initialPosition": 50,
+            "alreadyValid": true,
+            "initialPosition": 0,
             "showLiveIndication": true
           }
         ]
@@ -148,7 +148,8 @@
               "My mind was mostly focused",
               "My mind was totally focused"
             ],
-            "initialPosition": 50,
+            "alreadyValid": true,
+            "initialPosition": 100,
             "showLiveIndication": true
           },
           {
@@ -180,6 +181,7 @@
               "Totally aware"
             ],
             "initialPosition":50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -199,7 +201,8 @@
               "In clear and precise words"
             ],
             "alreadyValid": true,
-            "initialPosition": 50,
+            "initialPosition": 0,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -218,7 +221,8 @@
               "With some visual features",
               "With vivid images"
             ],
-            "initialPosition": 50,
+            "alreadyValid": true,
+            "initialPosition": 0,
             "showLiveIndication": true
           }
         ]
@@ -237,7 +241,9 @@
               "With some acoustic features",
               "With vivid sounds"
             ],
-            "initialPosition": 50,
+            "alreadyValid": true,
+            "initialPosition": 0,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -260,6 +266,7 @@
               "Someone else"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -294,6 +301,7 @@
               "More than 2 minutes"
               ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -314,6 +322,7 @@
               "Desired thought requiring effort"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -331,6 +340,7 @@
               "Very Happy"
             ],
             "initialPosition": 50
+            "notApplyAllowed": true,
           }
         ]
       }
@@ -372,6 +382,7 @@
               "Brand new, never had it before"
             ],
             "initialPosition": 50,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -451,7 +462,8 @@
               "I paid attention to each moment",
               "I was on total automatic pilot"
             ],
-            "initialPosition": 50
+            "initialPosition": 50,
+            "notApplyAllowed": true
           }
         ]
       }
