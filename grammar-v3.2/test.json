@@ -1,5 +1,5 @@
 {
-  "version": "3.2-test-4",
+  "version": "3.2-test-5",
   "backendExpId": "3ae001dcc2e34a024880f455070a6ebae53cf7f760edd5592a4b7ec4b65d7e49",
   "backendDbName": "daydreaming-prod",
   "expDuration": 30,
@@ -2092,14 +2092,32 @@
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "people",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
                 {
                   "name": "probe.people",
                   "questionName": "probe.people",
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "interaction",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
                 {
                   "name": "probe.interaction",
                   "questionName": "probe.interaction",
@@ -2120,7 +2138,7 @@
           "nSlots": 1,
           "pages": [
             {
-              "name": "thought",
+              "name": "thought.focus",
               "position": {
                 "fixed": 0
               },
@@ -2132,28 +2150,64 @@
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "thought.surround",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
                 {
                   "name": "probe.thought.surround",
                   "questionName": "probe.thought.surround",
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "thought.words",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
                 {
                   "name": "probe.thought.words",
                   "questionName": "probe.thought.words",
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "thought.visual",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
                 {
                   "name": "probe.thought.visual",
                   "questionName": "probe.thought.visual",
                   "position": {
                     "fixed": 0
                   }
-                },
+                }
+              ]
+            },
+            {
+              "name": "thought.auditory",
+              "position": {
+                "fixed": 0
+              },
+              "nSlots": 1,
+              "questions": [
                 {
                   "name": "probe.thought.auditory",
                   "questionName": "probe.thought.auditory",
