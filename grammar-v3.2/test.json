@@ -5,8 +5,8 @@
   "expDuration": 30,
   "backendApiUrl": "http://api.naja.cc",
   "resultsPageUrl": "http://daydreaming-the-app.net/results/device",
-  "schedulingMinDelay": 150,
-  "schedulingMeanDelay": 3600,
+  "schedulingMinDelay": 300,
+  "schedulingMeanDelay": 7200,
   "questions": [
     {
       "name": "probe.location",
@@ -149,12 +149,12 @@
             "showLiveIndication": true
           },
           {
-            "text": "How aware were you of your mind wandering?",
+            "text": "How meta-aware were you of your mind wandering?",
             "hints": [
-              "Not aware at all",
+              "Not aware at all of my mind wandering",
               "The phone might have helped me notice",
-              "I knew it somehow",
-              "I knew it explicitly"
+              "I knew I was mind wandering somehow",
+              "I knew explicitly I was mind wandering"
             ],
             "initialPosition": 50,
             "notApplyAllowed": true,
@@ -219,6 +219,7 @@
             ],
             "alreadyValid": true,
             "initialPosition": 0,
+            "notApplyAllowed": true,
             "showLiveIndication": true
           }
         ]
@@ -2092,32 +2093,14 @@
                   "position": {
                     "fixed": 0
                   }
-                }
-              ]
-            },
-            {
-              "name": "people",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
+                },
                 {
                   "name": "probe.people",
                   "questionName": "probe.people",
                   "position": {
                     "fixed": 0
                   }
-                }
-              ]
-            },
-            {
-              "name": "interaction",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
+                },
                 {
                   "name": "probe.interaction",
                   "questionName": "probe.interaction",
@@ -2138,7 +2121,7 @@
           "nSlots": 1,
           "pages": [
             {
-              "name": "thought.focus",
+              "name": "thought",
               "position": {
                 "fixed": 0
               },
@@ -2150,64 +2133,28 @@
                   "position": {
                     "fixed": 0
                   }
-                }
-              ]
-            },
-            {
-              "name": "thought.surround",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
+                },
                 {
                   "name": "probe.thought.surround",
                   "questionName": "probe.thought.surround",
                   "position": {
                     "fixed": 0
                   }
-                }
-              ]
-            },
-            {
-              "name": "thought.words",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
+                },
                 {
                   "name": "probe.thought.words",
                   "questionName": "probe.thought.words",
                   "position": {
                     "fixed": 0
                   }
-                }
-              ]
-            },
-            {
-              "name": "thought.visual",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
+                },
                 {
                   "name": "probe.thought.visual",
                   "questionName": "probe.thought.visual",
                   "position": {
                     "fixed": 0
                   }
-                }
-              ]
-            },
-            {
-              "name": "thought.auditory",
-              "position": {
-                "fixed": 0
-              },
-              "nSlots": 1,
-              "questions": [
+                },
                 {
                   "name": "probe.thought.auditory",
                   "questionName": "probe.thought.auditory",
@@ -3091,7 +3038,7 @@
     "thinking in words": "Like reciting a poem in your mind. Could you tell the precise words? Whether the sentence was long or not?",
     "thinking with visual images": "Like wondering whether your bedroom door opens inwards or outwards. Do you see anything in your mind?",
     "thinking with sounds": "Like thinking about your favorite singer's voice: high pitch or low pitch?",
-    "mind wandering": "Like reading many times the same sentence, knowing that we fail to focus. Unlike reading a whole paragraph without noticing mind wandering",
+    "meta-aware": "Like reading many times the same sentence, knowing that we fail to focus. Unlike reading a whole paragraph without noticing mind wandering",
     "surroundings": "Like when searching for someone in the crowd. Unlike watching a very good movie"
   }
 }
